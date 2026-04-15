@@ -1,0 +1,68 @@
+# --- Build artifacts ---
+/dist/
+/build/
+*.zip
+*.tar.gz
+
+# --- Dependencies ---
+/vendor/
+/node_modules/
+composer.phar
+
+# --- PHPCS / tools ---
+.phpcs.cache
+.phpunit.result.cache
+.phpunit.cache/
+
+# --- Env / local config ---
+.env
+.env.*
+!.env.example
+wp-config.php
+wp-config-sample.php
+/.vscode/
+/.idea/
+*.code-workspace
+
+# --- OS junk ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# --- Editor swap / backup ---
+*.swp
+*.swo
+*~
+*.bak
+*.orig
+
+# --- Logs ---
+*.log
+/logs/
+debug.log
+error_log
+
+# --- Source maps ---
+*.map
+
+# --- Local development ---
+/.wp-env/
+.wp-env.override.json
+/wp-content/
+/.phpunit/
+/tests/tmp/
+
+# --- Translator working files ---
+*.po~
+
+# --- Local notes (never commit) ---
+NOTES.md
+TODO.md
+SCRATCH.md
+/notes/
+/scratch/

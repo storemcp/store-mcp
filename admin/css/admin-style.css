@@ -1,0 +1,332 @@
+/* StoreMCP admin styles. Built on top of native WP admin styles — minimal additions only. */
+
+.store-mcp-wrap {
+	max-width: 1200px;
+}
+
+.store-mcp-wrap .store-mcp-tier {
+	display: inline-block;
+	padding: 2px 10px;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	border-radius: 999px;
+	vertical-align: middle;
+	margin-left: 8px;
+}
+.store-mcp-tier-free   { background: #e6e7eb; color: #1d2327; }
+.store-mcp-tier-pro    { background: #2271b1; color: #fff; }
+.store-mcp-tier-agency { background: #6c2eb9; color: #fff; }
+
+.store-mcp-pill {
+	display: inline-block;
+	padding: 2px 8px;
+	font-size: 11px;
+	font-weight: 600;
+	border-radius: 4px;
+	background: #f0f0f1;
+	color: #1d2327;
+}
+.store-mcp-pill.ok    { background: #d1f5e0; color: #00712f; }
+.store-mcp-pill.warn  { background: #fde8d3; color: #8a3a00; }
+.store-mcp-pill.muted { background: #e6e7eb; color: #50575e; }
+.store-mcp-pill.pro   { background: #2271b1; color: #fff; }
+.store-mcp-pill.free  { background: #d1d5db; color: #1d2327; }
+
+.store-mcp-grid {
+	display: grid;
+	gap: 16px;
+	margin: 16px 0;
+}
+.store-mcp-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.store-mcp-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.store-mcp-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 960px) {
+	.store-mcp-grid-2,
+	.store-mcp-grid-3,
+	.store-mcp-grid-4 { grid-template-columns: 1fr; }
+}
+
+.store-mcp-stat {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 18px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+.store-mcp-stat.is-warning { border-left: 4px solid #d63638; }
+.store-mcp-stat-label {
+	font-size: 12px;
+	color: #50575e;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+.store-mcp-stat-value {
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 1.1;
+	color: #1d2327;
+}
+
+.store-mcp-card {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 20px;
+	margin: 16px 0;
+}
+.store-mcp-card h2 {
+	margin-top: 0;
+	font-size: 16px;
+}
+
+.store-mcp-steps {
+	list-style: decimal inside;
+	padding-left: 0;
+}
+.store-mcp-steps li {
+	margin-bottom: 14px;
+}
+.store-mcp-steps li > strong { display: block; margin-bottom: 4px; }
+
+.store-mcp-copyable {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 8px 10px;
+	font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+	font-size: 12px;
+	overflow-x: auto;
+}
+.store-mcp-copyable code {
+	background: transparent;
+	padding: 0;
+	flex: 1;
+	white-space: nowrap;
+	overflow-x: auto;
+}
+
+.store-mcp-inline-form {
+	display: flex;
+	gap: 8px;
+	margin: 12px 0;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.store-mcp-inline-form input[type="text"],
+.store-mcp-inline-form input[type="url"] {
+	min-width: 280px;
+}
+
+.store-mcp-new-key {
+	background: #fffaeb;
+	border: 1px solid #f0c000;
+	border-radius: 4px;
+	padding: 14px;
+	margin: 12px 0;
+}
+
+.store-mcp-keys-table code,
+.store-mcp-log-table code {
+	font-size: 11px;
+}
+
+.store-mcp-filters {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.store-mcp-log-table pre {
+	background: #f6f7f7;
+	padding: 8px;
+	border-radius: 3px;
+	font-size: 11px;
+	max-width: 380px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.store-mcp-switch {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 22px;
+	vertical-align: middle;
+}
+.store-mcp-switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.store-mcp-switch span {
+	position: absolute;
+	cursor: pointer;
+	inset: 0;
+	background: #c3c4c7;
+	border-radius: 22px;
+	transition: 0.2s;
+}
+.store-mcp-switch span::before {
+	content: "";
+	position: absolute;
+	height: 16px;
+	width: 16px;
+	left: 3px;
+	bottom: 3px;
+	background: #fff;
+	border-radius: 50%;
+	transition: 0.2s;
+}
+.store-mcp-switch input:checked + span { background: #2271b1; }
+.store-mcp-switch input:checked + span::before { transform: translateX(18px); }
+.store-mcp-switch input:disabled + span { opacity: 0.5; cursor: not-allowed; }
+
+.store-mcp-upgrade .store-mcp-grid-3 > div {
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 18px;
+	text-align: center;
+}
+.store-mcp-upgrade .store-mcp-grid-3 > div.featured {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.15);
+	background: #fff;
+}
+.store-mcp-upgrade h3 { margin-top: 0; }
+.store-mcp-price {
+	font-size: 28px;
+	font-weight: 700;
+	color: #1d2327;
+	margin: 8px 0;
+}
+.store-mcp-price small { font-size: 14px; color: #50575e; font-weight: 400; }
+.store-mcp-upgrade ul { text-align: left; padding-left: 20px; }
+
+.store-mcp-branding {
+	margin-top: 24px;
+	font-size: 12px;
+	color: #6c7781;
+	text-align: right;
+}
+.store-mcp-branding a { color: #6c7781; }
+
+/* ---- Connect-first dashboard ---- */
+.store-mcp-hero-card {
+	background: linear-gradient(135deg, #ffffff 0%, #f0f6ff 100%);
+	border: 1px solid #c3d4e8;
+	border-radius: 8px;
+	padding: 28px;
+	margin: 20px 0 24px;
+}
+.store-mcp-hero-head h2 {
+	margin: 0 0 6px;
+	font-size: 18px;
+	letter-spacing: -0.01em;
+}
+.store-mcp-hero-head p {
+	margin: 0 0 18px;
+	color: #50575e;
+	font-size: 14px;
+}
+.store-mcp-endpoint-row {
+	display: flex;
+	gap: 10px;
+	align-items: stretch;
+}
+.store-mcp-endpoint-row input {
+	flex: 1;
+	font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
+	font-size: 13px;
+	padding: 10px 14px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 6px;
+	min-width: 0;
+}
+.store-mcp-endpoint-row .button {
+	padding: 0 16px;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+.store-mcp-endpoint-row .button .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	line-height: 1;
+}
+
+.store-mcp-connect-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 14px;
+	margin: 16px 0 24px;
+}
+.store-mcp-connect-card {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 18px;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.store-mcp-connect-card:hover { border-color: #8c8f94; }
+.store-mcp-connect-card.is-open { border-color: #2271b1; box-shadow: 0 0 0 2px rgba(34,113,177,0.12); }
+.store-mcp-connect-head {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+.store-mcp-connect-logo {
+	width: 40px;
+	height: 40px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.store-mcp-connect-head > div:not(.store-mcp-connect-logo) { flex: 1; min-width: 0; }
+.store-mcp-connect-head h3 { margin: 0; font-size: 14px; }
+.store-mcp-connect-head p { margin: 2px 0 0; color: #50575e; font-size: 12px; }
+.store-mcp-connect-card ol.store-mcp-steps {
+	margin: 16px 0 0;
+	padding-left: 22px;
+	color: #1d2327;
+	font-size: 13px;
+	line-height: 1.6;
+}
+.store-mcp-connect-card ol.store-mcp-steps li { margin-bottom: 8px; }
+.store-mcp-connect-card ol.store-mcp-steps .button-small { margin-left: 6px; }
+.store-mcp-code {
+	background: #1d2327;
+	color: #f0f0f1;
+	padding: 10px 12px;
+	border-radius: 6px;
+	font-size: 12px;
+	overflow-x: auto;
+	margin: 8px 0 0;
+}
+.store-mcp-code code { background: none; color: inherit; font-family: inherit; }
+
+.store-mcp-clients-table td,
+.store-mcp-clients-table th { padding: 10px 12px; }
+
+.store-mcp-modules-table td { vertical-align: top; }
+.store-mcp-module-desc { color: #1d2327; margin-bottom: 4px; }
+.store-mcp-examples {
+	margin: 4px 0 0;
+	padding-left: 18px;
+	color: #50575e;
+	font-size: 12px;
+	list-style: disc;
+}
+.store-mcp-examples li { margin: 2px 0; font-style: italic; }

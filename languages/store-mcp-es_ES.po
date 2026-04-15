@@ -1,0 +1,2440 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the StoreMCP package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: StoreMCP 1.1.1\n"
+"Report-Msgid-Bugs-To: support@storemcp.io\n"
+"POT-Creation-Date: 2026-04-14 22:26-0300\n"
+"PO-Revision-Date: 2026-04-14 22:26-0300\n"
+"Last-Translator: StoreMCP <support@storemcp.io>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: store-mcp\n"
+
+#: admin/class-admin-ajax.php:41 admin/class-admin-page.php:142
+#: includes/class-mcp-oauth.php:406
+msgid "Forbidden"
+msgstr "Prohibido"
+
+#: admin/class-admin-ajax.php:59
+msgid "API key generated. Copy it now — it will not be shown again."
+msgstr "Clave de API generada. Cópiala ahora — no se mostrará de nuevo."
+
+#: admin/class-admin-ajax.php:73 admin/class-admin-ajax.php:86
+msgid "Invalid id"
+msgstr "ID no válido"
+
+#: admin/class-admin-ajax.php:77
+msgid "Could not revoke key"
+msgstr "No se pudo revocar la clave"
+
+#: admin/class-admin-ajax.php:79
+msgid "Key revoked"
+msgstr "Clave revocada"
+
+#: admin/class-admin-ajax.php:89
+msgid "Key deleted"
+msgstr "Clave eliminada"
+
+#: admin/class-admin-ajax.php:118
+msgid "Settings saved"
+msgstr "Ajustes guardados"
+
+#: admin/class-admin-ajax.php:125 includes/class-mcp-oauth.php:470
+msgid "Missing client_id"
+msgstr "Falta client_id"
+
+#: admin/class-admin-ajax.php:129
+msgid "Could not revoke app"
+msgstr "No se pudo revocar la aplicación"
+
+#: admin/class-admin-ajax.php:131
+msgid "App disconnected"
+msgstr "Aplicación desconectada"
+
+#: admin/class-admin-ajax.php:141
+msgid "Invalid module"
+msgstr "Módulo no válido"
+
+#: admin/class-admin-ajax.php:152
+msgid "Module updated"
+msgstr "Módulo actualizado"
+
+#: admin/class-admin-ajax.php:183
+msgid "Log cleared"
+msgstr "Registro borrado"
+
+#: admin/class-admin-ajax.php:186
+#, php-format
+msgid "%d entries removed"
+msgstr "%d entradas eliminadas"
+
+#: admin/class-admin-ajax.php:192
+msgid "Agency plan required"
+msgstr "Se requiere el plan Agency"
+
+#: admin/class-admin-ajax.php:202
+msgid "White label saved"
+msgstr "Marca blanca guardada"
+
+#: admin/class-admin-ajax.php:217
+msgid "MCP endpoint reachable"
+msgstr "Endpoint MCP accesible"
+
+#: admin/class-admin-page.php:52 admin/class-admin-page.php:175
+msgid "Dashboard"
+msgstr "Panel de control"
+
+#: admin/class-admin-page.php:53 admin/class-admin-page.php:176
+msgid "Settings"
+msgstr "Ajustes"
+
+#: admin/class-admin-page.php:54 admin/views/tools.php:451
+#: admin/views/tools.php:461
+msgid "Tools"
+msgstr "Herramientas"
+
+#: admin/class-admin-page.php:55
+msgid "Activity Log"
+msgstr "Registro de actividad"
+
+#: admin/class-admin-page.php:56 admin/views/dashboard.php:154
+#: admin/views/license.php:16
+msgid "License"
+msgstr "Licencia"
+
+#: admin/class-admin-page.php:59 admin/views/white-label.php:19
+msgid "White Label"
+msgstr "Marca blanca"
+
+#: admin/class-admin-page.php:89
+msgid "Revoke this API key? Clients using it will stop working."
+msgstr "¿Revocar esta clave de API? Los clientes que la usen dejarán de funcionar."
+
+#: admin/class-admin-page.php:90
+msgid "Permanently delete this key?"
+msgstr "¿Eliminar esta clave de forma permanente?"
+
+#: admin/class-admin-page.php:91
+msgid "Delete all activity log entries?"
+msgstr "¿Eliminar todas las entradas del registro de actividad?"
+
+#: admin/class-admin-page.php:92
+msgid "Disconnect this app? It will need to authorize again to reconnect."
+msgstr "¿Desconectar esta aplicación? Tendrá que autorizar de nuevo para reconectarse."
+
+#: admin/class-admin-page.php:93
+msgid "Copied"
+msgstr "Copiado"
+
+#: admin/class-admin-page.php:94
+msgid "Saved"
+msgstr "Guardado"
+
+#: admin/class-admin-page.php:95
+msgid "Something went wrong"
+msgstr "Algo salió mal"
+
+#: admin/class-admin-page.php:96
+msgid "Copy this key now — it will not be shown again."
+msgstr "Copia esta clave ahora — no se mostrará de nuevo."
+
+#: admin/class-admin-page.php:97 admin/views/dashboard.php:53
+#: admin/views/dashboard.php:76 admin/views/dashboard.php:94
+msgid "Show steps"
+msgstr "Mostrar pasos"
+
+#: admin/class-admin-page.php:98
+msgid "Hide steps"
+msgstr "Ocultar pasos"
+
+#: admin/class-admin-page.php:125
+msgid "White Label requires the Agency plan."
+msgstr "La marca blanca requiere el plan Agency."
+
+#: admin/class-admin-page.php:133
+msgid "StoreMCP"
+msgstr "StoreMCP"
+
+#: admin/class-admin-page.php:133
+msgid "View not found."
+msgstr "Vista no encontrada."
+
+#: admin/class-admin-page.php:168
+msgid ""
+"StoreMCP database is out of date. Please deactivate and reactivate the "
+"plugin."
+msgstr ""
+"La base de datos de StoreMCP está desactualizada. Por favor, desactiva y "
+"reactiva el plugin."
+
+#: admin/class-admin-page.php:179 admin/views/license.php:66
+msgid "Upgrade to Pro"
+msgstr "Actualizar a Pro"
+
+#: admin/views/activity-log.php:28 admin/views/settings.php:162
+msgid "Activity log"
+msgstr "Registro de actividad"
+
+#: admin/views/activity-log.php:29
+msgid "Export CSV"
+msgstr "Exportar CSV"
+
+#: admin/views/activity-log.php:30
+msgid "Clear log"
+msgstr "Borrar registro"
+
+#: admin/views/activity-log.php:34 admin/views/dashboard.php:171
+#: admin/views/tools.php:520
+msgid "Tool"
+msgstr "Herramienta"
+
+#: admin/views/activity-log.php:36
+msgid "Any status"
+msgstr "Cualquier estado"
+
+#: admin/views/activity-log.php:37
+msgid "Success"
+msgstr "Éxito"
+
+#: admin/views/activity-log.php:38 admin/views/activity-log.php:74
+msgid "Error"
+msgstr "Error"
+
+#: admin/views/activity-log.php:42
+msgid "Search params/error"
+msgstr "Buscar parámetros/error"
+
+#: admin/views/activity-log.php:43
+msgid "Filter"
+msgstr "Filtrar"
+
+#: admin/views/activity-log.php:44
+msgid "Reset"
+msgstr "Restablecer"
+
+#: admin/views/activity-log.php:50
+msgid "Time"
+msgstr "Hora"
+
+#: admin/views/activity-log.php:51
+msgid "Method / tool"
+msgstr "Método / herramienta"
+
+#: admin/views/activity-log.php:52 admin/views/dashboard.php:149
+#: admin/views/license.php:24 admin/views/settings.php:79
+#: admin/views/tools.php:460
+msgid "Status"
+msgstr "Estado"
+
+#: admin/views/activity-log.php:53
+msgid "Duration"
+msgstr "Duración"
+
+#: admin/views/activity-log.php:54
+msgid "Key / user"
+msgstr "Clave / usuario"
+
+#: admin/views/activity-log.php:55
+msgid "IP"
+msgstr "IP"
+
+#: admin/views/activity-log.php:56
+msgid "Details"
+msgstr "Detalles"
+
+#: admin/views/activity-log.php:61
+msgid "No entries match the filter."
+msgstr "Ninguna entrada coincide con el filtro."
+
+#: admin/views/activity-log.php:77
+msgid "Params"
+msgstr "Parámetros"
+
+#: admin/views/dashboard.php:27
+msgid ""
+"Connect your site to Claude, ChatGPT, Cursor, and any MCP-compatible AI "
+"client."
+msgstr ""
+"Conecta tu sitio a Claude, ChatGPT, Cursor y cualquier cliente de IA "
+"compatible con MCP."
+
+#: admin/views/dashboard.php:31
+msgid "Your MCP server URL"
+msgstr "URL de tu servidor MCP"
+
+#: admin/views/dashboard.php:32
+msgid ""
+"Paste this URL into any MCP-compatible AI client. It handles authentication "
+"automatically."
+msgstr ""
+"Pega esta URL en cualquier cliente de IA compatible con MCP. Gestiona la "
+"autenticación automáticamente."
+
+#: admin/views/dashboard.php:38 admin/views/dashboard.php:60
+msgid "Copy URL"
+msgstr "Copiar URL"
+
+#: admin/views/dashboard.php:50
+msgid "Claude Desktop / Claude.ai"
+msgstr "Claude Desktop / Claude.ai"
+
+#: admin/views/dashboard.php:51
+msgid "Custom connector with OAuth"
+msgstr "Conector personalizado con OAuth"
+
+#: admin/views/dashboard.php:56
+msgid "Open Claude → Settings → Connectors."
+msgstr "Abre Claude → Ajustes → Conectores."
+
+#: admin/views/dashboard.php:57
+msgid "Scroll down and click \"Add custom connector\"."
+msgstr "Desplázate hacia abajo y haz clic en \"Añadir conector personalizado\"."
+
+#: admin/views/dashboard.php:59
+msgid "Paste the URL above in the Server URL field and click Add."
+msgstr "Pega la URL de arriba en el campo Server URL y haz clic en Añadir."
+
+#: admin/views/dashboard.php:62
+msgid ""
+"Click Connect — a window opens on this site. Log in if asked and click Allow."
+msgstr ""
+"Haz clic en Conectar — se abrirá una ventana en este sitio. Inicia sesión si "
+"te lo pide y haz clic en Permitir."
+
+#: admin/views/dashboard.php:63
+msgid "Done. All MCP tools are now available to Claude."
+msgstr "Listo. Todas las herramientas MCP ya están disponibles para Claude."
+
+#: admin/views/dashboard.php:73
+msgid "ChatGPT"
+msgstr "ChatGPT"
+
+#: admin/views/dashboard.php:74
+msgid "Developer Mode / Custom connector"
+msgstr "Modo desarrollador / Conector personalizado"
+
+#: admin/views/dashboard.php:79
+msgid "In ChatGPT → Settings → Connectors → Advanced → enable Developer mode."
+msgstr "En ChatGPT → Ajustes → Conectores → Avanzado → activa el modo desarrollador."
+
+#: admin/views/dashboard.php:80
+msgid ""
+"Click Create, name it StoreMCP, and paste the URL above as MCP Server URL."
+msgstr ""
+"Haz clic en Crear, ponle el nombre StoreMCP y pega la URL de arriba como MCP "
+"Server URL."
+
+#: admin/views/dashboard.php:81
+msgid ""
+"Choose OAuth as authentication. Save. Authorize on this site when prompted."
+msgstr ""
+"Elige OAuth como autenticación. Guarda. Autoriza en este sitio cuando se te "
+"solicite."
+
+#: admin/views/dashboard.php:91
+msgid "Cursor / Windsurf / VS Code"
+msgstr "Cursor / Windsurf / VS Code"
+
+#: admin/views/dashboard.php:92
+msgid "mcp.json — remote server with OAuth"
+msgstr "mcp.json — servidor remoto con OAuth"
+
+#: admin/views/dashboard.php:97
+msgid "Open your mcp.json file (project or global)."
+msgstr "Abre tu archivo mcp.json (de proyecto o global)."
+
+#: admin/views/dashboard.php:99
+msgid "Add the server URL:"
+msgstr "Añade la URL del servidor:"
+
+#: admin/views/dashboard.php:108
+msgid "Reload MCP — your client will open a browser window to authorize."
+msgstr "Recarga MCP — tu cliente abrirá una ventana del navegador para autorizar."
+
+#: admin/views/dashboard.php:115
+msgid "Connected apps"
+msgstr "Aplicaciones conectadas"
+
+#: admin/views/dashboard.php:117
+msgid ""
+"No apps are connected yet. Connect Claude or ChatGPT using the steps above."
+msgstr ""
+"Aún no hay aplicaciones conectadas. Conecta Claude o ChatGPT siguiendo los "
+"pasos de arriba."
+
+#: admin/views/dashboard.php:122
+msgid "App"
+msgstr "Aplicación"
+
+#: admin/views/dashboard.php:123
+msgid "Connected"
+msgstr "Conectada"
+
+#: admin/views/dashboard.php:124 admin/views/settings.php:78
+msgid "Last used"
+msgstr "Último uso"
+
+#: admin/views/dashboard.php:125
+msgid "Active tokens"
+msgstr "Tokens activos"
+
+#: admin/views/dashboard.php:133
+msgid "Unnamed client"
+msgstr "Cliente sin nombre"
+
+#: admin/views/dashboard.php:139 admin/views/settings.php:99
+msgid "Revoke"
+msgstr "Revocar"
+
+#: admin/views/dashboard.php:152
+msgid "Plugin enabled"
+msgstr "Plugin activado"
+
+#: admin/views/dashboard.php:152
+msgid "On"
+msgstr "Activado"
+
+#: admin/views/dashboard.php:152
+msgid "Off"
+msgstr "Desactivado"
+
+#: admin/views/dashboard.php:153
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: admin/views/dashboard.php:153 admin/views/settings.php:96
+#: admin/views/tools.php:484
+msgid "Active"
+msgstr "Activo"
+
+#: admin/views/dashboard.php:153
+msgid "Not active"
+msgstr "No activo"
+
+#: admin/views/dashboard.php:155
+msgid "Tools available"
+msgstr "Herramientas disponibles"
+
+#: admin/views/dashboard.php:156
+msgid "Requests today"
+msgstr "Solicitudes hoy"
+
+#: admin/views/dashboard.php:156
+#, php-format
+msgid "%d errors"
+msgstr "%d errores"
+
+#: admin/views/dashboard.php:157
+msgid "Protocol"
+msgstr "Protocolo"
+
+#: admin/views/dashboard.php:161
+msgid "Test connection"
+msgstr "Probar conexión"
+
+#: admin/views/dashboard.php:169
+msgid "Top tools (last 7 days)"
+msgstr "Herramientas más usadas (últimos 7 días)"
+
+#: admin/views/dashboard.php:171
+msgid "Calls"
+msgstr "Llamadas"
+
+#: admin/views/dashboard.php:185
+#, php-format
+msgid "Powered by %s"
+msgstr "Con tecnología de %s"
+
+#: admin/views/license.php:19
+msgid "Current plan"
+msgstr "Plan actual"
+
+#: admin/views/license.php:24
+msgid "Valid"
+msgstr "Válida"
+
+#: admin/views/license.php:24
+msgid "Inactive"
+msgstr "Inactiva"
+
+#: admin/views/license.php:26
+msgid "Expires"
+msgstr "Caduca"
+
+#: admin/views/license.php:29
+msgid "Sites"
+msgstr "Sitios"
+
+#: admin/views/license.php:32
+msgid "Customer"
+msgstr "Cliente"
+
+#: admin/views/license.php:35
+msgid "Last checked"
+msgstr "Última comprobación"
+
+#: admin/views/license.php:38
+msgid "Last error"
+msgstr "Último error"
+
+#: admin/views/license.php:47
+msgid "Activate license"
+msgstr "Activar licencia"
+
+#: admin/views/license.php:48
+msgid "Enter your StoreMCP license key. Get one at storemcp.io/pricing."
+msgstr "Introduce tu clave de licencia de StoreMCP. Consigue una en storemcp.io/pricing."
+
+#: admin/views/license.php:51
+msgid "Activate"
+msgstr "Activar"
+
+#: admin/views/license.php:54
+msgid "License key"
+msgstr "Clave de licencia"
+
+#: admin/views/license.php:57
+msgid "Re-check now"
+msgstr "Volver a comprobar ahora"
+
+#: admin/views/license.php:58
+msgid "Deactivate"
+msgstr "Desactivar"
+
+#: admin/views/license.php:72
+msgid "WP core CRUD"
+msgstr "CRUD del núcleo de WP"
+
+#: admin/views/license.php:73
+msgid "WC read-only"
+msgstr "WC solo lectura"
+
+#: admin/views/license.php:74
+msgid "30 req/min"
+msgstr "30 sol/min"
+
+#: admin/views/license.php:75
+msgid "1 site"
+msgstr "1 sitio"
+
+#: admin/views/license.php:82
+msgid "Full WC control"
+msgstr "Control completo de WC"
+
+#: admin/views/license.php:83
+msgid "Bulk operations"
+msgstr "Operaciones masivas"
+
+#: admin/views/license.php:84
+msgid "120 req/min"
+msgstr "120 sol/min"
+
+#: admin/views/license.php:85
+msgid "Up to 5 sites"
+msgstr "Hasta 5 sitios"
+
+#: admin/views/license.php:87
+msgid "Get Pro"
+msgstr "Obtener Pro"
+
+#: admin/views/license.php:93
+msgid "Unlimited sites"
+msgstr "Sitios ilimitados"
+
+#: admin/views/license.php:94
+msgid "White label"
+msgstr "Marca blanca"
+
+#: admin/views/license.php:95
+msgid "Custom roles"
+msgstr "Roles personalizados"
+
+#: admin/views/license.php:96
+msgid "SLA support"
+msgstr "Soporte con SLA"
+
+#: admin/views/oauth-consent.php:20 includes/class-mcp-oauth.php:506
+msgid "Unknown MCP client"
+msgstr "Cliente MCP desconocido"
+
+#: admin/views/oauth-consent.php:30
+#, php-format
+msgid "Authorize %s · %s"
+msgstr "Autorizar %s · %s"
+
+#: admin/views/oauth-consent.php:233
+#, php-format
+msgid "Allow %1$s to access %2$s?"
+msgstr "¿Permitir que %1$s acceda a %2$s?"
+
+#: admin/views/oauth-consent.php:248
+#, php-format
+msgid "Signed in as %s"
+msgstr "Sesión iniciada como %s"
+
+#: admin/views/oauth-consent.php:253
+msgid "This will allow the app to"
+msgstr "Esto permitirá a la aplicación"
+
+#: admin/views/oauth-consent.php:255
+msgid "Read and manage content, products and settings via MCP tools"
+msgstr "Leer y gestionar contenido, productos y ajustes mediante herramientas MCP"
+
+#: admin/views/oauth-consent.php:256
+#, php-format
+msgid "Act on behalf of %s, limited to their existing permissions"
+msgstr "Actuar en nombre de %s, limitado a sus permisos existentes"
+
+#: admin/views/oauth-consent.php:257
+msgid "Be revoked any time from Settings → Connected apps"
+msgstr "Ser revocada en cualquier momento desde Ajustes → Aplicaciones conectadas"
+
+#: admin/views/oauth-consent.php:267 includes/class-mcp-oauth.php:528
+msgid "Deny"
+msgstr "Denegar"
+
+#: admin/views/oauth-consent.php:268 includes/class-mcp-oauth.php:527
+msgid "Allow"
+msgstr "Permitir"
+
+#: admin/views/oauth-consent.php:273
+msgid "Only allow apps you trust."
+msgstr "Solo permite aplicaciones en las que confíes."
+
+#: admin/views/settings.php:24
+msgid "Administrator (manage_options)"
+msgstr "Administrador (manage_options)"
+
+#: admin/views/settings.php:25
+msgid "Editor (edit_others_posts)"
+msgstr "Editor (edit_others_posts)"
+
+#: admin/views/settings.php:26
+msgid "Author (publish_posts)"
+msgstr "Autor (publish_posts)"
+
+#: admin/views/settings.php:27
+msgid "Contributor (edit_posts)"
+msgstr "Colaborador (edit_posts)"
+
+#: admin/views/settings.php:28
+msgid "Any logged-in user (read)"
+msgstr "Cualquier usuario con sesión iniciada (read)"
+
+#: admin/views/settings.php:32
+msgid "StoreMCP — Settings"
+msgstr "StoreMCP — Ajustes"
+
+#: admin/views/settings.php:35
+msgid "OAuth authorization"
+msgstr "Autorización OAuth"
+
+#: admin/views/settings.php:36
+msgid ""
+"MCP clients like Claude and ChatGPT authenticate via OAuth 2.1. Choose who "
+"on your site is allowed to approve a connection request."
+msgstr ""
+"Los clientes MCP como Claude y ChatGPT se autentican mediante OAuth 2.1. "
+"Elige quién en tu sitio puede aprobar una solicitud de conexión."
+
+#: admin/views/settings.php:40
+msgid "Required capability to authorize"
+msgstr "Capacidad requerida para autorizar"
+
+#: admin/views/settings.php:47
+msgid ""
+"Only users with this capability see the \"Allow\" button on the consent "
+"screen. The granted token inherits the approving user's capabilities."
+msgstr ""
+"Solo los usuarios con esta capacidad ven el botón \"Permitir\" en la "
+"pantalla de consentimiento. El token concedido hereda las capacidades del "
+"usuario que aprueba."
+
+#: admin/views/settings.php:54
+msgid "API keys (advanced)"
+msgstr "Claves de API (avanzado)"
+
+#: admin/views/settings.php:55
+msgid ""
+"Most users should use OAuth — just paste the MCP URL in their AI client. API "
+"keys are useful for scripts, n8n, or clients that do not support OAuth. Keys "
+"are hashed: copy each one when you generate it."
+msgstr ""
+"La mayoría de usuarios debería usar OAuth — solo hay que pegar la URL de MCP "
+"en su cliente de IA. Las claves de API son útiles para scripts, n8n o "
+"clientes que no soportan OAuth. Las claves se almacenan con hash: cópialas "
+"cuando las generes."
+
+#: admin/views/settings.php:58
+msgid "Key label (e.g. Claude desktop)"
+msgstr "Etiqueta de la clave (p. ej. Claude desktop)"
+
+#: admin/views/settings.php:59
+msgid "Generate API key"
+msgstr "Generar clave de API"
+
+#: admin/views/settings.php:63
+msgid "New API key"
+msgstr "Nueva clave de API"
+
+#: admin/views/settings.php:66
+msgid "Copy"
+msgstr "Copiar"
+
+#: admin/views/settings.php:68
+msgid "Save it now — it will not be shown again."
+msgstr "Guárdala ahora — no se mostrará de nuevo."
+
+#: admin/views/settings.php:74
+msgid "Label"
+msgstr "Etiqueta"
+
+#: admin/views/settings.php:75
+msgid "Key id"
+msgstr "ID de la clave"
+
+#: admin/views/settings.php:76
+msgid "User"
+msgstr "Usuario"
+
+#: admin/views/settings.php:77
+msgid "Created"
+msgstr "Creada"
+
+#: admin/views/settings.php:85
+msgid "No keys yet."
+msgstr "Aún no hay claves."
+
+#: admin/views/settings.php:96
+msgid "Revoked"
+msgstr "Revocada"
+
+#: admin/views/settings.php:101
+msgid "Delete"
+msgstr "Eliminar"
+
+#: admin/views/settings.php:111
+msgid "General"
+msgstr "General"
+
+#: admin/views/settings.php:114
+msgid "MCP server enabled"
+msgstr "Servidor MCP activado"
+
+#: admin/views/settings.php:116
+msgid "When off, all MCP endpoints return 503."
+msgstr "Cuando está desactivado, todos los endpoints MCP devuelven 503."
+
+#: admin/views/settings.php:120
+msgid "Allow Application Passwords"
+msgstr "Permitir contraseñas de aplicación"
+
+#: admin/views/settings.php:122
+msgid ""
+"In addition to StoreMCP API keys, accept native WordPress Application "
+"Passwords."
+msgstr ""
+"Además de las claves de API de StoreMCP, acepta contraseñas de aplicación "
+"nativas de WordPress."
+
+#: admin/views/settings.php:129
+msgid "Rate limits"
+msgstr "Límites de tasa"
+
+#: admin/views/settings.php:132
+msgid "Free tier (req/min)"
+msgstr "Plan Gratis (sol/min)"
+
+#: admin/views/settings.php:136
+msgid "Pro tier (req/min)"
+msgstr "Plan Pro (sol/min)"
+
+#: admin/views/settings.php:138
+msgid "Activate Pro to raise this limit."
+msgstr "Activa Pro para aumentar este límite."
+
+#: admin/views/settings.php:142
+msgid "Report cache (seconds)"
+msgstr "Caché de informes (segundos)"
+
+#: admin/views/settings.php:149
+msgid "CORS"
+msgstr "CORS"
+
+#: admin/views/settings.php:152
+msgid "Allowed origins"
+msgstr "Orígenes permitidos"
+
+#: admin/views/settings.php:155
+msgid "One origin per line. Use * to allow any (not recommended)."
+msgstr "Un origen por línea. Usa * para permitir cualquiera (no recomendado)."
+
+#: admin/views/settings.php:165
+msgid "Retention (days)"
+msgstr "Retención (días)"
+
+#: admin/views/settings.php:172
+msgid "Save settings"
+msgstr "Guardar ajustes"
+
+#: admin/views/tools.php:17
+msgid "Pages"
+msgstr "Páginas"
+
+#: admin/views/tools.php:20
+msgid "Full CRUD for WordPress pages: list, read, create, update and delete."
+msgstr "CRUD completo para páginas de WordPress: listar, leer, crear, actualizar y eliminar."
+
+#: admin/views/tools.php:22
+msgid "\"Create a draft page titled About Us with this content…\""
+msgstr "\"Crea una página en borrador titulada Sobre nosotros con este contenido…\""
+
+#: admin/views/tools.php:23
+msgid "\"List all published pages modified in the last week.\""
+msgstr "\"Lista todas las páginas publicadas modificadas en la última semana.\""
+
+#: admin/views/tools.php:27
+msgid "Posts"
+msgstr "Entradas"
+
+#: admin/views/tools.php:30
+msgid ""
+"Blog posts, categories and tags. Create, update, publish or schedule "
+"articles."
+msgstr ""
+"Entradas de blog, categorías y etiquetas. Crea, actualiza, publica o "
+"programa artículos."
+
+#: admin/views/tools.php:32
+msgid "\"Publish a new post in the News category tagged ai, wordpress.\""
+msgstr "\"Publica una nueva entrada en la categoría Noticias con las etiquetas ai, wordpress.\""
+
+#: admin/views/tools.php:33
+msgid "\"List my 20 most recent posts with their status.\""
+msgstr "\"Lista mis 20 entradas más recientes con su estado.\""
+
+#: admin/views/tools.php:37
+msgid "Media"
+msgstr "Medios"
+
+#: admin/views/tools.php:40
+msgid ""
+"Media library: list attachments, upload new images/files, edit alt text and "
+"delete."
+msgstr ""
+"Biblioteca de medios: lista adjuntos, sube nuevas imágenes/archivos, edita "
+"el texto alternativo y elimina."
+
+#: admin/views/tools.php:42
+msgid "\"Upload this image and set it as featured image of post #42.\""
+msgstr "\"Sube esta imagen y establécela como imagen destacada de la entrada #42.\""
+
+#: admin/views/tools.php:43
+msgid "\"List media items larger than 2 MB uploaded this year.\""
+msgstr "\"Lista los elementos de medios mayores a 2 MB subidos este año.\""
+
+#: admin/views/tools.php:47
+msgid "Menus"
+msgstr "Menús"
+
+#: admin/views/tools.php:50
+msgid ""
+"Navigation menus: read menu structure and add, move or remove menu items."
+msgstr ""
+"Menús de navegación: lee la estructura del menú y añade, mueve o elimina "
+"elementos del menú."
+
+#: admin/views/tools.php:52
+msgid "\"Add a Contact link to the main navigation menu.\""
+msgstr "\"Añade un enlace Contacto al menú de navegación principal.\""
+
+#: admin/views/tools.php:53
+msgid "\"Remove all menu items pointing to deleted pages.\""
+msgstr "\"Elimina todos los elementos del menú que apunten a páginas eliminadas.\""
+
+#: admin/views/tools.php:57
+msgid "Widgets"
+msgstr "Widgets"
+
+#: admin/views/tools.php:60
+msgid ""
+"Sidebar widgets: read every sidebar and create, update or delete widget "
+"blocks."
+msgstr ""
+"Widgets de la barra lateral: lee cada barra lateral y crea, actualiza o "
+"elimina bloques de widgets."
+
+#: admin/views/tools.php:62
+msgid "\"Add a newsletter signup block to the footer sidebar.\""
+msgstr "\"Añade un bloque de suscripción al boletín a la barra lateral del pie.\""
+
+#: admin/views/tools.php:63
+msgid "\"Remove the recent-comments widget from every sidebar.\""
+msgstr "\"Elimina el widget de comentarios recientes de todas las barras laterales.\""
+
+#: admin/views/tools.php:67
+msgid "Users"
+msgstr "Usuarios"
+
+#: admin/views/tools.php:70
+msgid ""
+"User accounts. Free: list and read. Pro: create, update roles and delete."
+msgstr ""
+"Cuentas de usuario. Gratis: listar y leer. Pro: crear, actualizar roles y "
+"eliminar."
+
+#: admin/views/tools.php:72
+msgid "\"List all editors who have not logged in for 90 days.\""
+msgstr "\"Lista todos los editores que no han iniciado sesión en 90 días.\""
+
+#: admin/views/tools.php:73
+msgid "\"Promote user @ana to editor role.\""
+msgstr "\"Promueve al usuario @ana al rol de editor.\""
+
+#: admin/views/tools.php:77
+msgid "Site"
+msgstr "Sitio"
+
+#: admin/views/tools.php:80
+msgid ""
+"Site-wide operations: general info, site-health checks, cache flush and URL "
+"search & replace."
+msgstr ""
+"Operaciones a nivel de sitio: información general, comprobaciones de salud "
+"del sitio, vaciado de caché y búsqueda y reemplazo de URL."
+
+#: admin/views/tools.php:82
+msgid "\"Give me a health report of this site and flush caches.\""
+msgstr "\"Dame un informe de salud de este sitio y vacía las cachés.\""
+
+#: admin/views/tools.php:83
+msgid "\"Search and replace the old domain by the new one in all content.\""
+msgstr "\"Busca y reemplaza el dominio antiguo por el nuevo en todo el contenido.\""
+
+#: admin/views/tools.php:87
+msgid "Products"
+msgstr "Productos"
+
+#: admin/views/tools.php:90
+msgid ""
+"WooCommerce products. Free: list and read. Pro: full CRUD and bulk update."
+msgstr ""
+"Productos de WooCommerce. Gratis: listar y leer. Pro: CRUD completo y "
+"actualización masiva."
+
+#: admin/views/tools.php:92
+msgid "\"Create a simple product Red T-Shirt priced at 29.90 EUR, stock 50.\""
+msgstr "\"Crea un producto simple Camiseta Roja con precio de 29,90 EUR y stock 50.\""
+
+#: admin/views/tools.php:93
+msgid "\"Bulk-apply 20% discount to every product in the Summer category.\""
+msgstr "\"Aplica un descuento masivo del 20% a todos los productos de la categoría Verano.\""
+
+#: admin/views/tools.php:97
+msgid "Product categories"
+msgstr "Categorías de producto"
+
+#: admin/views/tools.php:100
+msgid "WooCommerce product categories. Organize your catalog taxonomy."
+msgstr "Categorías de producto de WooCommerce. Organiza la taxonomía de tu catálogo."
+
+#: admin/views/tools.php:102
+msgid "\"Create a new Featured category as child of Home.\""
+msgstr "\"Crea una nueva categoría Destacados como hija de Inicio.\""
+
+#: admin/views/tools.php:103
+msgid "\"Rename the Sale category to Outlet.\""
+msgstr "\"Renombra la categoría Rebajas a Outlet.\""
+
+#: admin/views/tools.php:107
+msgid "Product tags"
+msgstr "Etiquetas de producto"
+
+#: admin/views/tools.php:110
+msgid "WooCommerce product tags for cross-category grouping and search."
+msgstr "Etiquetas de producto de WooCommerce para agrupación y búsqueda entre categorías."
+
+#: admin/views/tools.php:112
+msgid "\"List the 10 most-used product tags.\""
+msgstr "\"Lista las 10 etiquetas de producto más usadas.\""
+
+#: admin/views/tools.php:113
+msgid "\"Delete every tag with zero products.\""
+msgstr "\"Elimina todas las etiquetas con cero productos.\""
+
+#: admin/views/tools.php:117
+msgid "Orders"
+msgstr "Pedidos"
+
+#: admin/views/tools.php:120
+msgid "WooCommerce orders. Free: totals only. Pro: full CRUD and order notes."
+msgstr "Pedidos de WooCommerce. Gratis: solo totales. Pro: CRUD completo y notas de pedido."
+
+#: admin/views/tools.php:122
+msgid "\"Show me today's orders and total revenue.\""
+msgstr "\"Muéstrame los pedidos de hoy y los ingresos totales.\""
+
+#: admin/views/tools.php:123
+msgid "\"Mark order #1204 as completed and add a note to the customer.\""
+msgstr "\"Marca el pedido #1204 como completado y añade una nota al cliente.\""
+
+#: admin/views/tools.php:127
+msgid "Reports"
+msgstr "Informes"
+
+#: admin/views/tools.php:130
+msgid "Sales reports, top sellers and earners, low- and out-of-stock alerts."
+msgstr ""
+"Informes de ventas, productos más vendidos y con más ingresos, alertas de "
+"stock bajo y agotado."
+
+#: admin/views/tools.php:132
+msgid "\"Give me the sales report for last month grouped by day.\""
+msgstr "\"Dame el informe de ventas del mes pasado agrupado por día.\""
+
+#: admin/views/tools.php:133
+msgid "\"List products that are out of stock right now.\""
+msgstr "\"Lista los productos que están agotados ahora mismo.\""
+
+#: admin/views/tools.php:137
+msgid "Product variations"
+msgstr "Variaciones de producto"
+
+#: admin/views/tools.php:140
+msgid "Variable product variations: sizes, colors, stocks and prices."
+msgstr "Variaciones de productos variables: tallas, colores, stocks y precios."
+
+#: admin/views/tools.php:142
+msgid "\"Add a Large / Black variation to product #210 priced at 39.99 EUR.\""
+msgstr "\"Añade una variación Grande / Negro al producto #210 con precio de 39,99 EUR.\""
+
+#: admin/views/tools.php:143
+msgid "\"Update stock of every variation of product #55 to 20.\""
+msgstr "\"Actualiza el stock de todas las variaciones del producto #55 a 20.\""
+
+#: admin/views/tools.php:147
+msgid "Attributes"
+msgstr "Atributos"
+
+#: admin/views/tools.php:150
+msgid ""
+"Global attributes and their terms, used by variable products and filters."
+msgstr ""
+"Atributos globales y sus términos, usados por productos variables y filtros."
+
+#: admin/views/tools.php:152
+msgid "\"Create a global attribute Size with terms S, M, L, XL.\""
+msgstr "\"Crea un atributo global Talla con los términos S, M, L, XL.\""
+
+#: admin/views/tools.php:153
+msgid "\"Add color Emerald to the global Color attribute.\""
+msgstr "\"Añade el color Esmeralda al atributo global Color.\""
+
+#: admin/views/tools.php:157
+msgid "Customers"
+msgstr "Clientes"
+
+#: admin/views/tools.php:160
+msgid ""
+"WooCommerce customers with full profile, addresses and purchase history."
+msgstr ""
+"Clientes de WooCommerce con perfil completo, direcciones e historial de "
+"compras."
+
+#: admin/views/tools.php:162
+msgid "\"Find customers who spent more than 500 EUR this year.\""
+msgstr "\"Encuentra clientes que han gastado más de 500 EUR este año.\""
+
+#: admin/views/tools.php:163
+msgid "\"Update shipping address for customer #88.\""
+msgstr "\"Actualiza la dirección de envío del cliente #88.\""
+
+#: admin/views/tools.php:167
+msgid "Coupons"
+msgstr "Cupones"
+
+#: admin/views/tools.php:170
+msgid ""
+"Discount coupons: percentages, fixed amounts, usage limits and expiry dates."
+msgstr ""
+"Cupones de descuento: porcentajes, importes fijos, límites de uso y fechas "
+"de caducidad."
+
+#: admin/views/tools.php:172
+msgid "\"Create a 15% coupon BLACKFRIDAY valid for the next 7 days.\""
+msgstr "\"Crea un cupón BLACKFRIDAY del 15% válido por los próximos 7 días.\""
+
+#: admin/views/tools.php:173
+msgid "\"Disable every coupon that has already been used 50 times.\""
+msgstr "\"Desactiva todos los cupones que ya se han usado 50 veces.\""
+
+#: admin/views/tools.php:177
+msgid "Shipping"
+msgstr "Envíos"
+
+#: admin/views/tools.php:180
+msgid ""
+"Shipping zones and their methods (flat rate, free shipping, local pickup)."
+msgstr ""
+"Zonas de envío y sus métodos (tarifa plana, envío gratuito, recogida local)."
+
+#: admin/views/tools.php:182
+msgid "\"Add a new EU zone with flat rate of 7.90 EUR.\""
+msgstr "\"Añade una nueva zona UE con tarifa plana de 7,90 EUR.\""
+
+#: admin/views/tools.php:183
+msgid "\"Offer free shipping on orders over 60 EUR in the Local zone.\""
+msgstr "\"Ofrece envío gratuito en pedidos superiores a 60 EUR en la zona Local.\""
+
+#: admin/views/tools.php:187
+msgid "Tax"
+msgstr "Impuestos"
+
+#: admin/views/tools.php:190
+msgid "Tax rates and tax classes applied by country, state or postal code."
+msgstr ""
+"Tasas e impuestos y clases impositivas aplicadas por país, estado o código "
+"postal."
+
+#: admin/views/tools.php:192
+msgid "\"Add a 21% VAT rate for Spain in the Standard class.\""
+msgstr "\"Añade una tasa de IVA del 21% para España en la clase Estándar.\""
+
+#: admin/views/tools.php:193
+msgid "\"List every tax rate configured for France.\""
+msgstr "\"Lista todas las tasas de impuestos configuradas para Francia.\""
+
+#: admin/views/tools.php:197
+msgid "WC Settings"
+msgstr "Ajustes de WC"
+
+#: admin/views/tools.php:200
+msgid ""
+"WooCommerce settings and payment gateways (Stripe, PayPal, bank transfer, "
+"COD)."
+msgstr ""
+"Ajustes de WooCommerce y pasarelas de pago (Stripe, PayPal, transferencia "
+"bancaria, contra reembolso)."
+
+#: admin/views/tools.php:202
+msgid "\"Change the store currency to USD.\""
+msgstr "\"Cambia la moneda de la tienda a USD.\""
+
+#: admin/views/tools.php:203
+msgid "\"Enable Stripe gateway and hide bank transfer.\""
+msgstr "\"Activa la pasarela Stripe y oculta la transferencia bancaria.\""
+
+#: admin/views/tools.php:207
+msgid "Reviews"
+msgstr "Reseñas"
+
+#: admin/views/tools.php:210
+msgid "Moderate product reviews: list, approve, spam, edit or delete."
+msgstr "Modera reseñas de producto: listar, aprobar, marcar como spam, editar o eliminar."
+
+#: admin/views/tools.php:212
+msgid "\"Show me all unapproved reviews from the last 24 hours.\""
+msgstr "\"Muéstrame todas las reseñas no aprobadas de las últimas 24 horas.\""
+
+#: admin/views/tools.php:213
+msgid "\"Approve every 5-star review for product #101.\""
+msgstr "\"Aprueba todas las reseñas de 5 estrellas del producto #101.\""
+
+#: admin/views/tools.php:217
+msgid "SEO & meta"
+msgstr "SEO y meta"
+
+#: admin/views/tools.php:220
+msgid "Post meta plus Yoast/RankMath SEO title, description and focus keyword."
+msgstr "Meta de entrada más título, descripción y palabra clave principal de SEO de Yoast/RankMath."
+
+#: admin/views/tools.php:222
+msgid "\"Write SEO title and meta description for each product in Outlet.\""
+msgstr "\"Escribe el título SEO y la meta descripción para cada producto en Outlet.\""
+
+#: admin/views/tools.php:223
+msgid "\"Set focus keyword 'wordpress plugin' on post #301 in Yoast.\""
+msgstr "\"Establece la palabra clave principal 'wordpress plugin' en la entrada #301 en Yoast.\""
+
+#: admin/views/tools.php:227
+msgid "Plugins"
+msgstr "Plugins"
+
+#: admin/views/tools.php:230
+msgid "List installed plugins and activate or deactivate them remotely."
+msgstr "Lista los plugins instalados y actívalos o desactívalos de forma remota."
+
+#: admin/views/tools.php:232
+msgid "\"Deactivate every plugin whose name contains 'debug'.\""
+msgstr "\"Desactiva todos los plugins cuyo nombre contenga 'debug'.\""
+
+#: admin/views/tools.php:233
+msgid "\"Activate WPML and tell me its version.\""
+msgstr "\"Activa WPML y dime su versión.\""
+
+#: admin/views/tools.php:237
+msgid "Themes"
+msgstr "Temas"
+
+#: admin/views/tools.php:240
+msgid "List installed themes, read active theme info and switch active theme."
+msgstr "Lista los temas instalados, lee información del tema activo y cambia el tema activo."
+
+#: admin/views/tools.php:242
+msgid "\"Switch active theme to Twenty Twenty-Four.\""
+msgstr "\"Cambia el tema activo a Twenty Twenty-Four.\""
+
+#: admin/views/tools.php:243
+msgid "\"Which themes are installed and which one is active?\""
+msgstr "\"¿Qué temas están instalados y cuál está activo?\""
+
+#: admin/views/tools.php:247
+msgid "Webhooks"
+msgstr "Webhooks"
+
+#: admin/views/tools.php:250
+msgid ""
+"WooCommerce webhooks to push order, product or customer events to external "
+"services."
+msgstr ""
+"Webhooks de WooCommerce para enviar eventos de pedido, producto o cliente a "
+"servicios externos."
+
+#: admin/views/tools.php:252
+msgid "\"Create a webhook that posts every completed order to my Zapier URL.\""
+msgstr "\"Crea un webhook que envíe cada pedido completado a mi URL de Zapier.\""
+
+#: admin/views/tools.php:253
+msgid "\"Pause all webhooks pointing to staging.example.com.\""
+msgstr "\"Pausa todos los webhooks que apunten a staging.example.com.\""
+
+#: admin/views/tools.php:257
+msgid "Refunds"
+msgstr "Reembolsos"
+
+#: admin/views/tools.php:260
+msgid ""
+"Create partial or full refunds on orders, with optional gateway restock."
+msgstr ""
+"Crea reembolsos parciales o totales en pedidos, con reposición de stock "
+"opcional."
+
+#: admin/views/tools.php:262
+msgid "\"Refund 20 EUR of order #1502 because of a discount adjustment.\""
+msgstr "\"Reembolsa 20 EUR del pedido #1502 por un ajuste de descuento.\""
+
+#: admin/views/tools.php:263
+msgid "\"Fully refund order #1610 and restock its items.\""
+msgstr "\"Reembolsa íntegramente el pedido #1610 y repón su stock.\""
+
+#: admin/views/tools.php:267
+msgid "System"
+msgstr "Sistema"
+
+#: admin/views/tools.php:270
+msgid ""
+"System status and WooCommerce maintenance tools (regenerate lookup tables, "
+"recount terms, clear sessions)."
+msgstr ""
+"Estado del sistema y herramientas de mantenimiento de WooCommerce "
+"(regenerar tablas de búsqueda, recontar términos, borrar sesiones)."
+
+#: admin/views/tools.php:272
+msgid "\"Give me the WooCommerce system status report.\""
+msgstr "\"Dame el informe de estado del sistema de WooCommerce.\""
+
+#: admin/views/tools.php:273
+msgid "\"Regenerate product lookup tables and clear customer sessions.\""
+msgstr "\"Regenera las tablas de búsqueda de productos y borra las sesiones de clientes.\""
+
+#: admin/views/tools.php:284
+msgid ""
+"Browse WordPress pages with filters by status, author, parent or search term."
+msgstr ""
+"Navega por las páginas de WordPress con filtros por estado, autor, superior "
+"o término de búsqueda."
+
+#: admin/views/tools.php:285
+msgid "Read a single page including its full content and meta fields."
+msgstr "Lee una sola página incluyendo su contenido completo y campos meta."
+
+#: admin/views/tools.php:286
+msgid ""
+"Create a new page as draft, published or scheduled, with template and parent."
+msgstr ""
+"Crea una nueva página como borrador, publicada o programada, con plantilla y "
+"superior."
+
+#: admin/views/tools.php:287
+msgid ""
+"Edit an existing page: title, content, status, slug, parent, template or "
+"meta."
+msgstr ""
+"Edita una página existente: título, contenido, estado, slug, superior, "
+"plantilla o meta."
+
+#: admin/views/tools.php:288
+msgid "Trash a page or delete it permanently with force=true."
+msgstr "Envía una página a la papelera o elimínala de forma permanente con force=true."
+
+#: admin/views/tools.php:290
+msgid ""
+"List blog posts with filters by category, tag, author, status and date range."
+msgstr ""
+"Lista entradas de blog con filtros por categoría, etiqueta, autor, estado y "
+"rango de fechas."
+
+#: admin/views/tools.php:291
+msgid "Read a post including its content, categories, tags and meta."
+msgstr "Lee una entrada incluyendo su contenido, categorías, etiquetas y meta."
+
+#: admin/views/tools.php:292
+msgid ""
+"Publish a new post (draft, pending, scheduled or public) with categories and "
+"tags."
+msgstr ""
+"Publica una nueva entrada (borrador, pendiente, programada o pública) con "
+"categorías y etiquetas."
+
+#: admin/views/tools.php:293
+msgid "Edit a post: content, taxonomies, featured image or status."
+msgstr "Edita una entrada: contenido, taxonomías, imagen destacada o estado."
+
+#: admin/views/tools.php:294
+msgid "Move a post to trash or delete it permanently."
+msgstr "Mueve una entrada a la papelera o elimínala de forma permanente."
+
+#: admin/views/tools.php:295
+msgid "List all blog post categories with hierarchy and counts."
+msgstr "Lista todas las categorías de entradas de blog con jerarquía y recuentos."
+
+#: admin/views/tools.php:296
+msgid "Create a new blog category with optional parent and description."
+msgstr "Crea una nueva categoría de blog con superior y descripción opcionales."
+
+#: admin/views/tools.php:297
+msgid "List blog tags ordered by name, count or date."
+msgstr "Lista etiquetas de blog ordenadas por nombre, recuento o fecha."
+
+#: admin/views/tools.php:298
+msgid "Create a new blog tag."
+msgstr "Crea una nueva etiqueta de blog."
+
+#: admin/views/tools.php:300
+msgid "Browse the media library filtered by type, author or upload date."
+msgstr "Navega la biblioteca de medios filtrada por tipo, autor o fecha de subida."
+
+#: admin/views/tools.php:301
+msgid "Read a media item with full metadata, sizes and source URL."
+msgstr "Lee un elemento de medios con metadatos completos, tamaños y URL de origen."
+
+#: admin/views/tools.php:302
+msgid "Upload a new image or file to the library from a URL or base64 payload."
+msgstr "Sube una nueva imagen o archivo a la biblioteca desde una URL o carga base64."
+
+#: admin/views/tools.php:303
+msgid "Edit media metadata: title, alt text, caption, description."
+msgstr "Edita los metadatos de medios: título, texto alternativo, leyenda, descripción."
+
+#: admin/views/tools.php:304
+msgid "Delete a media attachment permanently."
+msgstr "Elimina un adjunto de medios de forma permanente."
+
+#: admin/views/tools.php:306
+msgid "List navigation menus with their assigned theme locations."
+msgstr "Lista los menús de navegación con sus ubicaciones de tema asignadas."
+
+#: admin/views/tools.php:307
+msgid "Read a menu including its items and hierarchy."
+msgstr "Lee un menú incluyendo sus elementos y jerarquía."
+
+#: admin/views/tools.php:308
+msgid "Add a new item to a menu (page, post, category, custom URL)."
+msgstr "Añade un nuevo elemento a un menú (página, entrada, categoría, URL personalizada)."
+
+#: admin/views/tools.php:309
+msgid "Edit a menu item: label, link, position or parent."
+msgstr "Edita un elemento de menú: etiqueta, enlace, posición o superior."
+
+#: admin/views/tools.php:310
+msgid "Remove an item from a menu."
+msgstr "Elimina un elemento de un menú."
+
+#: admin/views/tools.php:312
+msgid "List all registered widget areas (sidebars) of the theme."
+msgstr "Lista todas las áreas de widgets registradas (barras laterales) del tema."
+
+#: admin/views/tools.php:313
+msgid "List widget instances inside a given sidebar."
+msgstr "Lista las instancias de widgets dentro de una barra lateral dada."
+
+#: admin/views/tools.php:314
+msgid "Add a new widget block to a sidebar."
+msgstr "Añade un nuevo bloque de widget a una barra lateral."
+
+#: admin/views/tools.php:315
+msgid "Edit the content or settings of an existing widget."
+msgstr "Edita el contenido o ajustes de un widget existente."
+
+#: admin/views/tools.php:316
+msgid "Remove a widget from its sidebar."
+msgstr "Elimina un widget de su barra lateral."
+
+#: admin/views/tools.php:318
+msgid "List users with filters by role, search or registration date."
+msgstr "Lista usuarios con filtros por rol, búsqueda o fecha de registro."
+
+#: admin/views/tools.php:319
+msgid "Read a user profile including roles and metadata."
+msgstr "Lee un perfil de usuario incluyendo roles y metadatos."
+
+#: admin/views/tools.php:320
+msgid "Create a new user with email, role and password (Pro)."
+msgstr "Crea un nuevo usuario con correo electrónico, rol y contraseña (Pro)."
+
+#: admin/views/tools.php:321
+msgid "Edit user profile, role or password (Pro)."
+msgstr "Edita el perfil de usuario, rol o contraseña (Pro)."
+
+#: admin/views/tools.php:322
+msgid "Delete a user and optionally reassign their content (Pro)."
+msgstr "Elimina un usuario y opcionalmente reasigna su contenido (Pro)."
+
+#: admin/views/tools.php:324
+msgid "Read site title, tagline, URL, language, theme and plugin summary."
+msgstr "Lee el título del sitio, descripción corta, URL, idioma, tema y resumen de plugins."
+
+#: admin/views/tools.php:325
+msgid "Run the WordPress site-health suite and get pass/fail checks."
+msgstr "Ejecuta la suite de salud del sitio de WordPress y obtén comprobaciones de aprobado/fallido."
+
+#: admin/views/tools.php:326
+msgid "Flush object-cache, rewrite rules and transients."
+msgstr "Vacía la caché de objetos, las reglas de reescritura y los transitorios."
+
+#: admin/views/tools.php:327
+msgid "Safely search and replace strings across posts and options (Pro)."
+msgstr "Busca y reemplaza cadenas de forma segura en entradas y opciones (Pro)."
+
+#: admin/views/tools.php:329
+msgid ""
+"Browse WooCommerce products with filters by category, status, price or stock."
+msgstr ""
+"Navega productos de WooCommerce con filtros por categoría, estado, precio o "
+"stock."
+
+#: admin/views/tools.php:330
+msgid "Read a product with attributes, images, variations and meta."
+msgstr "Lee un producto con atributos, imágenes, variaciones y meta."
+
+#: admin/views/tools.php:331
+msgid "Create a simple, grouped, external or variable product (Pro)."
+msgstr "Crea un producto simple, agrupado, externo o variable (Pro)."
+
+#: admin/views/tools.php:332
+msgid "Edit product fields, price, stock, images or taxonomies (Pro)."
+msgstr "Edita campos del producto, precio, stock, imágenes o taxonomías (Pro)."
+
+#: admin/views/tools.php:333
+msgid "Trash or permanently delete a product (Pro)."
+msgstr "Envía a la papelera o elimina permanentemente un producto (Pro)."
+
+#: admin/views/tools.php:334
+msgid ""
+"Apply the same change (price, stock, category) to many products at once "
+"(Pro)."
+msgstr ""
+"Aplica el mismo cambio (precio, stock, categoría) a muchos productos a la "
+"vez (Pro)."
+
+#: admin/views/tools.php:336
+msgid "List product categories with hierarchy and product counts."
+msgstr "Lista categorías de producto con jerarquía y recuentos de productos."
+
+#: admin/views/tools.php:337
+msgid "Read a product category with image and description."
+msgstr "Lee una categoría de producto con imagen y descripción."
+
+#: admin/views/tools.php:338
+msgid "Create a new product category, optionally nested under a parent."
+msgstr "Crea una nueva categoría de producto, opcionalmente anidada bajo una superior."
+
+#: admin/views/tools.php:339
+msgid "Edit a product category: name, slug, parent, image or description."
+msgstr "Edita una categoría de producto: nombre, slug, superior, imagen o descripción."
+
+#: admin/views/tools.php:340
+msgid "Delete a product category."
+msgstr "Elimina una categoría de producto."
+
+#: admin/views/tools.php:342
+msgid "List product tags with usage counts."
+msgstr "Lista etiquetas de producto con recuentos de uso."
+
+#: admin/views/tools.php:343
+msgid "Create a new product tag."
+msgstr "Crea una nueva etiqueta de producto."
+
+#: admin/views/tools.php:344
+msgid "Edit a product tag."
+msgstr "Edita una etiqueta de producto."
+
+#: admin/views/tools.php:345
+msgid "Delete a product tag."
+msgstr "Elimina una etiqueta de producto."
+
+#: admin/views/tools.php:347
+msgid "List WooCommerce orders with filters by status, customer, date range."
+msgstr "Lista pedidos de WooCommerce con filtros por estado, cliente, rango de fechas."
+
+#: admin/views/tools.php:348
+msgid "Read an order with items, billing, shipping and totals."
+msgstr "Lee un pedido con artículos, facturación, envío y totales."
+
+#: admin/views/tools.php:349
+msgid "Create an order programmatically (Pro)."
+msgstr "Crea un pedido programáticamente (Pro)."
+
+#: admin/views/tools.php:350
+msgid "Change order status, notes, billing or items (Pro)."
+msgstr "Cambia el estado del pedido, notas, facturación o artículos (Pro)."
+
+#: admin/views/tools.php:351
+msgid "Trash or permanently delete an order (Pro)."
+msgstr "Envía a la papelera o elimina permanentemente un pedido (Pro)."
+
+#: admin/views/tools.php:352
+msgid "Read the internal and customer-facing notes on an order (Pro)."
+msgstr "Lee las notas internas y para el cliente de un pedido (Pro)."
+
+#: admin/views/tools.php:353
+msgid "Add an internal or customer-facing note to an order (Pro)."
+msgstr "Añade una nota interna o para el cliente a un pedido (Pro)."
+
+#: admin/views/tools.php:355
+msgid "Totals by order status across the entire store."
+msgstr "Totales por estado de pedido en toda la tienda."
+
+#: admin/views/tools.php:356
+msgid "Totals by product type and stock status."
+msgstr "Totales por tipo de producto y estado de stock."
+
+#: admin/views/tools.php:357
+msgid "High-level sales report: revenue, orders, average order value."
+msgstr "Informe de ventas de alto nivel: ingresos, pedidos, valor medio del pedido."
+
+#: admin/views/tools.php:358
+msgid "Sales breakdown by day, week or month in a date range."
+msgstr "Desglose de ventas por día, semana o mes en un rango de fechas."
+
+#: admin/views/tools.php:359
+msgid "Top-selling products by units sold."
+msgstr "Productos más vendidos por unidades vendidas."
+
+#: admin/views/tools.php:360
+msgid "Top-earning products by revenue."
+msgstr "Productos con más ingresos."
+
+#: admin/views/tools.php:361
+msgid "Customer totals: paying vs. non-paying, new vs. returning."
+msgstr "Totales de clientes: que pagan vs. que no pagan, nuevos vs. recurrentes."
+
+#: admin/views/tools.php:362
+msgid "Products close to running out of stock."
+msgstr "Productos a punto de quedarse sin stock."
+
+#: admin/views/tools.php:363
+msgid "Products that are currently out of stock."
+msgstr "Productos que están agotados actualmente."
+
+#: admin/views/tools.php:365
+msgid "List variations of a variable product with prices and stocks."
+msgstr "Lista variaciones de un producto variable con precios y stocks."
+
+#: admin/views/tools.php:366
+msgid "Read a single variation with its attribute combination."
+msgstr "Lee una sola variación con su combinación de atributos."
+
+#: admin/views/tools.php:367
+msgid "Add a new variation with its attribute values and price."
+msgstr "Añade una nueva variación con sus valores de atributo y precio."
+
+#: admin/views/tools.php:368
+msgid "Edit a variation: price, stock, SKU, dimensions, image."
+msgstr "Edita una variación: precio, stock, SKU, dimensiones, imagen."
+
+#: admin/views/tools.php:369
+msgid "Delete a variation from its parent product."
+msgstr "Elimina una variación de su producto superior."
+
+#: admin/views/tools.php:371
+msgid "List global product attributes (Size, Color, Material…)."
+msgstr "Lista atributos globales de producto (Talla, Color, Material…)."
+
+#: admin/views/tools.php:372
+msgid "Create a new global attribute."
+msgstr "Crea un nuevo atributo global."
+
+#: admin/views/tools.php:373
+msgid "Edit a global attribute: name, slug, order or type."
+msgstr "Edita un atributo global: nombre, slug, orden o tipo."
+
+#: admin/views/tools.php:374
+msgid "Delete a global attribute and its terms."
+msgstr "Elimina un atributo global y sus términos."
+
+#: admin/views/tools.php:375
+msgid "List terms of an attribute (e.g. values inside Color)."
+msgstr "Lista términos de un atributo (p. ej. valores dentro de Color)."
+
+#: admin/views/tools.php:376
+msgid "Add a new term to an attribute."
+msgstr "Añade un nuevo término a un atributo."
+
+#: admin/views/tools.php:377
+msgid "Edit a term inside an attribute."
+msgstr "Edita un término dentro de un atributo."
+
+#: admin/views/tools.php:378
+msgid "Delete a term from an attribute."
+msgstr "Elimina un término de un atributo."
+
+#: admin/views/tools.php:380
+msgid ""
+"Browse WooCommerce customers with filters by role, search and registration "
+"date."
+msgstr ""
+"Navega clientes de WooCommerce con filtros por rol, búsqueda y fecha de "
+"registro."
+
+#: admin/views/tools.php:381
+msgid "Read a customer profile, addresses and order stats."
+msgstr "Lee el perfil de un cliente, direcciones y estadísticas de pedidos."
+
+#: admin/views/tools.php:382
+msgid "Create a new WooCommerce customer."
+msgstr "Crea un nuevo cliente de WooCommerce."
+
+#: admin/views/tools.php:383
+msgid "Edit a customer profile, billing or shipping address."
+msgstr "Edita el perfil de un cliente, dirección de facturación o de envío."
+
+#: admin/views/tools.php:384
+msgid "Delete a customer and optionally reassign their orders."
+msgstr "Elimina un cliente y opcionalmente reasigna sus pedidos."
+
+#: admin/views/tools.php:386
+msgid "List discount coupons with usage count and expiry."
+msgstr "Lista cupones de descuento con recuento de uso y caducidad."
+
+#: admin/views/tools.php:387
+msgid "Read a single coupon including restrictions."
+msgstr "Lee un solo cupón incluyendo restricciones."
+
+#: admin/views/tools.php:388
+msgid "Create a percentage or fixed-amount coupon with limits and expiry."
+msgstr "Crea un cupón de porcentaje o importe fijo con límites y caducidad."
+
+#: admin/views/tools.php:389
+msgid "Edit a coupon: amount, limits, product/category scope."
+msgstr "Edita un cupón: importe, límites, ámbito de producto/categoría."
+
+#: admin/views/tools.php:390
+msgid "Delete a coupon permanently."
+msgstr "Elimina un cupón de forma permanente."
+
+#: admin/views/tools.php:392
+msgid "List shipping zones and their regions."
+msgstr "Lista zonas de envío y sus regiones."
+
+#: admin/views/tools.php:393
+msgid "Read a shipping zone with its regions and methods."
+msgstr "Lee una zona de envío con sus regiones y métodos."
+
+#: admin/views/tools.php:394
+msgid "Create a new shipping zone for a set of countries or states."
+msgstr "Crea una nueva zona de envío para un conjunto de países o estados."
+
+#: admin/views/tools.php:395
+msgid "Edit a zone: name, regions, order."
+msgstr "Edita una zona: nombre, regiones, orden."
+
+#: admin/views/tools.php:396
+msgid "Delete a shipping zone."
+msgstr "Elimina una zona de envío."
+
+#: admin/views/tools.php:397
+msgid "List shipping methods attached to a zone."
+msgstr "Lista métodos de envío asociados a una zona."
+
+#: admin/views/tools.php:398
+msgid "Add a flat rate, free shipping or local pickup method to a zone."
+msgstr "Añade un método de tarifa plana, envío gratuito o recogida local a una zona."
+
+#: admin/views/tools.php:400
+msgid "List configured tax rates with country, state and percentage."
+msgstr "Lista tasas de impuestos configuradas con país, estado y porcentaje."
+
+#: admin/views/tools.php:401
+msgid "Create a new tax rate for a country/region and class."
+msgstr "Crea una nueva tasa de impuestos para un país/región y clase."
+
+#: admin/views/tools.php:402
+msgid "Edit a tax rate: percentage, scope, priority."
+msgstr "Edita una tasa de impuestos: porcentaje, ámbito, prioridad."
+
+#: admin/views/tools.php:403
+msgid "Delete a tax rate."
+msgstr "Elimina una tasa de impuestos."
+
+#: admin/views/tools.php:404
+msgid "List tax classes (Standard, Reduced, Zero…)."
+msgstr "Lista clases de impuestos (Estándar, Reducido, Cero…)."
+
+#: admin/views/tools.php:406
+msgid "Read WooCommerce settings (general, products, tax, emails…)."
+msgstr "Lee los ajustes de WooCommerce (general, productos, impuestos, correos…)."
+
+#: admin/views/tools.php:407
+msgid "Update a single WooCommerce setting by ID."
+msgstr "Actualiza un solo ajuste de WooCommerce por ID."
+
+#: admin/views/tools.php:408
+msgid "List enabled and disabled payment gateways."
+msgstr "Lista pasarelas de pago activadas y desactivadas."
+
+#: admin/views/tools.php:409
+msgid "Enable, disable or reconfigure a payment gateway."
+msgstr "Activa, desactiva o reconfigura una pasarela de pago."
+
+#: admin/views/tools.php:411
+msgid "List product reviews with filters by status and rating."
+msgstr "Lista reseñas de producto con filtros por estado y valoración."
+
+#: admin/views/tools.php:412
+msgid "Read a single review including author and content."
+msgstr "Lee una sola reseña incluyendo autor y contenido."
+
+#: admin/views/tools.php:413
+msgid "Post a review on a product programmatically."
+msgstr "Publica una reseña en un producto programáticamente."
+
+#: admin/views/tools.php:414
+msgid "Approve, unapprove, spam or edit a review."
+msgstr "Aprueba, desaprueba, marca como spam o edita una reseña."
+
+#: admin/views/tools.php:415
+msgid "Delete a review permanently."
+msgstr "Elimina una reseña de forma permanente."
+
+#: admin/views/tools.php:417
+msgid "Read every public meta field of a post or product."
+msgstr "Lee todos los campos meta públicos de una entrada o producto."
+
+#: admin/views/tools.php:418
+msgid "Create or update an arbitrary meta field on a post or product."
+msgstr "Crea o actualiza un campo meta arbitrario en una entrada o producto."
+
+#: admin/views/tools.php:419
+msgid "Delete a meta field from a post or product."
+msgstr "Elimina un campo meta de una entrada o producto."
+
+#: admin/views/tools.php:420
+msgid "Read Yoast/RankMath SEO title, description and focus keyword."
+msgstr "Lee el título SEO, descripción y palabra clave principal de Yoast/RankMath."
+
+#: admin/views/tools.php:421
+msgid "Update SEO title, description and focus keyword for Yoast or RankMath."
+msgstr "Actualiza el título SEO, descripción y palabra clave principal para Yoast o RankMath."
+
+#: admin/views/tools.php:422
+msgid "Read safe site options (branding, SEO defaults, analytics IDs)."
+msgstr "Lee opciones seguras del sitio (marca, valores SEO predeterminados, IDs de analítica)."
+
+#: admin/views/tools.php:423
+msgid "Update a site option from the allow-list."
+msgstr "Actualiza una opción del sitio desde la lista de permitidas."
+
+#: admin/views/tools.php:425
+msgid "List every installed plugin with version and active status."
+msgstr "Lista todos los plugins instalados con versión y estado activo."
+
+#: admin/views/tools.php:426
+msgid "Activate a plugin by its file path."
+msgstr "Activa un plugin por su ruta de archivo."
+
+#: admin/views/tools.php:427
+msgid "Deactivate a plugin."
+msgstr "Desactiva un plugin."
+
+#: admin/views/tools.php:429
+msgid "Read info about the currently active theme."
+msgstr "Lee información sobre el tema actualmente activo."
+
+#: admin/views/tools.php:430
+msgid "List every installed theme."
+msgstr "Lista todos los temas instalados."
+
+#: admin/views/tools.php:431
+msgid "Switch the active theme by stylesheet."
+msgstr "Cambia el tema activo por hoja de estilos."
+
+#: admin/views/tools.php:433
+msgid "List WooCommerce webhooks and their delivery URLs."
+msgstr "Lista webhooks de WooCommerce y sus URLs de entrega."
+
+#: admin/views/tools.php:434
+msgid "Read a webhook with topic, status and secret hint."
+msgstr "Lee un webhook con tema, estado y pista del secreto."
+
+#: admin/views/tools.php:435
+msgid "Create a new webhook for order, product or customer events."
+msgstr "Crea un nuevo webhook para eventos de pedido, producto o cliente."
+
+#: admin/views/tools.php:436
+msgid "Edit a webhook: URL, topic, status."
+msgstr "Edita un webhook: URL, tema, estado."
+
+#: admin/views/tools.php:437
+msgid "Delete a webhook."
+msgstr "Elimina un webhook."
+
+#: admin/views/tools.php:439
+msgid "List refunds attached to an order."
+msgstr "Lista reembolsos asociados a un pedido."
+
+#: admin/views/tools.php:440
+msgid "Create a partial or full refund, optionally restocking items."
+msgstr "Crea un reembolso parcial o total, opcionalmente reponiendo artículos."
+
+#: admin/views/tools.php:441
+msgid "Delete a refund record."
+msgstr "Elimina un registro de reembolso."
+
+#: admin/views/tools.php:443
+msgid "Get the full WooCommerce system status report."
+msgstr "Obtén el informe completo de estado del sistema de WooCommerce."
+
+#: admin/views/tools.php:444
+msgid "List the maintenance actions available in WC System → Tools."
+msgstr "Lista las acciones de mantenimiento disponibles en WC Sistema → Herramientas."
+
+#: admin/views/tools.php:445
+msgid ""
+"Run a maintenance tool: clear sessions, regenerate lookups, recount terms."
+msgstr ""
+"Ejecuta una herramienta de mantenimiento: borrar sesiones, regenerar "
+"búsquedas, recontar términos."
+
+#: admin/views/tools.php:452
+msgid ""
+"Toggle entire modules on/off and explore what each one does. Disabled "
+"modules are not loaded — useful to reduce surface area."
+msgstr ""
+"Activa/desactiva módulos enteros y explora lo que hace cada uno. Los "
+"módulos desactivados no se cargan — útil para reducir la superficie de "
+"ataque."
+
+#: admin/views/tools.php:458
+msgid "Module"
+msgstr "Módulo"
+
+#: admin/views/tools.php:459
+msgid "Tier"
+msgstr "Plan"
+
+#: admin/views/tools.php:462
+msgid "What it does & example prompts"
+msgstr "Qué hace y prompts de ejemplo"
+
+#: admin/views/tools.php:478
+msgid "Needs WooCommerce"
+msgstr "Necesita WooCommerce"
+
+#: admin/views/tools.php:480
+msgid "Needs Pro"
+msgstr "Necesita Pro"
+
+#: admin/views/tools.php:482
+msgid "Disabled"
+msgstr "Desactivado"
+
+#: admin/views/tools.php:511
+msgid "Registered tools"
+msgstr "Herramientas registradas"
+
+#: admin/views/tools.php:514
+#, php-format
+msgid ""
+"%d tools currently exposed to MCP clients. Each tool below includes a plain-"
+"language explainer of what it does."
+msgstr ""
+"%d herramientas expuestas actualmente a clientes MCP. Cada herramienta de "
+"abajo incluye una explicación en lenguaje sencillo de lo que hace."
+
+#: admin/views/tools.php:517
+msgid "Show full catalogue"
+msgstr "Mostrar catálogo completo"
+
+#: admin/views/tools.php:521
+msgid "What it does"
+msgstr "Qué hace"
+
+#: admin/views/white-label.php:20
+msgid ""
+"Replace the StoreMCP brand throughout the admin panel and the MCP server "
+"identification."
+msgstr ""
+"Reemplaza la marca StoreMCP en todo el panel de administración y la "
+"identificación del servidor MCP."
+
+#: admin/views/white-label.php:26
+msgid "Plugin name"
+msgstr "Nombre del plugin"
+
+#: admin/views/white-label.php:30
+msgid "Logo URL"
+msgstr "URL del logo"
+
+#: admin/views/white-label.php:33
+msgid "Shown on the dashboard. PNG or SVG, ~256 px wide."
+msgstr "Se muestra en el panel de control. PNG o SVG, ~256 px de ancho."
+
+#: admin/views/white-label.php:37
+msgid "Menu icon URL"
+msgstr "URL del icono del menú"
+
+#: admin/views/white-label.php:40
+msgid ""
+"SVG recommended (16×16 or 20×20). Leave empty to use the default dashicon."
+msgstr ""
+"Se recomienda SVG (16×16 o 20×20). Déjalo vacío para usar el dashicon "
+"predeterminado."
+
+#: admin/views/white-label.php:44
+msgid "Support URL"
+msgstr "URL de soporte"
+
+#: admin/views/white-label.php:51
+msgid "Save white label"
+msgstr "Guardar marca blanca"
+
+#: includes/class-mcp-auth.php:31
+msgid "Invalid or expired access token"
+msgstr "Token de acceso no válido o caducado"
+
+#: includes/class-mcp-auth.php:39
+msgid "Token owner no longer exists"
+msgstr "El propietario del token ya no existe"
+
+#: includes/class-mcp-auth.php:87
+msgid "Authentication required. Connect via OAuth or provide an API key."
+msgstr "Se requiere autenticación. Conéctate vía OAuth o proporciona una clave de API."
+
+#: includes/class-mcp-auth.php:115 includes/class-mcp-auth.php:120
+msgid "Invalid API key format"
+msgstr "Formato de clave de API no válido"
+
+#: includes/class-mcp-auth.php:128 includes/class-mcp-auth.php:134
+msgid "Invalid API key"
+msgstr "Clave de API no válida"
+
+#: includes/class-mcp-auth.php:131
+msgid "API key has been revoked"
+msgstr "La clave de API ha sido revocada"
+
+#: includes/class-mcp-auth.php:139
+msgid "API key owner no longer exists"
+msgstr "El propietario de la clave de API ya no existe"
+
+#: includes/class-mcp-license.php:53
+msgid "License key is empty"
+msgstr "La clave de licencia está vacía"
+
+#: includes/class-mcp-license.php:70
+msgid "License deactivated"
+msgstr "Licencia desactivada"
+
+#: includes/class-mcp-license.php:80
+msgid "No license configured"
+msgstr "No hay licencia configurada"
+
+#: includes/class-mcp-license.php:114
+msgid "License active"
+msgstr "Licencia activa"
+
+#: includes/class-mcp-license.php:114
+msgid "License invalid"
+msgstr "Licencia no válida"
+
+#: includes/class-mcp-license.php:142
+msgid "License server error"
+msgstr "Error del servidor de licencias"
+
+#: includes/class-mcp-oauth.php:357 includes/class-mcp-oauth.php:398
+msgid "Invalid authorization request"
+msgstr "Solicitud de autorización no válida"
+
+#: includes/class-mcp-oauth.php:374
+msgid "Not allowed"
+msgstr "No permitido"
+
+#: includes/class-mcp-oauth.php:377
+#, php-format
+msgid ""
+"Your user does not have the \"%s\" capability required to authorize MCP "
+"clients for this site."
+msgstr ""
+"Tu usuario no tiene la capacidad \"%s\" requerida para autorizar clientes "
+"MCP en este sitio."
+
+#: includes/class-mcp-oauth.php:389
+msgid "You must be logged in."
+msgstr "Debes haber iniciado sesión."
+
+#: includes/class-mcp-oauth.php:467
+msgid "Only response_type=code is supported"
+msgstr "Solo se soporta response_type=code"
+
+#: includes/class-mcp-oauth.php:473
+msgid "Missing redirect_uri"
+msgstr "Falta redirect_uri"
+
+#: includes/class-mcp-oauth.php:476
+msgid "PKCE code_challenge with S256 is required"
+msgstr "Se requiere PKCE code_challenge con S256"
+
+#: includes/class-mcp-oauth.php:481
+msgid "Unknown client"
+msgstr "Cliente desconocido"
+
+#: includes/class-mcp-oauth.php:486
+msgid "redirect_uri does not match registered URIs"
+msgstr "redirect_uri no coincide con las URIs registradas"
+
+#: includes/class-mcp-oauth.php:520
+msgid "Authorize"
+msgstr "Autorizar"
+
+#: includes/class-mcp-oauth.php:526
+#, php-format
+msgid "%s wants to access your site as %s."
+msgstr "%s quiere acceder a tu sitio como %s."
+
+#: includes/class-mcp-permissions.php:20
+#, php-format
+msgid "Missing capability: %s"
+msgstr "Falta capacidad: %s"
+
+#: includes/class-mcp-permissions.php:33
+#, php-format
+msgid "Missing one of capabilities: %s"
+msgstr "Falta una de las capacidades: %s"
+
+#: includes/class-mcp-permissions.php:40
+msgid "WooCommerce is not active"
+msgstr "WooCommerce no está activo"
+
+#: includes/class-mcp-rate-limiter.php:50
+#, php-format
+msgid "Rate limit exceeded (%d requests/minute)"
+msgstr "Límite de tasa superado (%d solicitudes/minuto)"
+
+#: includes/class-mcp-resources-registry.php:78
+#, php-format
+msgid "Unknown resource: %s"
+msgstr "Recurso desconocido: %s"
+
+#: includes/class-mcp-resources-registry.php:83
+msgid "This resource requires StoreMCP Pro"
+msgstr "Este recurso requiere StoreMCP Pro"
+
+#: includes/class-mcp-server.php:97
+msgid "StoreMCP is disabled"
+msgstr "StoreMCP está desactivado"
+
+#: includes/class-mcp-server.php:140
+msgid "Parse error: invalid JSON"
+msgstr "Error de análisis: JSON no válido"
+
+#: includes/class-mcp-server.php:200
+msgid "Invalid JSON-RPC request"
+msgstr "Solicitud JSON-RPC no válida"
+
+#: includes/class-mcp-server.php:252
+#, php-format
+msgid "Method not found: %s"
+msgstr "Método no encontrado: %s"
+
+#: includes/class-mcp-server.php:269
+msgid "Internal error"
+msgstr "Error interno"
+
+#: includes/class-mcp-server.php:297
+msgid ""
+"StoreMCP exposes WordPress and WooCommerce as MCP tools. Use tools/list to "
+"discover available operations."
+msgstr ""
+"StoreMCP expone WordPress y WooCommerce como herramientas MCP. Usa "
+"tools/list para descubrir las operaciones disponibles."
+
+#: includes/class-mcp-server.php:312
+msgid "Missing tool name"
+msgstr "Falta el nombre de la herramienta"
+
+#: includes/class-mcp-server.php:315
+msgid "Arguments must be an object"
+msgstr "Los argumentos deben ser un objeto"
+
+#: includes/class-mcp-server.php:328
+msgid "Missing resource uri"
+msgstr "Falta el uri del recurso"
+
+#: includes/class-mcp-tools-registry.php:146
+#, php-format
+msgid "Unknown tool: %s"
+msgstr "Herramienta desconocida: %s"
+
+#: includes/class-mcp-tools-registry.php:152
+msgid "This tool requires StoreMCP Pro"
+msgstr "Esta herramienta requiere StoreMCP Pro"
+
+#: includes/tools/class-attributes-tools.php:201
+msgid "Could not delete attribute"
+msgstr "No se pudo eliminar el atributo"
+
+#: includes/tools/class-attributes-tools.php:280
+msgid "Could not delete term"
+msgstr "No se pudo eliminar el término"
+
+#: includes/tools/class-attributes-tools.php:293
+#: includes/tools/class-attributes-tools.php:299
+msgid "Attribute not found"
+msgstr "Atributo no encontrado"
+
+#: includes/tools/class-categories-tools.php:153
+msgid "Category not found"
+msgstr "Categoría no encontrada"
+
+#: includes/tools/class-categories-tools.php:211
+msgid "Could not delete category"
+msgstr "No se pudo eliminar la categoría"
+
+#: includes/tools/class-coupons-tools.php:146
+#: includes/tools/class-coupons-tools.php:175
+msgid "Coupon not found"
+msgstr "Cupón no encontrado"
+
+#: includes/tools/class-coupons-tools.php:157
+msgid "Coupon code already exists"
+msgstr "El código del cupón ya existe"
+
+#: includes/tools/class-coupons-tools.php:194
+msgid "Could not delete coupon"
+msgstr "No se pudo eliminar el cupón"
+
+#: includes/tools/class-customers-tools.php:177
+#: includes/tools/class-customers-tools.php:221
+msgid "Customer not found"
+msgstr "Cliente no encontrado"
+
+#: includes/tools/class-customers-tools.php:240
+#: includes/tools/class-users-tools.php:200
+msgid "Cannot delete yourself"
+msgstr "No puedes eliminarte a ti mismo"
+
+#: includes/tools/class-customers-tools.php:248
+msgid "Could not delete customer"
+msgstr "No se pudo eliminar el cliente"
+
+#: includes/tools/class-media-tools.php:155
+#: includes/tools/class-media-tools.php:210
+msgid "Attachment not found"
+msgstr "Adjunto no encontrado"
+
+#: includes/tools/class-media-tools.php:174
+msgid "filename is required when uploading via base64"
+msgstr "se requiere filename al subir mediante base64"
+
+#: includes/tools/class-media-tools.php:178
+msgid "Provide either url or file (base64)."
+msgstr "Proporciona url o file (base64)."
+
+#: includes/tools/class-media-tools.php:234
+msgid "Could not delete attachment"
+msgstr "No se pudo eliminar el adjunto"
+
+#: includes/tools/class-media-tools.php:262
+msgid "Invalid base64 payload"
+msgstr "Carga base64 no válida"
+
+#: includes/tools/class-media-tools.php:268
+msgid "Disallowed file type"
+msgstr "Tipo de archivo no permitido"
+
+#: includes/tools/class-media-tools.php:273
+msgid "Could not create temp file"
+msgstr "No se pudo crear el archivo temporal"
+
+#: includes/tools/class-menus-tools.php:133
+msgid "Menu not found"
+msgstr "Menú no encontrado"
+
+#: includes/tools/class-menus-tools.php:170
+msgid "Menu item not found"
+msgstr "Elemento de menú no encontrado"
+
+#: includes/tools/class-menus-tools.php:190
+msgid "Could not delete menu item"
+msgstr "No se pudo eliminar el elemento de menú"
+
+#: includes/tools/class-orders-tools.php:272
+#: includes/tools/class-orders-tools.php:304
+#: includes/tools/class-orders-tools.php:323
+#: includes/tools/class-orders-tools.php:360
+#: includes/tools/class-refunds-tools.php:83
+#: includes/tools/class-refunds-tools.php:108
+msgid "Order not found"
+msgstr "Pedido no encontrado"
+
+#: includes/tools/class-orders-tools.php:330
+msgid "Could not delete order"
+msgstr "No se pudo eliminar el pedido"
+
+#: includes/tools/class-orders-tools.php:369
+msgid "Could not add note"
+msgstr "No se pudo añadir la nota"
+
+#: includes/tools/class-orders-tools.php:468
+msgid "Fee"
+msgstr "Tarifa"
+
+#: includes/tools/class-pages-tools.php:160
+#: includes/tools/class-pages-tools.php:216
+msgid "Page not found"
+msgstr "Página no encontrada"
+
+#: includes/tools/class-pages-tools.php:248
+msgid "Could not delete page"
+msgstr "No se pudo eliminar la página"
+
+#: includes/tools/class-plugins-tools.php:134
+msgid "Cannot deactivate StoreMCP via its own API."
+msgstr "No se puede desactivar StoreMCP mediante su propia API."
+
+#: includes/tools/class-plugins-tools.php:156
+msgid "Invalid plugin path"
+msgstr "Ruta de plugin no válida"
+
+#: includes/tools/class-plugins-tools.php:160
+msgid "Plugin not found"
+msgstr "Plugin no encontrado"
+
+#: includes/tools/class-posts-tools.php:255
+#: includes/tools/class-posts-tools.php:314
+msgid "Post not found"
+msgstr "Entrada no encontrada"
+
+#: includes/tools/class-posts-tools.php:345
+msgid "Could not delete post"
+msgstr "No se pudo eliminar la entrada"
+
+#: includes/tools/class-products-tools.php:264
+#: includes/tools/class-products-tools.php:295
+#: includes/tools/class-products-tools.php:312
+#: includes/tools/class-reviews-tools.php:157
+msgid "Product not found"
+msgstr "Producto no encontrado"
+
+#: includes/tools/class-products-tools.php:318
+msgid "Could not delete product"
+msgstr "No se pudo eliminar el producto"
+
+#: includes/tools/class-products-tools.php:329
+msgid "Bulk update limited to 50 products per call"
+msgstr "Actualización masiva limitada a 50 productos por llamada"
+
+#: includes/tools/class-refunds-tools.php:154
+msgid "Refund not found"
+msgstr "Reembolso no encontrado"
+
+#: includes/tools/class-reports-tools.php:493
+msgid "Invalid date"
+msgstr "Fecha no válida"
+
+#: includes/tools/class-reviews-tools.php:146
+#: includes/tools/class-reviews-tools.php:194
+msgid "Review not found"
+msgstr "Reseña no encontrada"
+
+#: includes/tools/class-reviews-tools.php:173
+msgid "Could not create review"
+msgstr "No se pudo crear la reseña"
+
+#: includes/tools/class-reviews-tools.php:230
+msgid "Could not delete review"
+msgstr "No se pudo eliminar la reseña"
+
+#: includes/tools/class-seo-tools.php:286
+#, php-format
+msgid "Option not in allow-list: %s"
+msgstr "Opción no en la lista de permitidas: %s"
+
+#: includes/tools/class-seo-tools.php:305
+msgid "Protected meta keys require include_protected=true"
+msgstr "Las claves meta protegidas requieren include_protected=true"
+
+#: includes/tools/class-seo-tools.php:309
+msgid "Meta key is blocked"
+msgstr "La clave meta está bloqueada"
+
+#: includes/tools/class-settings-tools.php:134
+msgid "Option not writable via MCP"
+msgstr "La opción no se puede escribir mediante MCP"
+
+#: includes/tools/class-settings-tools.php:167
+msgid "Gateway not found"
+msgstr "Pasarela no encontrada"
+
+#: includes/tools/class-shipping-tools.php:169
+#: includes/tools/class-shipping-tools.php:199
+#: includes/tools/class-shipping-tools.php:220
+#: includes/tools/class-shipping-tools.php:233
+#: includes/tools/class-shipping-tools.php:250
+msgid "Zone not found"
+msgstr "Zona no encontrada"
+
+#: includes/tools/class-shipping-tools.php:216
+msgid "The default zone cannot be deleted"
+msgstr "La zona predeterminada no se puede eliminar"
+
+#: includes/tools/class-shipping-tools.php:258
+msgid "Could not create method"
+msgstr "No se pudo crear el método"
+
+#: includes/tools/class-system-tools.php:147
+msgid "Delete all transients stored in the options table."
+msgstr "Elimina todos los transitorios almacenados en la tabla de opciones."
+
+#: includes/tools/class-system-tools.php:148
+msgid "Delete only expired transients."
+msgstr "Elimina solo los transitorios caducados."
+
+#: includes/tools/class-system-tools.php:149
+msgid "Clear WooCommerce customer sessions (requires WC)."
+msgstr "Borra las sesiones de clientes de WooCommerce (requiere WC)."
+
+#: includes/tools/class-system-tools.php:150
+msgid "Recount post counts for all taxonomies."
+msgstr "Recuenta los recuentos de entradas para todas las taxonomías."
+
+#: includes/tools/class-system-tools.php:151
+msgid ""
+"Reset attachment metadata so thumbnails can be regenerated on next access."
+msgstr ""
+"Restablece los metadatos del adjunto para que las miniaturas se puedan "
+"regenerar en el próximo acceso."
+
+#: includes/tools/class-system-tools.php:152
+msgid "Run the WP database upgrade routine."
+msgstr "Ejecuta la rutina de actualización de la base de datos de WP."
+
+#: includes/tools/class-system-tools.php:153
+msgid "Run the WC database upgrade routine (requires WC)."
+msgstr "Ejecuta la rutina de actualización de la base de datos de WC (requiere WC)."
+
+#: includes/tools/class-system-tools.php:168
+msgid "Unknown tool id"
+msgstr "ID de herramienta desconocido"
+
+#: includes/tools/class-system-tools.php:241
+msgid "WC_Install not available"
+msgstr "WC_Install no disponible"
+
+#: includes/tools/class-tags-tools.php:151
+msgid "Could not delete tag"
+msgstr "No se pudo eliminar la etiqueta"
+
+#: includes/tools/class-tax-tools.php:133
+msgid "Could not create tax rate"
+msgstr "No se pudo crear la tasa de impuestos"
+
+#: includes/tools/class-tax-tools.php:164
+msgid "Standard"
+msgstr "Estándar"
+
+#: includes/tools/class-tax-tools.php:199
+msgid "Tax rate not found"
+msgstr "Tasa de impuestos no encontrada"
+
+#: includes/tools/class-themes-tools.php:82
+msgid "Theme not found"
+msgstr "Tema no encontrado"
+
+#: includes/tools/class-themes-tools.php:85
+msgid "Theme has errors and cannot be activated"
+msgstr "El tema tiene errores y no se puede activar"
+
+#: includes/tools/class-users-tools.php:137
+msgid "User not found"
+msgstr "Usuario no encontrado"
+
+#: includes/tools/class-users-tools.php:149
+msgid "Invalid username or email"
+msgstr "Nombre de usuario o correo electrónico no válido"
+
+#: includes/tools/class-users-tools.php:211
+msgid "Could not delete user"
+msgstr "No se pudo eliminar el usuario"
+
+#: includes/tools/class-variations-tools.php:142
+#: includes/tools/class-variations-tools.php:179
+msgid "Variable product not found"
+msgstr "Producto variable no encontrado"
+
+#: includes/tools/class-variations-tools.php:167
+#: includes/tools/class-variations-tools.php:197
+#: includes/tools/class-variations-tools.php:212
+msgid "Variation not found"
+msgstr "Variación no encontrada"
+
+#: includes/tools/class-variations-tools.php:217
+msgid "Could not delete variation"
+msgstr "No se pudo eliminar la variación"
+
+#: includes/tools/class-webhooks-tools.php:135
+#: includes/tools/class-webhooks-tools.php:169
+#: includes/tools/class-webhooks-tools.php:197
+msgid "Webhook not found"
+msgstr "Webhook no encontrado"
+
+#: includes/tools/class-webhooks-tools.php:146
+#: includes/tools/class-webhooks-tools.php:178
+msgid "Invalid topic"
+msgstr "Tema no válido"
+
+#: includes/tools/class-widgets-tools.php:156
+msgid "Invalid widget_id"
+msgstr "widget_id no válido"
+
+#: includes/tools/class-widgets-tools.php:162
+msgid "Widget instance not found"
+msgstr "Instancia de widget no encontrada"
+
+#: includes/tools/trait-tool-base.php:24
+#, php-format
+msgid "Missing required argument: %s"
+msgstr "Falta argumento requerido: %s"
+
+#: includes/tools/trait-tool-base.php:81
+#, php-format
+msgid "Invalid value for %1$s. Allowed: %2$s"
+msgstr "Valor no válido para %1$s. Permitidos: %2$s"

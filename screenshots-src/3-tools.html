@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>StoreMCP — Tools</title>
+<link rel="stylesheet" href="_base.css">
+<link rel="stylesheet" href="../admin/css/admin-style.css">
+<style>
+  .wp-content { min-height: 800px; }
+  .store-mcp-wrap { max-width: 100%; }
+  .mod-row td { padding: 14px 12px; }
+  .mod-name { font-weight: 600; }
+  .mod-examples { color: #50575e; font-size: 12px; margin: 6px 0 0; padding-left: 18px; font-style: italic; }
+  .badge-free { background: #d1d5db; color: #1d2327; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 3px; margin-left: 6px; letter-spacing: 0.04em; }
+  .badge-pro { background: #2271b1; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 3px; margin-left: 6px; letter-spacing: 0.04em; }
+</style>
+</head>
+<body>
+<div class="wp-toolbar"><span class="site">☰ mystore.com</span><span class="spacer"></span><span class="user">Howdy, admin ▾</span></div>
+<div class="layout">
+  <nav class="wp-sidebar">
+    <div class="menu-item"><span class="dc">▦</span> Dashboard</div>
+    <div class="menu-item"><span class="dc">📝</span> Posts</div>
+    <div class="menu-item"><span class="dc">🖼</span> Media</div>
+    <div class="menu-item"><span class="dc">📄</span> Pages</div>
+    <div class="menu-item"><span class="dc">🛒</span> WooCommerce</div>
+    <div class="menu-item"><span class="dc">📦</span> Products</div>
+    <div class="menu-item active"><span class="dc">⇄</span> StoreMCP</div>
+    <div class="sub">Dashboard</div>
+    <div class="sub">Settings</div>
+    <div class="sub active">Tools</div>
+    <div class="sub">Activity Log</div>
+    <div class="sub">License</div>
+    <div class="menu-item"><span class="dc">🎨</span> Appearance</div>
+    <div class="menu-item"><span class="dc">🔌</span> Plugins</div>
+    <div class="menu-item"><span class="dc">👤</span> Users</div>
+    <div class="menu-item"><span class="dc">⚙</span> Settings</div>
+  </nav>
+  <main class="wp-content">
+    <div class="wrap store-mcp-wrap">
+      <h1 class="wp-heading-inline">Tools</h1>
+      <p class="description">Toggle individual tool modules. Disabled modules are not registered, reducing attack surface.</p>
+
+      <div class="store-mcp-card">
+        <table class="widefat striped store-mcp-modules-table">
+          <thead><tr><th style="width:30%">Module</th><th>What it does</th><th style="width:80px; text-align:center">State</th></tr></thead>
+          <tbody>
+            <tr class="mod-row">
+              <td><span class="mod-name">Posts &amp; Pages</span><span class="badge-free">FREE</span></td>
+              <td><div class="store-mcp-module-desc">Create, edit, publish, delete posts and pages. Draft management, scheduling, revisions, featured images.</div><ul class="mod-examples"><li>"Publish a post about our spring sale using the draft from yesterday"</li><li>"Schedule this page to go live next Monday"</li></ul></td>
+              <td style="text-align:center"><label class="store-mcp-switch"><input type="checkbox" checked><span></span></label></td>
+            </tr>
+            <tr class="mod-row">
+              <td><span class="mod-name">Media library</span><span class="badge-free">FREE</span></td>
+              <td><div class="store-mcp-module-desc">Upload, delete, list and update media files. Replace alt text, captions and attachment metadata.</div><ul class="mod-examples"><li>"Add alt text to every product image missing one"</li></ul></td>
+              <td style="text-align:center"><label class="store-mcp-switch"><input type="checkbox" checked><span></span></label></td>
+            </tr>
+            <tr class="mod-row">
+              <td><span class="mod-name">WooCommerce products</span><span class="badge-pro">PRO</span></td>
+              <td><div class="store-mcp-module-desc">Full CRUD on products, variations, attributes, categories and tags. Stock management and price rules.</div><ul class="mod-examples"><li>"Reduce all products in the Winter category by 20% until Sunday"</li><li>"Create 5 variations for the Blue T-shirt SKU"</li></ul></td>
+              <td style="text-align:center"><label class="store-mcp-switch"><input type="checkbox" checked><span></span></label></td>
+            </tr>
+            <tr class="mod-row">
+              <td><span class="mod-name">WooCommerce orders</span><span class="badge-pro">PRO</span></td>
+              <td><div class="store-mcp-module-desc">Read, create, update orders (HPOS-compatible). Status changes, order notes, refunds.</div><ul class="mod-examples"><li>"Mark order #4821 as shipped and email the customer the tracking number"</li></ul></td>
+              <td style="text-align:center"><label class="store-mcp-switch"><input type="checkbox" checked><span></span></label></td>
+            </tr>
+            <tr class="mod-row">
+              <td><span class="mod-name">Reports &amp; analytics</span><span class="badge-pro">PRO</span></td>
+              <td><div class="store-mcp-module-desc">Sales reports, top sellers, low-stock and out-of-stock lists, daily time-series ready for charts.</div><ul class="mod-examples"><li>"Show me this week's top 10 sellers compared to last week"</li></ul></td>
+              <td style="text-align:center"><label class="store-mcp-switch"><input type="checkbox" checked><span></span></label></td>
+            </tr>
+            <tr class="mod-row">
+              <td><span class="mod-name">SEO (Yoast / Rank Math)</span><span class="badge-pro">PRO</span></td>
+              <td><div class="store-mcp-module-desc">Read and write SEO title, meta description, focus keyword, canonical, robots directives.</div><ul class="mod-examples"><li>"Rewrite the meta descriptions of all product pages in the Shoes category"</li></ul></td>
+              <td style="text-align:center"><label class="store-mcp-switch"><input type="checkbox" checked><span></span></label></td>
+            </tr>
+            <tr class="mod-row">
+              <td><span class="mod-name">Menus &amp; widgets</span><span class="badge-free">FREE</span></td>
+              <td><div class="store-mcp-module-desc">Create, edit and order nav menus. Manage classic widgets and sidebars.</div></td>
+              <td style="text-align:center"><label class="store-mcp-switch"><input type="checkbox" checked><span></span></label></td>
+            </tr>
+            <tr class="mod-row">
+              <td><span class="mod-name">Plugin &amp; theme management</span><span class="badge-pro">PRO</span></td>
+              <td><div class="store-mcp-module-desc">List, install, activate, update plugins and themes. Triggers WP-level capability checks per action.</div></td>
+              <td style="text-align:center"><label class="store-mcp-switch"><input type="checkbox"><span></span></label></td>
+            </tr>
+            <tr class="mod-row">
+              <td><span class="mod-name">System maintenance</span><span class="badge-pro">PRO</span></td>
+              <td><div class="store-mcp-module-desc">Clear caches, run DB optimization, check for core updates, get a full system status report.</div></td>
+              <td style="text-align:center"><label class="store-mcp-switch"><input type="checkbox" checked><span></span></label></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

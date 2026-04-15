@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>StoreMCP — Dashboard</title>
+<link rel="stylesheet" href="_base.css">
+<link rel="stylesheet" href="../admin/css/admin-style.css">
+<style>
+  .wp-content { min-height: 800px; }
+  .store-mcp-wrap { max-width: 100%; }
+</style>
+</head>
+<body>
+<div class="wp-toolbar">
+  <span class="site">☰ mystore.com</span>
+  <span class="spacer"></span>
+  <span class="user">Howdy, admin ▾</span>
+</div>
+<div class="layout">
+  <nav class="wp-sidebar">
+    <div class="menu-item"><span class="dc">▦</span> Dashboard</div>
+    <div class="menu-item"><span class="dc">📝</span> Posts</div>
+    <div class="menu-item"><span class="dc">🖼</span> Media</div>
+    <div class="menu-item"><span class="dc">📄</span> Pages</div>
+    <div class="menu-item"><span class="dc">💬</span> Comments</div>
+    <div class="menu-item"><span class="dc">🛒</span> WooCommerce</div>
+    <div class="menu-item"><span class="dc">📦</span> Products</div>
+    <div class="menu-item active"><span class="dc">⇄</span> StoreMCP</div>
+    <div class="sub active">Dashboard</div>
+    <div class="sub">Settings</div>
+    <div class="sub">Tools</div>
+    <div class="sub">Activity Log</div>
+    <div class="sub">License</div>
+    <div class="menu-item"><span class="dc">🎨</span> Appearance</div>
+    <div class="menu-item"><span class="dc">🔌</span> Plugins</div>
+    <div class="menu-item"><span class="dc">👤</span> Users</div>
+    <div class="menu-item"><span class="dc">🛠</span> Tools</div>
+    <div class="menu-item"><span class="dc">⚙</span> Settings</div>
+  </nav>
+  <main class="wp-content">
+    <div class="wrap store-mcp-wrap">
+      <h1 class="wp-heading-inline">StoreMCP <span class="store-mcp-tier store-mcp-tier-pro">PRO</span></h1>
+      <p class="description">Connect your site to Claude, ChatGPT, Cursor, and any MCP-compatible AI client.</p>
+
+      <div class="store-mcp-hero-card">
+        <div class="store-mcp-hero-head">
+          <h2>Your MCP server URL</h2>
+          <p>Paste this URL into any MCP-compatible AI client. It handles authentication automatically.</p>
+        </div>
+        <div class="store-mcp-endpoint-row">
+          <input type="text" readonly value="https://mystore.com/wp-json/store-mcp/v1/mcp">
+          <button type="button" class="button button-primary">📋 Copy URL</button>
+        </div>
+      </div>
+
+      <div class="store-mcp-connect-grid">
+        <div class="store-mcp-connect-card">
+          <div class="store-mcp-connect-head">
+            <div class="store-mcp-connect-logo">
+              <svg viewBox="0 0 120 120" width="40" height="40"><path fill="#D97757" d="M60 10c27.6 0 50 22.4 50 50s-22.4 50-50 50S10 87.6 10 60 32.4 10 60 10zm-8 30l-16 40h8l3-8h14l3 8h8L56 40h-4zm2 8l5 14h-10l5-14z"/></svg>
+            </div>
+            <div>
+              <h3>Claude Desktop / Claude.ai</h3>
+              <p>Custom connector with OAuth</p>
+            </div>
+            <button type="button" class="button button-small">Show steps</button>
+          </div>
+        </div>
+        <div class="store-mcp-connect-card is-open">
+          <div class="store-mcp-connect-head">
+            <div class="store-mcp-connect-logo">
+              <svg viewBox="0 0 24 24" width="40" height="40"><path fill="#10A37F" d="M22.28 9.82a5.87 5.87 0 0 0-.5-4.82 5.94 5.94 0 0 0-6.42-2.85A5.94 5.94 0 0 0 5.06 4.4a5.9 5.9 0 0 0-3.94 2.86 5.94 5.94 0 0 0 .73 6.95 5.87 5.87 0 0 0 .5 4.82 5.94 5.94 0 0 0 6.42 2.85 5.94 5.94 0 0 0 10.3-2.25 5.9 5.9 0 0 0 3.94-2.85 5.94 5.94 0 0 0-.73-6.96z"/></svg>
+            </div>
+            <div>
+              <h3>ChatGPT</h3>
+              <p>Developer Mode / Custom connector</p>
+            </div>
+            <button type="button" class="button button-small">Hide steps</button>
+          </div>
+          <ol class="store-mcp-steps">
+            <li>In ChatGPT → Settings → Connectors → Advanced → enable Developer mode.</li>
+            <li>Click Create, name it StoreMCP, and paste the URL above as MCP Server URL.</li>
+            <li>Choose OAuth as authentication. Save. Authorize on this site when prompted.</li>
+          </ol>
+        </div>
+        <div class="store-mcp-connect-card">
+          <div class="store-mcp-connect-head">
+            <div class="store-mcp-connect-logo">
+              <svg viewBox="0 0 24 24" width="40" height="40"><path fill="#1d1d1f" d="M3 3l9 5v13L3 16V3zm9 5l9-5v13l-9 5V8z"/></svg>
+            </div>
+            <div>
+              <h3>Cursor / Windsurf / VS Code</h3>
+              <p>mcp.json — remote server with OAuth</p>
+            </div>
+            <button type="button" class="button button-small">Show steps</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="store-mcp-grid store-mcp-grid-2">
+        <div class="store-mcp-card">
+          <h2>Connected apps</h2>
+          <table class="widefat striped store-mcp-clients-table">
+            <thead><tr><th>App</th><th>Connected</th><th>Last used</th><th>Active tokens</th><th></th></tr></thead>
+            <tbody>
+              <tr><td><strong>Claude Desktop</strong></td><td>2026-04-10 09:22</td><td>2026-04-15 01:47</td><td>1</td><td><button class="button-link" style="color:#a00">Revoke</button></td></tr>
+              <tr><td><strong>ChatGPT</strong></td><td>2026-04-12 14:10</td><td>2026-04-14 23:58</td><td>1</td><td><button class="button-link" style="color:#a00">Revoke</button></td></tr>
+              <tr><td><strong>Cursor (team)</strong></td><td>2026-04-13 11:05</td><td>2026-04-15 01:20</td><td>2</td><td><button class="button-link" style="color:#a00">Revoke</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="store-mcp-card">
+          <h2>Status</h2>
+          <table class="widefat striped">
+            <tbody>
+              <tr><th>Plugin enabled</th><td><span class="store-mcp-pill ok">On</span></td></tr>
+              <tr><th>WooCommerce</th><td><span class="store-mcp-pill ok">Active</span></td></tr>
+              <tr><th>License</th><td>PRO — 2027-04-10</td></tr>
+              <tr><th>Tools available</th><td>137</td></tr>
+              <tr><th>Requests today</th><td>1,284</td></tr>
+              <tr><th>Protocol</th><td><code>2025-03-26</code></td></tr>
+            </tbody>
+          </table>
+          <p><button type="button" class="button">Test connection</button> <span class="description" style="color:#00712f">✓ Connected · 42 ms</span></p>
+        </div>
+      </div>
+
+      <div class="store-mcp-card">
+        <h2>Top tools (last 7 days)</h2>
+        <table class="widefat striped">
+          <thead><tr><th>Tool</th><th>Calls</th></tr></thead>
+          <tbody>
+            <tr><td><code>wc_list_products</code></td><td>3,219</td></tr>
+            <tr><td><code>wc_get_order</code></td><td>1,847</td></tr>
+            <tr><td><code>wp_list_posts</code></td><td>1,203</td></tr>
+            <tr><td><code>wc_update_product</code></td><td>764</td></tr>
+            <tr><td><code>wc_sales_report</code></td><td>512</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

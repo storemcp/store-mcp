@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>StoreMCP — Settings</title>
+<link rel="stylesheet" href="_base.css">
+<link rel="stylesheet" href="../admin/css/admin-style.css">
+<style>.wp-content { min-height: 800px; } .store-mcp-wrap { max-width: 100%; }</style>
+</head>
+<body>
+<div class="wp-toolbar"><span class="site">☰ mystore.com</span><span class="spacer"></span><span class="user">Howdy, admin ▾</span></div>
+<div class="layout">
+  <nav class="wp-sidebar">
+    <div class="menu-item"><span class="dc">▦</span> Dashboard</div>
+    <div class="menu-item"><span class="dc">📝</span> Posts</div>
+    <div class="menu-item"><span class="dc">🖼</span> Media</div>
+    <div class="menu-item"><span class="dc">📄</span> Pages</div>
+    <div class="menu-item"><span class="dc">🛒</span> WooCommerce</div>
+    <div class="menu-item"><span class="dc">📦</span> Products</div>
+    <div class="menu-item active"><span class="dc">⇄</span> StoreMCP</div>
+    <div class="sub">Dashboard</div>
+    <div class="sub active">Settings</div>
+    <div class="sub">Tools</div>
+    <div class="sub">Activity Log</div>
+    <div class="sub">License</div>
+    <div class="menu-item"><span class="dc">🎨</span> Appearance</div>
+    <div class="menu-item"><span class="dc">🔌</span> Plugins</div>
+    <div class="menu-item"><span class="dc">👤</span> Users</div>
+    <div class="menu-item"><span class="dc">⚙</span> Settings</div>
+  </nav>
+  <main class="wp-content">
+    <div class="wrap store-mcp-wrap">
+      <h1 class="wp-heading-inline">Settings</h1>
+      <p class="description">Manage API keys, authentication, rate limits and CORS.</p>
+
+      <div class="store-mcp-card">
+        <h2>API keys</h2>
+        <p class="description">API keys are hashed and shown only once at creation. Revoke immediately if compromised.</p>
+        <div class="store-mcp-inline-form">
+          <input type="text" placeholder="Key label (e.g. Claude Desktop, my laptop)" style="flex:1">
+          <button type="button" class="button button-primary">Generate API key</button>
+        </div>
+        <div class="store-mcp-new-key">
+          <strong>⚠ Copy this key now — it will not be shown again.</strong>
+          <div class="store-mcp-copyable" style="margin-top:8px"><code>smcp_live_4f2a9c8e3b61d7a5f0e8c92ab4d6f183c7e905a1</code><button class="button button-small">Copy</button></div>
+        </div>
+        <table class="widefat striped store-mcp-keys-table" style="margin-top:16px">
+          <thead><tr><th>Label</th><th>Prefix</th><th>Created</th><th>Last used</th><th>Calls</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><strong>Claude Desktop — laptop</strong></td><td><code>smcp_live_4f2a</code></td><td>2026-04-10 09:22</td><td>2026-04-15 01:47</td><td>8,219</td><td><button class="button-link" style="color:#a00">Revoke</button></td></tr>
+            <tr><td><strong>CI bot — deploys</strong></td><td><code>smcp_live_9d3b</code></td><td>2026-04-08 18:00</td><td>2026-04-14 22:15</td><td>1,104</td><td><button class="button-link" style="color:#a00">Revoke</button></td></tr>
+            <tr><td><strong>Marketing agency (read-only)</strong></td><td><code>smcp_live_a62f</code></td><td>2026-03-28 10:44</td><td>2026-04-15 00:03</td><td>3,562</td><td><button class="button-link" style="color:#a00">Revoke</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="store-mcp-grid store-mcp-grid-2">
+        <div class="store-mcp-card">
+          <h2>Rate limits</h2>
+          <table class="widefat">
+            <tbody>
+              <tr><th style="width:60%">Requests / minute (Free key)</th><td><input type="number" value="30" style="width:80px"></td></tr>
+              <tr><th>Requests / minute (Pro key)</th><td><input type="number" value="120" style="width:80px"></td></tr>
+              <tr><th>Cache TTL (seconds)</th><td><input type="number" value="60" style="width:80px"></td></tr>
+              <tr><th>Log retention (days)</th><td><input type="number" value="30" style="width:80px"></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="store-mcp-card">
+          <h2>Authentication</h2>
+          <table class="widefat">
+            <tbody>
+              <tr><th style="width:60%">Allow Application Passwords</th><td><label class="store-mcp-switch"><input type="checkbox" checked><span></span></label></td></tr>
+              <tr><th>Allow OAuth 2.1 (Dynamic Client Registration)</th><td><label class="store-mcp-switch"><input type="checkbox" checked><span></span></label></td></tr>
+              <tr><th>Minimum OAuth capability</th><td><select><option>edit_posts</option><option selected>manage_options</option></select></td></tr>
+              <tr><th>Enforce HTTPS</th><td><label class="store-mcp-switch"><input type="checkbox" checked><span></span></label></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="store-mcp-card">
+        <h2>CORS</h2>
+        <p class="description">Only add origins you trust. Wildcards are not allowed.</p>
+        <div class="store-mcp-inline-form">
+          <input type="url" value="https://claude.ai" style="flex:1"> <button type="button" class="button">Add origin</button>
+        </div>
+        <table class="widefat striped" style="margin-top:8px">
+          <tbody>
+            <tr><td><code>https://claude.ai</code></td><td style="text-align:right"><button class="button-link" style="color:#a00">Remove</button></td></tr>
+            <tr><td><code>https://chat.openai.com</code></td><td style="text-align:right"><button class="button-link" style="color:#a00">Remove</button></td></tr>
+            <tr><td><code>https://cursor.sh</code></td><td style="text-align:right"><button class="button-link" style="color:#a00">Remove</button></td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:14px"><button type="button" class="button button-primary">Save changes</button></p>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

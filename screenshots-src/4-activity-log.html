@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>StoreMCP — Activity Log</title>
+<link rel="stylesheet" href="_base.css">
+<link rel="stylesheet" href="../admin/css/admin-style.css">
+<style>
+  .wp-content { min-height: 800px; }
+  .store-mcp-wrap { max-width: 100%; }
+  .log-ok { color: #00712f; font-weight: 600; }
+  .log-err { color: #a00; font-weight: 600; }
+  .log-row pre { margin: 0; background: #f6f7f7; padding: 6px 8px; font-size: 11px; border-radius: 3px; max-width: 380px; overflow-x: auto; white-space: pre-wrap; word-break: break-all; }
+  .row-highlight { background: #fff8e5 !important; }
+</style>
+</head>
+<body>
+<div class="wp-toolbar"><span class="site">☰ mystore.com</span><span class="spacer"></span><span class="user">Howdy, admin ▾</span></div>
+<div class="layout">
+  <nav class="wp-sidebar">
+    <div class="menu-item"><span class="dc">▦</span> Dashboard</div>
+    <div class="menu-item"><span class="dc">📝</span> Posts</div>
+    <div class="menu-item"><span class="dc">🖼</span> Media</div>
+    <div class="menu-item"><span class="dc">📄</span> Pages</div>
+    <div class="menu-item"><span class="dc">🛒</span> WooCommerce</div>
+    <div class="menu-item"><span class="dc">📦</span> Products</div>
+    <div class="menu-item active"><span class="dc">⇄</span> StoreMCP</div>
+    <div class="sub">Dashboard</div>
+    <div class="sub">Settings</div>
+    <div class="sub">Tools</div>
+    <div class="sub active">Activity Log</div>
+    <div class="sub">License</div>
+    <div class="menu-item"><span class="dc">🎨</span> Appearance</div>
+    <div class="menu-item"><span class="dc">🔌</span> Plugins</div>
+    <div class="menu-item"><span class="dc">👤</span> Users</div>
+    <div class="menu-item"><span class="dc">⚙</span> Settings</div>
+  </nav>
+  <main class="wp-content">
+    <div class="wrap store-mcp-wrap">
+      <h1 class="wp-heading-inline">Activity Log</h1>
+      <p class="description">Every MCP call made to your site. Sensitive params (passwords, secrets, tokens) are redacted before storage.</p>
+
+      <div class="store-mcp-card">
+        <div class="store-mcp-filters">
+          <input type="text" placeholder="Search tool or key…" style="width:240px">
+          <select><option>All tools</option><option>wc_list_products</option><option>wc_update_product</option><option>wp_create_post</option></select>
+          <select><option>All statuses</option><option>OK (2xx)</option><option>Errors (4xx/5xx)</option></select>
+          <input type="date" value="2026-04-08" style="width:140px">
+          <span>→</span>
+          <input type="date" value="2026-04-15" style="width:140px">
+          <button type="button" class="button">Apply filter</button>
+          <span style="flex:1"></span>
+          <button type="button" class="button">⬇ Export CSV</button>
+        </div>
+
+        <table class="widefat striped store-mcp-log-table" style="margin-top:14px">
+          <thead><tr><th>Time</th><th>Tool</th><th>Client</th><th>Status</th><th>Duration</th><th>Params</th></tr></thead>
+          <tbody>
+            <tr class="log-row"><td>2026-04-15 01:47:12</td><td><code>wc_update_product</code></td><td>Claude Desktop</td><td><span class="log-ok">200 OK</span></td><td>84 ms</td><td><pre>{"id":482,"price":"49.00","stock":24}</pre></td></tr>
+            <tr class="log-row"><td>2026-04-15 01:46:58</td><td><code>wc_list_products</code></td><td>ChatGPT</td><td><span class="log-ok">200 OK</span></td><td>32 ms</td><td><pre>{"category":"winter","per_page":20}</pre></td></tr>
+            <tr class="log-row row-highlight"><td>2026-04-15 01:46:41</td><td><code>wc_get_order</code></td><td>Cursor (team)</td><td><span class="log-err">404</span></td><td>18 ms</td><td><pre>{"id":9999} — order not found</pre></td></tr>
+            <tr class="log-row"><td>2026-04-15 01:46:10</td><td><code>wp_create_post</code></td><td>Claude Desktop</td><td><span class="log-ok">201 Created</span></td><td>142 ms</td><td><pre>{"title":"Spring sale — final week","status":"publish","categories":[12]}</pre></td></tr>
+            <tr class="log-row"><td>2026-04-15 01:45:52</td><td><code>wc_sales_report</code></td><td>Claude Desktop</td><td><span class="log-ok">200 OK</span></td><td>310 ms</td><td><pre>{"period":"last_7_days","group_by":"day"}</pre></td></tr>
+            <tr class="log-row"><td>2026-04-15 01:45:30</td><td><code>media_upload</code></td><td>Claude Desktop</td><td><span class="log-ok">201 Created</span></td><td>520 ms</td><td><pre>{"filename":"spring-banner.jpg","attachment_id":8412}</pre></td></tr>
+            <tr class="log-row row-highlight"><td>2026-04-15 01:44:02</td><td><code>wc_create_coupon</code></td><td>Marketing agency</td><td><span class="log-err">403</span></td><td>4 ms</td><td><pre>Rate limit exceeded (30/min) — retry_after: 42s</pre></td></tr>
+            <tr class="log-row"><td>2026-04-15 01:43:18</td><td><code>wp_list_posts</code></td><td>Cursor (team)</td><td><span class="log-ok">200 OK</span></td><td>41 ms</td><td><pre>{"status":"draft","author":3}</pre></td></tr>
+            <tr class="log-row"><td>2026-04-15 01:42:55</td><td><code>wc_update_stock</code></td><td>CI bot</td><td><span class="log-ok">200 OK</span></td><td>28 ms</td><td><pre>{"sku":"BLUE-TEE-L","quantity":120}</pre></td></tr>
+            <tr class="log-row"><td>2026-04-15 01:42:11</td><td><code>wc_list_orders</code></td><td>Claude Desktop</td><td><span class="log-ok">200 OK</span></td><td>96 ms</td><td><pre>{"status":"processing","date_after":"2026-04-01"}</pre></td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:14px; color:#50575e; font-size:12px;">Showing 10 of 18,432 entries · Page 1 of 1,844</p>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
