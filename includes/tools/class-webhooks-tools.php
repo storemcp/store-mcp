@@ -132,7 +132,7 @@ final class Webhooks_Tools {
 		$id      = (int) self::require_arg( $args, 'id' );
 		$webhook = new \WC_Webhook( $id );
 		if ( ! $webhook->get_id() ) {
-			throw new Tool_Exception( __( 'Webhook not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Webhook not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		return self::format_webhook( $webhook );
 	}
@@ -143,7 +143,7 @@ final class Webhooks_Tools {
 
 		$topic = sanitize_text_field( (string) self::require_arg( $args, 'topic' ) );
 		if ( ! wc_is_webhook_valid_topic( $topic ) ) {
-			throw new Tool_Exception( __( 'Invalid topic', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Invalid topic', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
 		}
 
 		$webhook = new \WC_Webhook();
@@ -166,7 +166,7 @@ final class Webhooks_Tools {
 		$id      = (int) self::require_arg( $args, 'id' );
 		$webhook = new \WC_Webhook( $id );
 		if ( ! $webhook->get_id() ) {
-			throw new Tool_Exception( __( 'Webhook not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Webhook not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		if ( array_key_exists( 'name', $args ) )         $webhook->set_name( sanitize_text_field( (string) $args['name'] ) );
@@ -175,7 +175,7 @@ final class Webhooks_Tools {
 		if ( array_key_exists( 'topic', $args ) ) {
 			$topic = sanitize_text_field( (string) $args['topic'] );
 			if ( ! wc_is_webhook_valid_topic( $topic ) ) {
-				throw new Tool_Exception( __( 'Invalid topic', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
+				throw new Tool_Exception( esc_html__( 'Invalid topic', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
 			}
 			$webhook->set_topic( $topic );
 		}
@@ -194,7 +194,7 @@ final class Webhooks_Tools {
 		$id      = (int) self::require_arg( $args, 'id' );
 		$webhook = new \WC_Webhook( $id );
 		if ( ! $webhook->get_id() ) {
-			throw new Tool_Exception( __( 'Webhook not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Webhook not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		$force = (bool) self::arg_bool( $args, 'force', true );
 		$webhook->delete( $force );

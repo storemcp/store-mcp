@@ -80,7 +80,7 @@ final class Refunds_Tools {
 		$order_id = (int) self::require_arg( $args, 'order_id' );
 		$order    = wc_get_order( $order_id );
 		if ( ! $order ) {
-			throw new Tool_Exception( __( 'Order not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Order not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$items = [];
@@ -105,7 +105,7 @@ final class Refunds_Tools {
 		$order_id = (int) self::require_arg( $args, 'order_id' );
 		$order    = wc_get_order( $order_id );
 		if ( ! $order ) {
-			throw new Tool_Exception( __( 'Order not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Order not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$amount     = (float) self::require_arg( $args, 'amount' );
@@ -131,7 +131,7 @@ final class Refunds_Tools {
 			'restock_items'  => $restock,
 		] );
 		if ( is_wp_error( $refund ) ) {
-			throw new Tool_Exception( $refund->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $refund->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 
 		return [
@@ -151,7 +151,7 @@ final class Refunds_Tools {
 		$refund_id = (int) self::require_arg( $args, 'refund_id' );
 		$refund    = wc_get_order( $refund_id );
 		if ( ! $refund || 'shop_order_refund' !== $refund->get_type() ) {
-			throw new Tool_Exception( __( 'Refund not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Refund not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		$refund->delete( true );
 		return [ 'id' => $refund_id, 'deleted' => true ];

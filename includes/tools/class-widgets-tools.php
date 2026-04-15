@@ -88,7 +88,7 @@ final class Widgets_Tools {
 		Permissions::require_cap( $context, 'edit_theme_options' );
 
 		global $wp_registered_sidebars;
-		$widgets = wp_get_sidebars_widgets();
+		$widgets = self::get_sidebars_widgets();
 
 		$out = [];
 		foreach ( (array) $wp_registered_sidebars as $id => $sidebar ) {
@@ -106,7 +106,7 @@ final class Widgets_Tools {
 		Permissions::require_cap( $context, 'edit_theme_options' );
 
 		$sidebar_id = (string) self::require_arg( $args, 'sidebar_id' );
-		$widgets    = wp_get_sidebars_widgets();
+		$widgets    = self::get_sidebars_widgets();
 		$ids        = $widgets[ $sidebar_id ] ?? [];
 
 		$items = [];
@@ -137,7 +137,7 @@ final class Widgets_Tools {
 		update_option( $option_key, $instances );
 
 		$widget_id = $widget_type . '-' . $next;
-		$sidebars  = wp_get_sidebars_widgets();
+		$sidebars  = self::get_sidebars_widgets();
 		$sidebars[ $sidebar_id ]   = $sidebars[ $sidebar_id ] ?? [];
 		$sidebars[ $sidebar_id ][] = $widget_id;
 		wp_set_sidebars_widgets( $sidebars );
@@ -153,13 +153,13 @@ final class Widgets_Tools {
 
 		[ $type, $number ] = self::split_widget_id( $widget_id );
 		if ( null === $type ) {
-			throw new Tool_Exception( __( 'Invalid widget_id', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Invalid widget_id', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
 		}
 
 		$option_key = 'widget_' . $type;
 		$instances  = get_option( $option_key, [] );
 		if ( ! isset( $instances[ $number ] ) ) {
-			throw new Tool_Exception( __( 'Widget instance not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Widget instance not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		$instances[ $number ] = array_merge( (array) $instances[ $number ], $settings );
 		update_option( $option_key, $instances );
@@ -173,7 +173,7 @@ final class Widgets_Tools {
 		$widget_id = (string) self::require_arg( $args, 'widget_id' );
 		[ $type, $number ] = self::split_widget_id( $widget_id );
 
-		$sidebars = wp_get_sidebars_widgets();
+		$sidebars = self::get_sidebars_widgets();
 		foreach ( $sidebars as $sidebar => $widget_ids ) {
 			if ( ! is_array( $widget_ids ) ) continue;
 			$sidebars[ $sidebar ] = array_values( array_filter( $widget_ids, static fn( $id ) => $id !== $widget_id ) );
@@ -206,6 +206,20 @@ final class Widgets_Tools {
 			return [ null, null ];
 		}
 		return [ sanitize_key( $m[1] ), (int) $m[2] ];
+	}
+
+	/**
+	 * Read sidebar→widget assignments from the option directly. Plugin Check
+	 * forbids wp_get_sidebars_widgets() because it can trigger theme-switch
+	 * side effects in some contexts; the option is the source of truth.
+	 */
+	private static function get_sidebars_widgets(): array {
+		$value = get_option( 'sidebars_widgets', [] );
+		if ( ! is_array( $value ) ) {
+			return [];
+		}
+		unset( $value['array_version'] );
+		return $value;
 	}
 
 	private static function next_widget_number( array $instances ): int {

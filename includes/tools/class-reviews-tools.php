@@ -143,7 +143,7 @@ final class Reviews_Tools {
 		$id      = (int) self::require_arg( $args, 'id' );
 		$comment = get_comment( $id );
 		if ( ! $comment || 'review' !== $comment->comment_type ) {
-			throw new Tool_Exception( __( 'Review not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Review not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		return self::format_review( $comment );
 	}
@@ -154,7 +154,7 @@ final class Reviews_Tools {
 
 		$pid = (int) self::require_arg( $args, 'product_id' );
 		if ( ! get_post( $pid ) ) {
-			throw new Tool_Exception( __( 'Product not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Product not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$status = (string) self::arg_enum( $args, 'status', self::STATUSES, 'approved' );
@@ -170,7 +170,7 @@ final class Reviews_Tools {
 
 		$id = wp_insert_comment( wp_slash( $data ) );
 		if ( ! $id ) {
-			throw new Tool_Exception( __( 'Could not create review', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not create review', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 
 		$rating = self::arg_int( $args, 'rating' );
@@ -191,7 +191,7 @@ final class Reviews_Tools {
 		$id      = (int) self::require_arg( $args, 'id' );
 		$comment = get_comment( $id );
 		if ( ! $comment || 'review' !== $comment->comment_type ) {
-			throw new Tool_Exception( __( 'Review not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Review not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$update = [ 'comment_ID' => $id ];
@@ -227,7 +227,7 @@ final class Reviews_Tools {
 		$force = (bool) self::arg_bool( $args, 'force', true );
 		$ok    = wp_delete_comment( $id, $force );
 		if ( ! $ok ) {
-			throw new Tool_Exception( __( 'Could not delete review', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not delete review', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => $id, 'deleted' => true, 'force' => $force ];
 	}

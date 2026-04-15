@@ -283,7 +283,7 @@ final class SEO_Tools {
 
 		$key = sanitize_key( (string) self::require_arg( $args, 'key' ) );
 		if ( ! in_array( $key, self::SITE_OPTION_ALLOWLIST, true ) ) {
-			throw new Tool_Exception( sprintf( /* translators: %s: option */ __( 'Option not in allow-list: %s', 'store-mcp' ), $key ), Server::ERR_FORBIDDEN );
+			throw new Tool_Exception( esc_html( sprintf( /* translators: %s: option */ __( 'Option not in allow-list: %s', 'store-mcp' ), $key ) ), Server::ERR_FORBIDDEN );
 		}
 		$value = self::arg( $args, 'value' );
 		update_option( $key, $value );
@@ -302,11 +302,11 @@ final class SEO_Tools {
 
 	private static function guard_meta_key( string $key, bool $allow_protected ): void {
 		if ( ! $allow_protected && str_starts_with( $key, '_' ) ) {
-			throw new Tool_Exception( __( 'Protected meta keys require include_protected=true', 'store-mcp' ), Server::ERR_FORBIDDEN );
+			throw new Tool_Exception( esc_html__( 'Protected meta keys require include_protected=true', 'store-mcp' ), Server::ERR_FORBIDDEN );
 		}
 		$blocked = [ 'user_pass', 'user_activation_key', 'session_tokens' ];
 		if ( in_array( $key, $blocked, true ) ) {
-			throw new Tool_Exception( __( 'Meta key is blocked', 'store-mcp' ), Server::ERR_FORBIDDEN );
+			throw new Tool_Exception( esc_html__( 'Meta key is blocked', 'store-mcp' ), Server::ERR_FORBIDDEN );
 		}
 	}
 

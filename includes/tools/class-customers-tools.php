@@ -174,7 +174,7 @@ final class Customers_Tools {
 		$id       = (int) self::require_arg( $args, 'id' );
 		$user     = get_userdata( $id );
 		if ( ! $user ) {
-			throw new Tool_Exception( __( 'Customer not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Customer not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		$customer = new \WC_Customer( $id );
 
@@ -200,7 +200,7 @@ final class Customers_Tools {
 
 		$user_id = wc_create_new_customer( $email, $username, $password );
 		if ( is_wp_error( $user_id ) ) {
-			throw new Tool_Exception( $user_id->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $user_id->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 
 		$customer = new \WC_Customer( $user_id );
@@ -218,7 +218,7 @@ final class Customers_Tools {
 
 		$customer = new \WC_Customer( $id );
 		if ( ! $customer->get_id() ) {
-			throw new Tool_Exception( __( 'Customer not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Customer not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		self::apply_customer_data( $customer, $args );
 		$customer->save();
@@ -237,7 +237,7 @@ final class Customers_Tools {
 		Permissions::require_cap( $context, 'delete_users' );
 
 		if ( $id === $context->user_id ) {
-			throw new Tool_Exception( __( 'Cannot delete yourself', 'store-mcp' ), Server::ERR_FORBIDDEN );
+			throw new Tool_Exception( esc_html__( 'Cannot delete yourself', 'store-mcp' ), Server::ERR_FORBIDDEN );
 		}
 
 		require_once ABSPATH . 'wp-admin/includes/user.php';
@@ -245,7 +245,7 @@ final class Customers_Tools {
 		$ok       = is_multisite() ? wpmu_delete_user( $id ) : wp_delete_user( $id, $reassign ?: null );
 
 		if ( ! $ok ) {
-			throw new Tool_Exception( __( 'Could not delete customer', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not delete customer', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => $id, 'deleted' => true ];
 	}

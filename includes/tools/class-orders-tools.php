@@ -269,7 +269,7 @@ final class Orders_Tools {
 		$id    = (int) self::require_arg( $args, 'id' );
 		$order = wc_get_order( $id );
 		if ( ! $order ) {
-			throw new Tool_Exception( __( 'Order not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Order not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		Permissions::require_cap( $context, 'edit_shop_order', $id );
 
@@ -285,7 +285,7 @@ final class Orders_Tools {
 			'customer_id' => (int) self::arg_int( $args, 'customer_id', 0 ),
 		] );
 		if ( is_wp_error( $order ) ) {
-			throw new Tool_Exception( $order->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $order->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 
 		self::apply_order_data( $order, $args );
@@ -301,7 +301,7 @@ final class Orders_Tools {
 		$id    = (int) self::require_arg( $args, 'id' );
 		$order = wc_get_order( $id );
 		if ( ! $order ) {
-			throw new Tool_Exception( __( 'Order not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Order not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		Permissions::require_cap( $context, 'edit_shop_order', $id );
 
@@ -320,14 +320,14 @@ final class Orders_Tools {
 		$id    = (int) self::require_arg( $args, 'id' );
 		$order = wc_get_order( $id );
 		if ( ! $order ) {
-			throw new Tool_Exception( __( 'Order not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Order not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		Permissions::require_cap( $context, 'delete_shop_order', $id );
 
 		$force = (bool) self::arg_bool( $args, 'force', false );
 		$ok    = $order->delete( $force );
 		if ( ! $ok ) {
-			throw new Tool_Exception( __( 'Could not delete order', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not delete order', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => $id, 'deleted' => true, 'force' => $force ];
 	}
@@ -357,7 +357,7 @@ final class Orders_Tools {
 		$order_id = (int) self::require_arg( $args, 'order_id' );
 		$order    = wc_get_order( $order_id );
 		if ( ! $order ) {
-			throw new Tool_Exception( __( 'Order not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Order not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		Permissions::require_cap( $context, 'edit_shop_order', $order_id );
 
@@ -366,7 +366,7 @@ final class Orders_Tools {
 
 		$note_id = $order->add_order_note( $note, $is_cust, true );
 		if ( ! $note_id ) {
-			throw new Tool_Exception( __( 'Could not add note', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not add note', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => (int) $note_id, 'order_id' => $order_id, 'customer_note' => $is_cust, 'note' => $note ];
 	}

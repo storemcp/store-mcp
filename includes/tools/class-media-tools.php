@@ -152,7 +152,7 @@ final class Media_Tools {
 		$id  = (int) self::require_arg( $args, 'id' );
 		$att = get_post( $id );
 		if ( ! $att || 'attachment' !== $att->post_type ) {
-			throw new Tool_Exception( __( 'Attachment not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Attachment not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		return self::format_attachment( $att );
 	}
@@ -171,11 +171,11 @@ final class Media_Tools {
 		} elseif ( ! empty( $args['file'] ) ) {
 			$filename = self::arg_string( $args, 'filename', '' );
 			if ( '' === $filename ) {
-				throw new Tool_Exception( __( 'filename is required when uploading via base64', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
+				throw new Tool_Exception( esc_html__( 'filename is required when uploading via base64', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
 			}
 			$id = self::sideload_base64( (string) $args['file'], $filename, (int) self::arg_int( $args, 'parent', 0 ) );
 		} else {
-			throw new Tool_Exception( __( 'Provide either url or file (base64).', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Provide either url or file (base64).', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
 		}
 
 		$update = [];
@@ -207,7 +207,7 @@ final class Media_Tools {
 		$id  = (int) self::require_arg( $args, 'id' );
 		$att = get_post( $id );
 		if ( ! $att || 'attachment' !== $att->post_type ) {
-			throw new Tool_Exception( __( 'Attachment not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Attachment not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$update = [ 'ID' => $id ];
@@ -231,7 +231,7 @@ final class Media_Tools {
 		$ok    = wp_delete_attachment( $id, $force );
 
 		if ( ! $ok ) {
-			throw new Tool_Exception( __( 'Could not delete attachment', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not delete attachment', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => $id, 'deleted' => true, 'force' => $force ];
 	}
@@ -239,7 +239,7 @@ final class Media_Tools {
 	private static function sideload_url( string $url, int $parent ): int {
 		$tmp = download_url( $url, 60 );
 		if ( is_wp_error( $tmp ) ) {
-			throw new Tool_Exception( $tmp->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $tmp->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		$file_array = [
 			'name'     => wp_basename( wp_parse_url( $url, PHP_URL_PATH ) ?: 'remote' ),
@@ -247,8 +247,8 @@ final class Media_Tools {
 		];
 		$id = media_handle_sideload( $file_array, $parent );
 		if ( is_wp_error( $id ) ) {
-			@unlink( $tmp );
-			throw new Tool_Exception( $id->get_error_message(), Server::ERR_TOOL_FAILED );
+			wp_delete_file( $tmp );
+			throw new Tool_Exception( esc_html( $id->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		return (int) $id;
 	}
@@ -259,26 +259,26 @@ final class Media_Tools {
 		}
 		$decoded = base64_decode( $base64, true );
 		if ( false === $decoded ) {
-			throw new Tool_Exception( __( 'Invalid base64 payload', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Invalid base64 payload', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
 		}
 
 		$filename = sanitize_file_name( $filename );
 		$check    = wp_check_filetype( $filename );
 		if ( ! $check['type'] ) {
-			throw new Tool_Exception( __( 'Disallowed file type', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Disallowed file type', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
 		}
 
 		$tmp = wp_tempnam( $filename );
 		if ( ! $tmp ) {
-			throw new Tool_Exception( __( 'Could not create temp file', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not create temp file', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		file_put_contents( $tmp, $decoded );
 
 		$file_array = [ 'name' => $filename, 'tmp_name' => $tmp ];
 		$id = media_handle_sideload( $file_array, $parent );
 		if ( is_wp_error( $id ) ) {
-			@unlink( $tmp );
-			throw new Tool_Exception( $id->get_error_message(), Server::ERR_TOOL_FAILED );
+			wp_delete_file( $tmp );
+			throw new Tool_Exception( esc_html( $id->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		return (int) $id;
 	}

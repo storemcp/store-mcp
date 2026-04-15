@@ -54,7 +54,6 @@ final class Plugin {
 			$this->updater->bootstrap();
 		}
 
-		add_action( 'init', [ $this, 'load_textdomain' ] );
 		add_action( 'rest_api_init', [ $this->server, 'register_routes' ] );
 		add_action( 'init', [ $this->tools, 'bootstrap' ], 20 );
 		add_action( 'init', [ $this->resources, 'bootstrap' ], 20 );
@@ -100,10 +99,6 @@ final class Plugin {
 			require_once $updater_file;
 		}
 		require_once $base . 'tools/trait-tool-base.php';
-	}
-
-	public function load_textdomain(): void {
-		load_plugin_textdomain( 'store-mcp', false, dirname( STORE_MCP_BASENAME ) . '/languages' );
 	}
 
 	public static function on_activate(): void {

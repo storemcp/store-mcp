@@ -130,7 +130,7 @@ final class Menus_Tools {
 		$id   = (int) self::require_arg( $args, 'id' );
 		$menu = wp_get_nav_menu_object( $id );
 		if ( ! $menu ) {
-			throw new Tool_Exception( __( 'Menu not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Menu not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$items = wp_get_nav_menu_items( $id, [ 'update_post_term_cache' => false ] ) ?: [];
@@ -154,7 +154,7 @@ final class Menus_Tools {
 
 		$id = wp_update_nav_menu_item( $menu_id, 0, $data );
 		if ( is_wp_error( $id ) ) {
-			throw new Tool_Exception( $id->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $id->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		return self::format_menu_item( get_post( $id ) );
 	}
@@ -167,7 +167,7 @@ final class Menus_Tools {
 
 		$existing = wp_setup_nav_menu_item( get_post( $item_id ) );
 		if ( ! $existing ) {
-			throw new Tool_Exception( __( 'Menu item not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Menu item not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$type = (string) ( $existing->type ?: 'custom' );
@@ -176,7 +176,7 @@ final class Menus_Tools {
 
 		$id = wp_update_nav_menu_item( $menu_id, $item_id, $data );
 		if ( is_wp_error( $id ) ) {
-			throw new Tool_Exception( $id->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $id->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		return self::format_menu_item( get_post( $id ) );
 	}
@@ -187,7 +187,7 @@ final class Menus_Tools {
 		$item_id = (int) self::require_arg( $args, 'item_id' );
 		$ok      = wp_delete_post( $item_id, true );
 		if ( ! $ok ) {
-			throw new Tool_Exception( __( 'Could not delete menu item', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not delete menu item', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'item_id' => $item_id, 'deleted' => true ];
 	}

@@ -143,13 +143,13 @@ final class Tools_Registry {
 
 	public function call( string $name, array $arguments, AuthContext $context ): array {
 		if ( ! isset( $this->tools[ $name ] ) ) {
-			throw new Tool_Exception( sprintf( /* translators: %s: tool name */ __( 'Unknown tool: %s', 'store-mcp' ), $name ), Server::RPC_METHOD_NOT_FOUND );
+			throw new Tool_Exception( esc_html( sprintf( /* translators: %s: tool name */ __( 'Unknown tool: %s', 'store-mcp' ), $name ) ), Server::RPC_METHOD_NOT_FOUND );
 		}
 
 		$tool = $this->tools[ $name ];
 
 		if ( self::TIER_PRO === $tool['_meta']['tier'] && ! $this->license->is_pro() ) {
-			throw new Tool_Exception( __( 'This tool requires StoreMCP Pro', 'store-mcp' ), Server::ERR_LICENSE_REQUIRED );
+			throw new Tool_Exception( esc_html__( 'This tool requires StoreMCP Pro', 'store-mcp' ), Server::ERR_LICENSE_REQUIRED );
 		}
 
 		$handler = $this->handlers[ $name ];

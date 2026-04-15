@@ -165,7 +165,7 @@ final class System_Tools {
 
 		$tool_id = (string) self::require_arg( $args, 'tool_id' );
 		if ( ! in_array( $tool_id, self::TOOLS, true ) ) {
-			throw new Tool_Exception( __( 'Unknown tool id', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Unknown tool id', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
 		}
 
 		return match ( $tool_id ) {
@@ -238,7 +238,7 @@ final class System_Tools {
 			\WC_Install::install();
 			return [ 'tool_id' => 'wc_update', 'completed' => true ];
 		}
-		throw new Tool_Exception( __( 'WC_Install not available', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+		throw new Tool_Exception( esc_html__( 'WC_Install not available', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 	}
 
 	private static function database_tables( $wpdb ): array {

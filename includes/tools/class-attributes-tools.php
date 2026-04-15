@@ -168,7 +168,7 @@ final class Attributes_Tools {
 			'has_archives' => (bool) self::arg_bool( $args, 'has_archives', false ),
 		] );
 		if ( is_wp_error( $id ) ) {
-			throw new Tool_Exception( $id->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $id->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		return self::get_by_id( (int) $id );
 	}
@@ -186,7 +186,7 @@ final class Attributes_Tools {
 
 		$result = wc_update_attribute( $id, $update );
 		if ( is_wp_error( $result ) ) {
-			throw new Tool_Exception( $result->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $result->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		return self::get_by_id( $id );
 	}
@@ -198,7 +198,7 @@ final class Attributes_Tools {
 		$id = (int) self::require_arg( $args, 'id' );
 		$ok = wc_delete_attribute( $id );
 		if ( ! $ok ) {
-			throw new Tool_Exception( __( 'Could not delete attribute', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not delete attribute', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => $id, 'deleted' => true ];
 	}
@@ -221,7 +221,7 @@ final class Attributes_Tools {
 
 		$terms = get_terms( $query_args );
 		if ( is_wp_error( $terms ) ) {
-			throw new Tool_Exception( $terms->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $terms->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		$total = (int) wp_count_terms( array_merge( $query_args, [ 'fields' => 'count' ] ) );
 		$items = array_map( [ self::class, 'format_term' ], $terms );
@@ -240,7 +240,7 @@ final class Attributes_Tools {
 
 		$res = wp_insert_term( (string) self::require_arg( $args, 'name' ), $taxonomy, $opts );
 		if ( is_wp_error( $res ) ) {
-			throw new Tool_Exception( $res->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $res->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		return self::format_term( get_term( (int) $res['term_id'], $taxonomy ) );
 	}
@@ -261,7 +261,7 @@ final class Attributes_Tools {
 		if ( $update ) {
 			$res = wp_update_term( $term_id, $taxonomy, $update );
 			if ( is_wp_error( $res ) ) {
-				throw new Tool_Exception( $res->get_error_message(), Server::ERR_TOOL_FAILED );
+				throw new Tool_Exception( esc_html( $res->get_error_message() ), Server::ERR_TOOL_FAILED );
 			}
 		}
 		return self::format_term( get_term( $term_id, $taxonomy ) );
@@ -278,7 +278,7 @@ final class Attributes_Tools {
 		$ok = wp_delete_term( $term_id, $taxonomy );
 		if ( ! $ok || is_wp_error( $ok ) ) {
 			$msg = is_wp_error( $ok ) ? $ok->get_error_message() : __( 'Could not delete term', 'store-mcp' );
-			throw new Tool_Exception( $msg, Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $msg ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'attribute_id' => $attr_id, 'term_id' => $term_id, 'deleted' => true ];
 	}
@@ -290,13 +290,13 @@ final class Attributes_Tools {
 				return self::format_attribute( $a );
 			}
 		}
-		throw new Tool_Exception( __( 'Attribute not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+		throw new Tool_Exception( esc_html__( 'Attribute not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 	}
 
 	private static function get_taxonomy_from_id( int $id ): string {
 		$slug = wc_attribute_taxonomy_name_by_id( $id );
 		if ( ! $slug ) {
-			throw new Tool_Exception( __( 'Attribute not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Attribute not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		return $slug;
 	}

@@ -309,10 +309,10 @@ final class Server {
 		$arguments = $params['arguments'] ?? [];
 
 		if ( '' === $name ) {
-			throw new Tool_Exception( __( 'Missing tool name', 'store-mcp' ), self::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Missing tool name', 'store-mcp' ), self::RPC_INVALID_PARAMS );
 		}
 		if ( ! is_array( $arguments ) ) {
-			throw new Tool_Exception( __( 'Arguments must be an object', 'store-mcp' ), self::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Arguments must be an object', 'store-mcp' ), self::RPC_INVALID_PARAMS );
 		}
 
 		return $this->tools->call( $name, $arguments, $context );
@@ -325,7 +325,7 @@ final class Server {
 	private function method_resources_read( array $params, AuthContext $context ): array {
 		$uri = isset( $params['uri'] ) ? (string) $params['uri'] : '';
 		if ( '' === $uri ) {
-			throw new Tool_Exception( __( 'Missing resource uri', 'store-mcp' ), self::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Missing resource uri', 'store-mcp' ), self::RPC_INVALID_PARAMS );
 		}
 		return $this->resources->read( $uri, $context );
 	}

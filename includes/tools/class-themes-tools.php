@@ -79,10 +79,10 @@ final class Themes_Tools {
 		$slug = sanitize_key( (string) self::require_arg( $args, 'stylesheet' ) );
 		$theme = wp_get_theme( $slug );
 		if ( ! $theme->exists() ) {
-			throw new Tool_Exception( __( 'Theme not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Theme not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		if ( method_exists( $theme, 'errors' ) && $theme->errors() ) {
-			throw new Tool_Exception( __( 'Theme has errors and cannot be activated', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Theme has errors and cannot be activated', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 
 		switch_theme( $slug );

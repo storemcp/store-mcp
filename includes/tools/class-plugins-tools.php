@@ -118,7 +118,7 @@ final class Plugins_Tools {
 
 		$result = activate_plugin( $plugin, '', $network_wide && is_multisite(), true );
 		if ( is_wp_error( $result ) ) {
-			throw new Tool_Exception( $result->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $result->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 
 		return [ 'plugin' => $plugin, 'active' => true ];
@@ -131,7 +131,7 @@ final class Plugins_Tools {
 		$plugin = self::validate_plugin_path( (string) self::require_arg( $args, 'plugin' ) );
 
 		if ( $plugin === STORE_MCP_BASENAME ) {
-			throw new Tool_Exception( __( 'Cannot deactivate StoreMCP via its own API.', 'store-mcp' ), Server::ERR_FORBIDDEN );
+			throw new Tool_Exception( esc_html__( 'Cannot deactivate StoreMCP via its own API.', 'store-mcp' ), Server::ERR_FORBIDDEN );
 		}
 
 		if ( ! is_plugin_active( $plugin ) ) {
@@ -153,11 +153,11 @@ final class Plugins_Tools {
 	private static function validate_plugin_path( string $plugin ): string {
 		$plugin = plugin_basename( trim( $plugin ) );
 		if ( '' === $plugin || str_contains( $plugin, '..' ) ) {
-			throw new Tool_Exception( __( 'Invalid plugin path', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Invalid plugin path', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
 		}
 		$plugins = get_plugins();
 		if ( ! isset( $plugins[ $plugin ] ) ) {
-			throw new Tool_Exception( __( 'Plugin not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Plugin not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		return $plugin;
 	}

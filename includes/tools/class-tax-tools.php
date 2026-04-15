@@ -130,7 +130,7 @@ final class Tax_Tools {
 		$id   = \WC_Tax::_insert_tax_rate( $data );
 
 		if ( ! $id ) {
-			throw new Tool_Exception( __( 'Could not create tax rate', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not create tax rate', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		self::apply_locations( (int) $id, $args );
 		return self::get_rate_by_id( (int) $id );
@@ -196,7 +196,7 @@ final class Tax_Tools {
 	private static function get_rate_by_id( int $id ): array {
 		$rate = \WC_Tax::_get_tax_rate( $id, OBJECT );
 		if ( ! $rate ) {
-			throw new Tool_Exception( __( 'Tax rate not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Tax rate not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		return self::format_rate( $rate );
 	}

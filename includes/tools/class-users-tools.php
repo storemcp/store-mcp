@@ -134,7 +134,7 @@ final class Users_Tools {
 
 		$user = get_userdata( $id );
 		if ( ! $user ) {
-			throw new Tool_Exception( __( 'User not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'User not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		return self::format_user( $user, true );
 	}
@@ -146,7 +146,7 @@ final class Users_Tools {
 		$email    = sanitize_email( (string) self::require_arg( $args, 'email' ) );
 
 		if ( '' === $username || ! is_email( $email ) ) {
-			throw new Tool_Exception( __( 'Invalid username or email', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Invalid username or email', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
 		}
 
 		$password = self::arg_string( $args, 'password', '' );
@@ -156,7 +156,7 @@ final class Users_Tools {
 
 		$id = wp_create_user( $username, $password, $email );
 		if ( is_wp_error( $id ) ) {
-			throw new Tool_Exception( $id->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $id->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 
 		$extra = [ 'ID' => $id ];
@@ -186,7 +186,7 @@ final class Users_Tools {
 
 		$result = wp_update_user( $data );
 		if ( is_wp_error( $result ) ) {
-			throw new Tool_Exception( $result->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $result->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 
 		return self::format_user( get_userdata( $id ), true );
@@ -197,7 +197,7 @@ final class Users_Tools {
 		Permissions::require_cap( $context, 'delete_users' );
 
 		if ( $id === $context->user_id ) {
-			throw new Tool_Exception( __( 'Cannot delete yourself', 'store-mcp' ), Server::ERR_FORBIDDEN );
+			throw new Tool_Exception( esc_html__( 'Cannot delete yourself', 'store-mcp' ), Server::ERR_FORBIDDEN );
 		}
 
 		require_once ABSPATH . 'wp-admin/includes/user.php';
@@ -208,7 +208,7 @@ final class Users_Tools {
 			: wp_delete_user( $id, $reassign ?: null );
 
 		if ( ! $ok ) {
-			throw new Tool_Exception( __( 'Could not delete user', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not delete user', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => $id, 'deleted' => true, 'reassign' => $reassign ];
 	}

@@ -136,7 +136,7 @@ final class Categories_Tools {
 
 		$terms = get_terms( $query_args );
 		if ( is_wp_error( $terms ) ) {
-			throw new Tool_Exception( $terms->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $terms->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		$total = (int) wp_count_terms( array_merge( $query_args, [ 'fields' => 'count' ] ) );
 
@@ -150,7 +150,7 @@ final class Categories_Tools {
 		$id   = (int) self::require_arg( $args, 'id' );
 		$term = get_term( $id, 'product_cat' );
 		if ( ! $term || is_wp_error( $term ) ) {
-			throw new Tool_Exception( __( 'Category not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Category not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		return self::format_category( $term );
 	}
@@ -166,7 +166,7 @@ final class Categories_Tools {
 
 		$result = wp_insert_term( (string) self::require_arg( $args, 'name' ), 'product_cat', $opts );
 		if ( is_wp_error( $result ) ) {
-			throw new Tool_Exception( $result->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $result->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 
 		if ( ! empty( $args['image'] ) ) {
@@ -190,7 +190,7 @@ final class Categories_Tools {
 		if ( $update ) {
 			$result = wp_update_term( $id, 'product_cat', $update );
 			if ( is_wp_error( $result ) ) {
-				throw new Tool_Exception( $result->get_error_message(), Server::ERR_TOOL_FAILED );
+				throw new Tool_Exception( esc_html( $result->get_error_message() ), Server::ERR_TOOL_FAILED );
 			}
 		}
 
@@ -209,7 +209,7 @@ final class Categories_Tools {
 		$ok = wp_delete_term( $id, 'product_cat' );
 		if ( ! $ok || is_wp_error( $ok ) ) {
 			$msg = is_wp_error( $ok ) ? $ok->get_error_message() : __( 'Could not delete category', 'store-mcp' );
-			throw new Tool_Exception( $msg, Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $msg ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => $id, 'deleted' => true ];
 	}
@@ -230,7 +230,7 @@ final class Categories_Tools {
 				if ( ! is_wp_error( $id ) ) {
 					$attachment_id = (int) $id;
 				} else {
-					@unlink( $tmp );
+					wp_delete_file( $tmp );
 				}
 			}
 		}

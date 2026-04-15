@@ -139,7 +139,7 @@ final class Variations_Tools {
 		$product_id = (int) self::require_arg( $args, 'product_id' );
 		$product    = wc_get_product( $product_id );
 		if ( ! $product || ! $product->is_type( 'variable' ) ) {
-			throw new Tool_Exception( __( 'Variable product not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Variable product not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$pagination = self::pagination( $args, 50 );
@@ -164,7 +164,7 @@ final class Variations_Tools {
 		$vid       = (int) self::require_arg( $args, 'variation_id' );
 		$variation = wc_get_product( $vid );
 		if ( ! $variation instanceof \WC_Product_Variation ) {
-			throw new Tool_Exception( __( 'Variation not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Variation not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		return self::format_variation( $variation );
 	}
@@ -176,7 +176,7 @@ final class Variations_Tools {
 		$product_id = (int) self::require_arg( $args, 'product_id' );
 		$product    = wc_get_product( $product_id );
 		if ( ! $product || ! $product->is_type( 'variable' ) ) {
-			throw new Tool_Exception( __( 'Variable product not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Variable product not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$variation = new \WC_Product_Variation();
@@ -194,7 +194,7 @@ final class Variations_Tools {
 		$vid       = (int) self::require_arg( $args, 'variation_id' );
 		$variation = wc_get_product( $vid );
 		if ( ! $variation instanceof \WC_Product_Variation ) {
-			throw new Tool_Exception( __( 'Variation not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Variation not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		self::apply_variation_data( $variation, $args );
 		$variation->save();
@@ -209,12 +209,12 @@ final class Variations_Tools {
 		$vid       = (int) self::require_arg( $args, 'variation_id' );
 		$variation = wc_get_product( $vid );
 		if ( ! $variation instanceof \WC_Product_Variation ) {
-			throw new Tool_Exception( __( 'Variation not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Variation not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		$force = (bool) self::arg_bool( $args, 'force', true );
 		$ok    = $variation->delete( $force );
 		if ( ! $ok ) {
-			throw new Tool_Exception( __( 'Could not delete variation', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not delete variation', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => $vid, 'deleted' => true ];
 	}
@@ -265,7 +265,7 @@ final class Variations_Tools {
 					if ( ! is_wp_error( $id ) ) {
 						$attachment_id = (int) $id;
 					} else {
-						@unlink( $tmp );
+						wp_delete_file( $tmp );
 					}
 				}
 			}

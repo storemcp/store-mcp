@@ -28,20 +28,20 @@ final class Rate_Limiter {
 		$window  = (int) ( time() / self::WINDOW_SECONDS ) * self::WINDOW_SECONDS;
 		$table   = $wpdb->prefix . 'storemcp_rate_limits';
 
-		$sql = $wpdb->prepare(
+		// phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,PluginCheck.Security.DirectDB.UnescapedDBParameter -- Custom plugin table; $table is the wpdb prefix + literal name; values are bound through prepare().
+		$wpdb->query( $wpdb->prepare(
 			"INSERT INTO {$table} (bucket, window_start, counter) VALUES (%s, %d, 1)
 			 ON DUPLICATE KEY UPDATE counter = counter + 1",
 			$bucket,
 			$window
-		);
-
-		$wpdb->query( $sql );
+		) );
 
 		$current = (int) $wpdb->get_var( $wpdb->prepare(
 			"SELECT counter FROM {$table} WHERE bucket = %s AND window_start = %d",
 			$bucket,
 			$window
 		) );
+		// phpcs:enable
 
 		if ( $current > $limit ) {
 			$retry_after = self::WINDOW_SECONDS - ( time() - $window );
@@ -56,6 +56,7 @@ final class Rate_Limiter {
 		}
 
 		if ( wp_rand( 1, 100 ) === 1 ) {
+			// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,PluginCheck.Security.DirectDB.UnescapedDBParameter -- Custom plugin table prefixed by wpdb; $window bound via prepare().
 			$wpdb->query( $wpdb->prepare(
 				"DELETE FROM {$table} WHERE window_start < %d",
 				$window - ( self::WINDOW_SECONDS * 5 )

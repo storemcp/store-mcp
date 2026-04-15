@@ -131,7 +131,7 @@ final class Settings_Tools {
 		$value = self::arg( $args, 'value' );
 
 		if ( ! self::is_allowed_option( $id ) || self::is_sensitive( $id ) ) {
-			throw new Tool_Exception( __( 'Option not writable via MCP', 'store-mcp' ), Server::ERR_FORBIDDEN );
+			throw new Tool_Exception( esc_html__( 'Option not writable via MCP', 'store-mcp' ), Server::ERR_FORBIDDEN );
 		}
 
 		update_option( $id, $value );
@@ -164,7 +164,7 @@ final class Settings_Tools {
 		$id       = sanitize_key( (string) self::require_arg( $args, 'id' ) );
 		$gateways = \WC()->payment_gateways()->payment_gateways();
 		if ( ! isset( $gateways[ $id ] ) ) {
-			throw new Tool_Exception( __( 'Gateway not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Gateway not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		$gateway      = $gateways[ $id ];
 		$option_key   = 'woocommerce_' . $id . '_settings';

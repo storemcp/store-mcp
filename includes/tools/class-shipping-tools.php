@@ -166,7 +166,7 @@ final class Shipping_Tools {
 		$id   = (int) self::require_arg( $args, 'id' );
 		$zone = \WC_Shipping_Zones::get_zone( $id );
 		if ( ! $zone && 0 !== $id ) {
-			throw new Tool_Exception( __( 'Zone not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Zone not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		if ( 0 === $id && ! $zone ) {
 			$zone = new \WC_Shipping_Zone( 0 );
@@ -196,7 +196,7 @@ final class Shipping_Tools {
 		$id   = (int) self::require_arg( $args, 'id' );
 		$zone = \WC_Shipping_Zones::get_zone( $id );
 		if ( ! $zone ) {
-			throw new Tool_Exception( __( 'Zone not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Zone not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		if ( array_key_exists( 'name', $args ) )  $zone->set_zone_name( sanitize_text_field( (string) $args['name'] ) );
 		if ( array_key_exists( 'order', $args ) ) $zone->set_zone_order( (int) $args['order'] );
@@ -213,11 +213,11 @@ final class Shipping_Tools {
 
 		$id = (int) self::require_arg( $args, 'id' );
 		if ( 0 === $id ) {
-			throw new Tool_Exception( __( 'The default zone cannot be deleted', 'store-mcp' ), Server::ERR_FORBIDDEN );
+			throw new Tool_Exception( esc_html__( 'The default zone cannot be deleted', 'store-mcp' ), Server::ERR_FORBIDDEN );
 		}
 		$zone = \WC_Shipping_Zones::get_zone( $id );
 		if ( ! $zone ) {
-			throw new Tool_Exception( __( 'Zone not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Zone not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		$zone->delete();
 		return [ 'id' => $id, 'deleted' => true ];
@@ -230,7 +230,7 @@ final class Shipping_Tools {
 		$zone_id = (int) self::require_arg( $args, 'zone_id' );
 		$zone    = \WC_Shipping_Zones::get_zone( $zone_id );
 		if ( ! $zone && 0 !== $zone_id ) {
-			throw new Tool_Exception( __( 'Zone not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Zone not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		if ( 0 === $zone_id && ! $zone ) {
 			$zone = new \WC_Shipping_Zone( 0 );
@@ -247,7 +247,7 @@ final class Shipping_Tools {
 		$method_id = sanitize_key( (string) self::require_arg( $args, 'method_id' ) );
 		$zone      = \WC_Shipping_Zones::get_zone( $zone_id );
 		if ( ! $zone && 0 !== $zone_id ) {
-			throw new Tool_Exception( __( 'Zone not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Zone not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		if ( 0 === $zone_id && ! $zone ) {
 			$zone = new \WC_Shipping_Zone( 0 );
@@ -255,7 +255,7 @@ final class Shipping_Tools {
 
 		$instance_id = $zone->add_shipping_method( $method_id );
 		if ( ! $instance_id ) {
-			throw new Tool_Exception( __( 'Could not create method', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not create method', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 
 		$settings = self::arg_array( $args, 'settings', [] );

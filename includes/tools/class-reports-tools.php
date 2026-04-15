@@ -490,7 +490,7 @@ final class Reports_Tools {
 	private static function sanitize_date( string $date ): string {
 		$ts = strtotime( $date );
 		if ( ! $ts ) {
-			throw new Tool_Exception( __( 'Invalid date', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Invalid date', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
 		}
 		return gmdate( 'Y-m-d', $ts );
 	}

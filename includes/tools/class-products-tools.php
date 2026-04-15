@@ -261,7 +261,7 @@ final class Products_Tools {
 		$id      = (int) self::require_arg( $args, 'id' );
 		$product = wc_get_product( $id );
 		if ( ! $product ) {
-			throw new Tool_Exception( __( 'Product not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Product not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		return self::format_product( $product, true );
 	}
@@ -292,7 +292,7 @@ final class Products_Tools {
 
 		$product = wc_get_product( $id );
 		if ( ! $product ) {
-			throw new Tool_Exception( __( 'Product not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Product not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		self::apply_product_data( $product, $args );
@@ -309,13 +309,13 @@ final class Products_Tools {
 
 		$product = wc_get_product( $id );
 		if ( ! $product ) {
-			throw new Tool_Exception( __( 'Product not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Product not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$force = (bool) self::arg_bool( $args, 'force', false );
 		$ok    = $product->delete( $force );
 		if ( ! $ok ) {
-			throw new Tool_Exception( __( 'Could not delete product', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not delete product', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => $id, 'deleted' => true, 'force' => $force ];
 	}
@@ -326,7 +326,7 @@ final class Products_Tools {
 
 		$updates = self::arg_array( $args, 'updates', [] );
 		if ( count( $updates ) > 50 ) {
-			throw new Tool_Exception( __( 'Bulk update limited to 50 products per call', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
+			throw new Tool_Exception( esc_html__( 'Bulk update limited to 50 products per call', 'store-mcp' ), Server::RPC_INVALID_PARAMS );
 		}
 
 		$results = [];
@@ -452,7 +452,7 @@ final class Products_Tools {
 		$file_array = [ 'name' => wp_basename( wp_parse_url( $url, PHP_URL_PATH ) ?: 'image' ), 'tmp_name' => $tmp ];
 		$id         = media_handle_sideload( $file_array, $parent );
 		if ( is_wp_error( $id ) ) {
-			@unlink( $tmp );
+			wp_delete_file( $tmp );
 			return 0;
 		}
 		return (int) $id;

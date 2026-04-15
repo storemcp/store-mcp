@@ -21,7 +21,7 @@ trait Tool_Base {
 	protected static function require_arg( array $args, string $key ) {
 		if ( ! array_key_exists( $key, $args ) || '' === $args[ $key ] || null === $args[ $key ] ) {
 			throw new Tool_Exception(
-				sprintf( /* translators: %s: argument name */ __( 'Missing required argument: %s', 'store-mcp' ), $key ),
+				esc_html( sprintf( /* translators: %s: argument name */ __( 'Missing required argument: %s', 'store-mcp' ), $key ) ),
 				Server::RPC_INVALID_PARAMS
 			);
 		}
@@ -78,7 +78,7 @@ trait Tool_Base {
 		$value = (string) $value;
 		if ( ! in_array( $value, $allowed, true ) ) {
 			throw new Tool_Exception(
-				sprintf( /* translators: 1: argument name, 2: allowed values */ __( 'Invalid value for %1$s. Allowed: %2$s', 'store-mcp' ), $key, implode( ', ', $allowed ) ),
+				esc_html( sprintf( /* translators: 1: argument name, 2: allowed values */ __( 'Invalid value for %1$s. Allowed: %2$s', 'store-mcp' ), $key, implode( ', ', $allowed ) ) ),
 				Server::RPC_INVALID_PARAMS
 			);
 		}

@@ -143,7 +143,7 @@ final class Coupons_Tools {
 		$id     = (int) self::require_arg( $args, 'id' );
 		$coupon = new \WC_Coupon( $id );
 		if ( ! $coupon->get_id() ) {
-			throw new Tool_Exception( __( 'Coupon not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Coupon not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		return self::format_coupon( $coupon );
 	}
@@ -154,7 +154,7 @@ final class Coupons_Tools {
 
 		$code = sanitize_text_field( (string) self::require_arg( $args, 'code' ) );
 		if ( wc_get_coupon_id_by_code( $code ) ) {
-			throw new Tool_Exception( __( 'Coupon code already exists', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Coupon code already exists', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 
 		$coupon = new \WC_Coupon();
@@ -172,7 +172,7 @@ final class Coupons_Tools {
 		$id     = (int) self::require_arg( $args, 'id' );
 		$coupon = new \WC_Coupon( $id );
 		if ( ! $coupon->get_id() ) {
-			throw new Tool_Exception( __( 'Coupon not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Coupon not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 		if ( array_key_exists( 'code', $args ) ) {
 			$coupon->set_code( sanitize_text_field( (string) $args['code'] ) );
@@ -191,7 +191,7 @@ final class Coupons_Tools {
 		$force = (bool) self::arg_bool( $args, 'force', true );
 		$ok    = wp_delete_post( $id, $force );
 		if ( ! $ok ) {
-			throw new Tool_Exception( __( 'Could not delete coupon', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not delete coupon', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => $id, 'deleted' => true, 'force' => $force ];
 	}

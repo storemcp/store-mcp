@@ -252,7 +252,7 @@ final class Posts_Tools {
 		$id   = (int) self::require_arg( $args, 'id' );
 		$post = get_post( $id );
 		if ( ! $post || 'post' !== $post->post_type ) {
-			throw new Tool_Exception( __( 'Post not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Post not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$data = self::format_post( $post, true );
@@ -296,7 +296,7 @@ final class Posts_Tools {
 
 		$id = wp_insert_post( wp_slash( $post_data ), true );
 		if ( is_wp_error( $id ) ) {
-			throw new Tool_Exception( $id->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $id->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 
 		self::apply_post_taxonomies( $id, $args );
@@ -311,7 +311,7 @@ final class Posts_Tools {
 
 		$post = get_post( $id );
 		if ( ! $post || 'post' !== $post->post_type ) {
-			throw new Tool_Exception( __( 'Post not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Post not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$update = [ 'ID' => $id ];
@@ -325,7 +325,7 @@ final class Posts_Tools {
 
 		$result = wp_update_post( wp_slash( $update ), true );
 		if ( is_wp_error( $result ) ) {
-			throw new Tool_Exception( $result->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $result->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 
 		self::apply_post_taxonomies( $id, $args );
@@ -342,7 +342,7 @@ final class Posts_Tools {
 		$ok    = wp_delete_post( $id, $force );
 
 		if ( ! $ok ) {
-			throw new Tool_Exception( __( 'Could not delete post', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not delete post', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => $id, 'deleted' => true, 'force' => $force ];
 	}
@@ -383,7 +383,7 @@ final class Posts_Tools {
 
 		$terms = get_terms( $query_args );
 		if ( is_wp_error( $terms ) ) {
-			throw new Tool_Exception( $terms->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $terms->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		$total = (int) wp_count_terms( array_merge( $query_args, [ 'fields' => 'count' ] ) );
 
@@ -400,7 +400,7 @@ final class Posts_Tools {
 
 		$result = wp_insert_term( $name, $taxonomy, $opts );
 		if ( is_wp_error( $result ) ) {
-			throw new Tool_Exception( $result->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $result->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		$term = get_term( (int) $result['term_id'], $taxonomy );
 		return self::format_term( $term );

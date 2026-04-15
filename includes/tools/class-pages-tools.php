@@ -157,7 +157,7 @@ final class Pages_Tools {
 		$id   = (int) self::require_arg( $args, 'id' );
 		$post = get_post( $id );
 		if ( ! $post || 'page' !== $post->post_type ) {
-			throw new Tool_Exception( __( 'Page not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Page not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$data = self::format_post( $post, true );
@@ -199,7 +199,7 @@ final class Pages_Tools {
 
 		$id = wp_insert_post( wp_slash( $post_data ), true );
 		if ( is_wp_error( $id ) ) {
-			throw new Tool_Exception( $id->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $id->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 
 		self::apply_optional_meta( $id, $args );
@@ -213,7 +213,7 @@ final class Pages_Tools {
 
 		$post = get_post( $id );
 		if ( ! $post || 'page' !== $post->post_type ) {
-			throw new Tool_Exception( __( 'Page not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html__( 'Page not found', 'store-mcp' ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$update = [ 'ID' => $id ];
@@ -229,7 +229,7 @@ final class Pages_Tools {
 
 		$result = wp_update_post( wp_slash( $update ), true );
 		if ( is_wp_error( $result ) ) {
-			throw new Tool_Exception( $result->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $result->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 
 		self::apply_optional_meta( $id, $args );
@@ -245,7 +245,7 @@ final class Pages_Tools {
 		$result = wp_delete_post( $id, $force );
 
 		if ( ! $result ) {
-			throw new Tool_Exception( __( 'Could not delete page', 'store-mcp' ), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html__( 'Could not delete page', 'store-mcp' ), Server::ERR_TOOL_FAILED );
 		}
 
 		return [ 'id' => $id, 'deleted' => true, 'force' => $force ];

@@ -99,7 +99,7 @@ final class Tags_Tools {
 
 		$terms = get_terms( $query_args );
 		if ( is_wp_error( $terms ) ) {
-			throw new Tool_Exception( $terms->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $terms->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		$total = (int) wp_count_terms( array_merge( $query_args, [ 'fields' => 'count' ] ) );
 
@@ -117,7 +117,7 @@ final class Tags_Tools {
 
 		$result = wp_insert_term( (string) self::require_arg( $args, 'name' ), 'product_tag', $opts );
 		if ( is_wp_error( $result ) ) {
-			throw new Tool_Exception( $result->get_error_message(), Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $result->get_error_message() ), Server::ERR_TOOL_FAILED );
 		}
 		return self::format_term( get_term( (int) $result['term_id'], 'product_tag' ) );
 	}
@@ -135,7 +135,7 @@ final class Tags_Tools {
 		if ( $update ) {
 			$result = wp_update_term( $id, 'product_tag', $update );
 			if ( is_wp_error( $result ) ) {
-				throw new Tool_Exception( $result->get_error_message(), Server::ERR_TOOL_FAILED );
+				throw new Tool_Exception( esc_html( $result->get_error_message() ), Server::ERR_TOOL_FAILED );
 			}
 		}
 		return self::format_term( get_term( $id, 'product_tag' ) );
@@ -149,7 +149,7 @@ final class Tags_Tools {
 		$ok = wp_delete_term( $id, 'product_tag' );
 		if ( ! $ok || is_wp_error( $ok ) ) {
 			$msg = is_wp_error( $ok ) ? $ok->get_error_message() : __( 'Could not delete tag', 'store-mcp' );
-			throw new Tool_Exception( $msg, Server::ERR_TOOL_FAILED );
+			throw new Tool_Exception( esc_html( $msg ), Server::ERR_TOOL_FAILED );
 		}
 		return [ 'id' => $id, 'deleted' => true ];
 	}

@@ -75,12 +75,12 @@ final class Resources_Registry {
 
 	public function read( string $uri, AuthContext $context ): array {
 		if ( ! isset( $this->readers[ $uri ] ) ) {
-			throw new Tool_Exception( sprintf( /* translators: %s: resource uri */ __( 'Unknown resource: %s', 'store-mcp' ), $uri ), Server::ERR_RESOURCE_NOT_FOUND );
+			throw new Tool_Exception( esc_html( sprintf( /* translators: %s: resource uri */ __( 'Unknown resource: %s', 'store-mcp' ), $uri ) ), Server::ERR_RESOURCE_NOT_FOUND );
 		}
 
 		$resource = $this->resources[ $uri ];
 		if ( Tools_Registry::TIER_PRO === $resource['_meta']['tier'] && ! $this->license->is_pro() ) {
-			throw new Tool_Exception( __( 'This resource requires StoreMCP Pro', 'store-mcp' ), Server::ERR_LICENSE_REQUIRED );
+			throw new Tool_Exception( esc_html__( 'This resource requires StoreMCP Pro', 'store-mcp' ), Server::ERR_LICENSE_REQUIRED );
 		}
 
 		$data = call_user_func( $this->readers[ $uri ], $context );

@@ -11,6 +11,12 @@ defined( 'ABSPATH' ) || exit;
 
 final class Activity_Log {
 
+	/**
+	 * Append-only audit insert. Uses $wpdb->insert() with a fully bound payload
+	 * (no untrusted SQL) and is intentionally uncached: every call must persist.
+	 *
+	 * @param array $entry
+	 */
 	public function record( array $entry ): void {
 		global $wpdb;
 
@@ -36,6 +42,7 @@ final class Activity_Log {
 			$params_json = (string) $encoded;
 		}
 
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching -- Custom plugin table; audit logs intentionally bypass cache.
 		$wpdb->insert(
 			$wpdb->prefix . 'storemcp_activity',
 			[
@@ -101,16 +108,17 @@ final class Activity_Log {
 
 		$table = $wpdb->prefix . 'storemcp_activity';
 
-		$total = (int) $wpdb->get_var( $prep
-			? $wpdb->prepare( "SELECT COUNT(*) FROM {$table} WHERE {$where_sql}", ...$prep )
-			: "SELECT COUNT(*) FROM {$table} WHERE {$where_sql}"
+		// phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.PreparedSQLPlaceholders.ReplacementsWrongNumber,WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare,WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,PluginCheck.Security.DirectDB.UnescapedDBParameter -- Custom plugin table; $where_sql is composed only of literal SQL fragments with %s/%d placeholders bound through prepare().
+		$count_sql = "SELECT COUNT(*) FROM {$table} WHERE {$where_sql}";
+		$total     = (int) ( $prep
+			? $wpdb->get_var( $wpdb->prepare( $count_sql, ...$prep ) )
+			: $wpdb->get_var( $count_sql )
 		);
 
+		$select_sql       = "SELECT * FROM {$table} WHERE {$where_sql} ORDER BY id DESC LIMIT %d OFFSET %d";
 		$prep_with_paging = array_merge( $prep, [ $per_page, $offset ] );
-		$rows = $wpdb->get_results( $wpdb->prepare(
-			"SELECT * FROM {$table} WHERE {$where_sql} ORDER BY id DESC LIMIT %d OFFSET %d",
-			...$prep_with_paging
-		) );
+		$rows = $wpdb->get_results( $wpdb->prepare( $select_sql, ...$prep_with_paging ) );
+		// phpcs:enable
 
 		return [
 			'rows'     => $rows ?: [],
@@ -126,8 +134,9 @@ final class Activity_Log {
 		$table = $wpdb->prefix . 'storemcp_activity';
 		$today = current_time( 'Y-m-d' );
 
-		return [
-			'today'      => (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$table} WHERE created_at >= %s", $today . ' 00:00:00' ) ),
+		// phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,PluginCheck.Security.DirectDB.UnescapedDBParameter -- Custom plugin table; only literal SQL + bound placeholders.
+		$stats = [
+			'today'        => (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$table} WHERE created_at >= %s", $today . ' 00:00:00' ) ),
 			'last_7_days'  => (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$table} WHERE created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY)" ),
 			'last_30_days' => (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$table} WHERE created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)" ),
 			'errors_today' => (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$table} WHERE created_at >= %s AND status = 'error'", $today . ' 00:00:00' ) ),
@@ -136,28 +145,28 @@ final class Activity_Log {
 				ARRAY_A
 			) ?: [],
 		];
+		// phpcs:enable
+
+		return $stats;
 	}
 
 	public function prune( int $days ): int {
 		global $wpdb;
-		$days = max( 1, $days );
-		return (int) $wpdb->query( $wpdb->prepare(
-			"DELETE FROM {$wpdb->prefix}storemcp_activity WHERE created_at < DATE_SUB(NOW(), INTERVAL %d DAY)",
-			$days
-		) );
+		$days  = max( 1, $days );
+		$table = $wpdb->prefix . 'storemcp_activity';
+
+		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,PluginCheck.Security.DirectDB.UnescapedDBParameter -- Custom plugin table; $days bound via prepare().
+		return (int) $wpdb->query( $wpdb->prepare( "DELETE FROM {$table} WHERE created_at < DATE_SUB(NOW(), INTERVAL %d DAY)", $days ) );
 	}
 
 	public function export_csv( array $args = [] ): string {
 		$args['per_page'] = 10000;
 		$res              = $this->query( $args );
 
-		$fh = fopen( 'php://temp', 'w+' );
-		if ( false === $fh ) {
-			return '';
-		}
-		fputcsv( $fh, [ 'id', 'created_at', 'ip', 'user_id', 'key_id', 'method', 'tool_name', 'status', 'http_code', 'duration_ms', 'error_message', 'params' ] );
+		$lines   = [];
+		$lines[] = self::csv_line( [ 'id', 'created_at', 'ip', 'user_id', 'key_id', 'method', 'tool_name', 'status', 'http_code', 'duration_ms', 'error_message', 'params' ] );
 		foreach ( $res['rows'] as $row ) {
-			fputcsv( $fh, [
+			$lines[] = self::csv_line( [
 				$row->id,
 				$row->created_at,
 				$row->ip,
@@ -172,10 +181,19 @@ final class Activity_Log {
 				$row->params,
 			] );
 		}
-		rewind( $fh );
-		$csv = stream_get_contents( $fh );
-		fclose( $fh );
-		return (string) $csv;
+		return implode( "\n", $lines ) . "\n";
+	}
+
+	private static function csv_line( array $fields ): string {
+		$out = [];
+		foreach ( $fields as $field ) {
+			$value = (string) $field;
+			if ( false !== strpbrk( $value, ",\"\n\r" ) ) {
+				$value = '"' . str_replace( '"', '""', $value ) . '"';
+			}
+			$out[] = $value;
+		}
+		return implode( ',', $out );
 	}
 
 	private function redact( $value ) {
