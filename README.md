@@ -1,4 +1,4 @@
-# StoreMCP — AI Control Center for WordPress & WooCommerce
+# StoreMCP — AI Control Center
 
 [![License: GPL v2+](https://img.shields.io/badge/License-GPLv2%2B-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![WordPress tested](https://img.shields.io/badge/WordPress-6.4%2B-21759b.svg)](https://wordpress.org/)

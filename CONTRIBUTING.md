@@ -45,8 +45,20 @@ curl -s https://<your-site>/wp-json/store-mcp/v1/info | jq .
 
 ## Coding style
 
-StoreMCP follows the
-[WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/).
+StoreMCP broadly follows the
+[WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/),
+with a few pragmatic relaxations for a PHP 8+, namespaced codebase:
+
+- Short array syntax `[]` is preferred over `array()`.
+- Not every private helper needs a docblock — reserve them for public API.
+- Interior multi-line function call alignment is up to you.
+
+The security- and correctness-relevant sniffs (escaping, `$wpdb->prepare`,
+capability checks, i18n text domain, global-prefix discipline) are all
+enforced in the ruleset at [phpcs.xml.dist](./phpcs.xml.dist).
+
+PHPCS is **optional** and **not part of CI** — run it locally if you want.
+CI only enforces PHP syntax (`php -l`) across PHP 8.0 / 8.1 / 8.2 / 8.3.
 
 Install PHPCS with the WPCS ruleset:
 

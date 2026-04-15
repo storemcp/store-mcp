@@ -2,11 +2,16 @@
 #
 # build-zip.sh — packages StoreMCP into a distributable zip.
 #
-# Outputs: dist/store-mcp-<version>.zip
-# The zip contains a single top-level `store-mcp/` folder, which is required
-# by both wordpress.org SVN and WordPress's "Upload plugin" installer.
+# Usage:
+#   build-zip.sh            → full build (self-hosted, with updater)
+#   build-zip.sh --wporg    → wordpress.org build (WITHOUT updater; wp.org
+#                             forbids plugin-bundled update mechanisms).
 #
-# Excludes: VCS, OS junk, dev files, build artifacts, the dist folder itself.
+# Outputs:
+#   dist/store-mcp-<version>.zip         (full)
+#   dist/store-mcp-<version>-wporg.zip   (wordpress.org)
+#
+# Both zips contain a single top-level `store-mcp/` folder.
 
 set -euo pipefail
 
@@ -14,6 +19,13 @@ PLUGIN_SLUG="store-mcp"
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIST_DIR="${ROOT_DIR}/dist"
 STAGE_DIR="${DIST_DIR}/${PLUGIN_SLUG}"
+
+VARIANT="full"
+SUFFIX=""
+if [[ "${1:-}" == "--wporg" ]]; then
+  VARIANT="wporg"
+  SUFFIX="-wporg"
+fi
 
 VERSION=$(grep -E "^[[:space:]]*\*[[:space:]]*Version:" "${ROOT_DIR}/${PLUGIN_SLUG}.php" | head -n1 | sed -E 's/.*Version:[[:space:]]*([^[:space:]]+).*/\1/')
 if [[ -z "${VERSION}" ]]; then
@@ -27,38 +39,50 @@ if [[ "${README_STABLE}" != "${VERSION}" ]]; then
   exit 1
 fi
 
-echo "Building ${PLUGIN_SLUG} v${VERSION}"
+echo "Building ${PLUGIN_SLUG} v${VERSION} (${VARIANT})"
 
-rm -rf "${DIST_DIR}"
+# Always rebuild stage from scratch.
+rm -rf "${STAGE_DIR}"
 mkdir -p "${STAGE_DIR}"
 
-# rsync excludes — keep in sync with .distignore if you add one.
-rsync -a \
-  --exclude=".git" \
-  --exclude=".gitignore" \
-  --exclude=".gitattributes" \
-  --exclude=".github" \
-  --exclude=".DS_Store" \
-  --exclude="node_modules" \
-  --exclude="vendor" \
-  --exclude="tests" \
-  --exclude="*.log" \
-  --exclude="*.swp" \
-  --exclude="*.map" \
-  --exclude="ARCHITECTURE.md" \
-  --exclude="CHANGELOG.md" \
-  --exclude="build-zip.sh" \
-  --exclude="build-screenshots.sh" \
-  --exclude="screenshots-src" \
-  --exclude="dist" \
-  --exclude="assets" \
-  "${ROOT_DIR}/" "${STAGE_DIR}/"
+RSYNC_EXCLUDES=(
+  --exclude=".git"
+  --exclude=".gitignore"
+  --exclude=".gitattributes"
+  --exclude=".github"
+  --exclude=".DS_Store"
+  --exclude="node_modules"
+  --exclude="vendor"
+  --exclude="tests"
+  --exclude="*.log"
+  --exclude="*.swp"
+  --exclude="*.map"
+  --exclude="ARCHITECTURE.md"
+  --exclude="CHANGELOG.md"
+  --exclude="CODE_OF_CONDUCT.md"
+  --exclude="LICENSE"
+  --exclude="README.md"
+  --exclude="build-zip.sh"
+  --exclude="build-screenshots.sh"
+  --exclude="screenshots-src"
+  --exclude="dist"
+  --exclude="assets"
+)
 
-# The /assets/ folder is for wordpress.org SVN (banners, icons, screenshots) —
-# it does NOT belong inside the plugin zip.
+# wordpress.org forbids plugin-bundled updaters. Strip the updater from that
+# build so the automated scanner doesn't flag hook references to
+# pre_set_site_transient_update_plugins.
+if [[ "${VARIANT}" == "wporg" ]]; then
+  RSYNC_EXCLUDES+=( --exclude="class-mcp-updater.php" )
+fi
+
+rsync -a "${RSYNC_EXCLUDES[@]}" "${ROOT_DIR}/" "${STAGE_DIR}/"
+
+# Double-check: no /assets/ inside the plugin zip. /assets/ is SVN-only.
 rm -rf "${STAGE_DIR}/assets"
 
-ZIP_PATH="${DIST_DIR}/${PLUGIN_SLUG}-${VERSION}.zip"
+ZIP_PATH="${DIST_DIR}/${PLUGIN_SLUG}-${VERSION}${SUFFIX}.zip"
+rm -f "${ZIP_PATH}"
 ( cd "${DIST_DIR}" && zip -rq "${ZIP_PATH}" "${PLUGIN_SLUG}" )
 
 SIZE=$(du -h "${ZIP_PATH}" | awk '{print $1}')

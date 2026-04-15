@@ -21,7 +21,7 @@ final class Plugin {
 	public Resources_Registry $resources;
 	public Rate_Limiter $rate_limiter;
 	public Activity_Log $activity_log;
-	public Updater $updater;
+	public ?Updater $updater = null;
 
 	public static function instance(): Plugin {
 		if ( null === self::$instance ) {
@@ -49,8 +49,10 @@ final class Plugin {
 
 		$this->oauth->bootstrap();
 
-		$this->updater = new Updater();
-		$this->updater->bootstrap();
+		if ( class_exists( __NAMESPACE__ . '\\Updater' ) ) {
+			$this->updater = new Updater();
+			$this->updater->bootstrap();
+		}
 
 		add_action( 'init', [ $this, 'load_textdomain' ] );
 		add_action( 'rest_api_init', [ $this->server, 'register_routes' ] );
@@ -91,7 +93,12 @@ final class Plugin {
 		require_once $base . 'class-mcp-server.php';
 		require_once $base . 'class-mcp-installer.php';
 		require_once $base . 'class-mcp-maintenance.php';
-		require_once $base . 'class-mcp-updater.php';
+
+		// Optional: present in self-hosted builds (storemcp.io), removed from wordpress.org builds.
+		$updater_file = $base . 'class-mcp-updater.php';
+		if ( file_exists( $updater_file ) ) {
+			require_once $updater_file;
+		}
 		require_once $base . 'tools/trait-tool-base.php';
 	}
 

@@ -4,6 +4,23 @@ All notable changes to StoreMCP are documented in this file. The format is based
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] — 2026-04-15
+
+### Added
+
+- `build-zip.sh --wporg` builds a wordpress.org-safe variant of the plugin
+  with the self-hosted `Updater` class stripped out. The default build
+  (`build-zip.sh`) keeps the updater for direct distribution from
+  storemcp.io.
+
+### Changed
+
+- Shortened the plugin display name to "StoreMCP — AI Control Center".
+- Updater is now loaded conditionally — the class file is excluded from the
+  wordpress.org build and the bootstrap tolerates its absence.
+- Published this repository as open source under GPL-2.0-or-later on GitHub
+  at `storemcp/store-mcp`.
+
 ## [1.1.1] — 2026-04-14
 
 ### Added

@@ -1,4 +1,4 @@
-=== StoreMCP — AI Control Center for WordPress & WooCommerce ===
+=== StoreMCP — AI Control Center ===
 Contributors: storemcp
 Tags: mcp, woocommerce, ai, claude, chatgpt
 Requires at least: 6.4

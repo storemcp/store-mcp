@@ -92,7 +92,7 @@ final class Updater {
 		}
 
 		$data = new \stdClass();
-		$data->name           = 'StoreMCP — AI Control Center for WordPress & WooCommerce';
+		$data->name           = 'StoreMCP — AI Control Center';
 		$data->slug           = 'store-mcp';
 		$data->version        = $info['version'] ?? STORE_MCP_VERSION;
 		$data->author         = '<a href="https://storemcp.io">StoreMCP</a>';

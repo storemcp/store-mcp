@@ -1,13 +1,12 @@
 <?php
 /**
- * Plugin Name:       StoreMCP — AI Control Center for WordPress & WooCommerce
+ * Plugin Name:       StoreMCP — AI Control Center
  * Plugin URI:        https://storemcp.io
  * Description:       Universal MCP (Model Context Protocol) server for WordPress and WooCommerce. Control your site from Claude, ChatGPT, Cursor and any MCP-compatible client.
  * Version:           1.1.2
  * Requires at least: 6.4
  * Requires PHP:      8.0
  * Author:            StoreMCP
- * Author URI:        https://storemcp.io
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       store-mcp
