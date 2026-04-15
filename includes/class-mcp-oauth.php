@@ -161,8 +161,8 @@ final class OAuth {
 	// ---------------------------------------------------------------------
 
 	public function maybe_handle_request(): void {
-		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? (string) wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
-		$path = (string) parse_url( $uri, PHP_URL_PATH );
+		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
+		$path = (string) wp_parse_url( $uri, PHP_URL_PATH );
 		if ( '' === $path ) {
 			return;
 		}
@@ -523,7 +523,14 @@ final class OAuth {
 		foreach ( $params as $k => $v ) {
 			echo '<input type=hidden name=' . esc_attr( $k ) . ' value=' . esc_attr( $v ) . '>';
 		}
-		echo '<p>' . esc_html( sprintf( __( '%s wants to access your site as %s.', 'store-mcp' ), $client_name, $user->user_login ) ) . '</p>';
+		echo '<p>' . esc_html(
+			sprintf(
+				/* translators: 1: MCP client name, 2: WordPress user login */
+				__( '%1$s wants to access your site as %2$s.', 'store-mcp' ),
+				$client_name,
+				$user->user_login
+			)
+		) . '</p>';
 		echo '<button name=decision value=allow>' . esc_html__( 'Allow', 'store-mcp' ) . '</button> ';
 		echo '<button name=decision value=deny>' . esc_html__( 'Deny', 'store-mcp' ) . '</button>';
 		echo '</form>';

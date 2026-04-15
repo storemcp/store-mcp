@@ -67,6 +67,10 @@ RSYNC_EXCLUDES=(
   --exclude="screenshots-src"
   --exclude="dist"
   --exclude="assets"
+  --exclude="phpcs.xml"
+  --exclude="phpcs.xml.dist"
+  --exclude="composer.json"
+  --exclude="composer.lock"
 )
 
 # wordpress.org forbids plugin-bundled updaters. Strip the updater from that

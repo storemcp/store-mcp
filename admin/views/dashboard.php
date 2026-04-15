@@ -153,7 +153,7 @@ $clients      = $plugin->oauth->list_clients();
 					<tr><th><?php esc_html_e( 'WooCommerce', 'store-mcp' ); ?></th><td><?php echo $wc_active ? '<span class="store-mcp-pill ok">' . esc_html__( 'Active', 'store-mcp' ) . '</span>' : '<span class="store-mcp-pill muted">' . esc_html__( 'Not active', 'store-mcp' ) . '</span>'; ?></td></tr>
 					<tr><th><?php esc_html_e( 'License', 'store-mcp' ); ?></th><td><?php echo esc_html( strtoupper( $tier ) ); ?><?php if ( ! empty( $state['expires_at'] ) ) : ?> — <?php echo esc_html( $state['expires_at'] ); ?><?php endif; ?></td></tr>
 					<tr><th><?php esc_html_e( 'Tools available', 'store-mcp' ); ?></th><td><?php echo esc_html( (string) $tools_count ); ?></td></tr>
-					<tr><th><?php esc_html_e( 'Requests today', 'store-mcp' ); ?></th><td><?php echo esc_html( number_format_i18n( $stats['today'] ) ); ?> <?php if ( $stats['errors_today'] > 0 ) : ?><span class="store-mcp-pill warn"><?php echo esc_html( sprintf( __( '%d errors', 'store-mcp' ), $stats['errors_today'] ) ); ?></span><?php endif; ?></td></tr>
+					<tr><th><?php esc_html_e( 'Requests today', 'store-mcp' ); ?></th><td><?php echo esc_html( number_format_i18n( $stats['today'] ) ); ?> <?php if ( $stats['errors_today'] > 0 ) : ?><span class="store-mcp-pill warn"><?php echo esc_html( sprintf( /* translators: %d: error count */ __( '%d errors', 'store-mcp' ), $stats['errors_today'] ) ); ?></span><?php endif; ?></td></tr>
 					<tr><th><?php esc_html_e( 'Protocol', 'store-mcp' ); ?></th><td><code><?php echo esc_html( STORE_MCP_PROTOCOL_VERSION ); ?></code></td></tr>
 				</tbody>
 			</table>

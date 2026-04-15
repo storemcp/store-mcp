@@ -4,6 +4,28 @@ All notable changes to StoreMCP are documented in this file. The format is based
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.3] — 2026-04-15
+
+### Fixed
+
+- WordPress Plugin Check compliance pass:
+  - Escape exception messages before rendering in admin views.
+  - Replace `parse_url()` with `wp_parse_url()` in OAuth helpers.
+  - Replace `unlink()` with `wp_delete_file()` where applicable.
+  - Prepare all custom-table queries with `$wpdb->prepare()`.
+  - Remove the deprecated explicit `load_plugin_textdomain()` call.
+- Widget tools no longer rely on `wp_get_sidebars_widgets()` (now reads the
+  `sidebars_widgets` option directly).
+- Activity-log CSV export no longer touches the filesystem.
+
+### Changed
+
+- Trimmed the readme short description to fit the wordpress.org 150-char
+  limit.
+- Bumped `Tested up to` to WordPress 6.8.
+- `build-zip.sh` excludes dev-only config files (`phpcs.xml`,
+  `phpcs.xml.dist`, `composer.json`, `composer.lock`) from release zips.
+
 ## [1.1.2] — 2026-04-15
 
 ### Added

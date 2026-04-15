@@ -2,13 +2,13 @@
 Contributors: storemcp
 Tags: mcp, woocommerce, ai, claude, chatgpt
 Requires at least: 6.4
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 8.0
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Universal MCP (Model Context Protocol) server for WordPress and WooCommerce. Control your site from Claude, ChatGPT, Cursor and any MCP-compatible client.
+Expose your WordPress and WooCommerce site as an MCP server for Claude, ChatGPT, Cursor and any MCP-compatible AI client.
 
 == Description ==
 
@@ -128,6 +128,12 @@ In a custom table `{prefix}storemcp_activity`. Retention is configurable (defaul
 
 == Changelog ==
 
+= 1.1.3 — 2026-04-15 =
+* Plugin Check pass: escape exception messages, replace `parse_url()` with `wp_parse_url()`, replace `unlink()` with `wp_delete_file()`, prepare all custom-table queries, remove deprecated `load_plugin_textdomain()` call.
+* Stop relying on `wp_get_sidebars_widgets()` in widget tools (now reads the `sidebars_widgets` option directly).
+* Activity-log CSV export no longer touches the filesystem.
+* Trim the readme short description to fit the wp.org 150-char limit; bump "Tested up to" to 6.8.
+
 = 1.1.2 — 2026-04-15 =
 * License activation now uses Lemon Squeezy: per-site instance tracking, correct seat counting and proper deactivation.
 * Added self-hosted auto-updater pulling from storemcp.io (only active when not installed from wordpress.org).
@@ -149,6 +155,9 @@ In a custom table `{prefix}storemcp_activity`. Retention is configurable (defaul
 * Yoast and Rank Math compatible SEO tools.
 
 == Upgrade Notice ==
+
+= 1.1.3 =
+Plugin Check / wordpress.org compliance pass. No behavioural changes.
 
 = 1.1.2 =
 Fixes Pro license activation (Lemon Squeezy integration) and enables self-hosted auto-updates.

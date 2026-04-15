@@ -27,7 +27,7 @@ $action_url  = \StoreMCP\OAuth::issuer() . \StoreMCP\OAuth::AUTHORIZE_PATH;
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title><?php echo esc_html( sprintf( __( 'Authorize %s · %s', 'store-mcp' ), $client_name, $brand ) ); ?></title>
+<title><?php echo esc_html( sprintf( /* translators: 1: MCP client name, 2: site brand name */ __( 'Authorize %1$s · %2$s', 'store-mcp' ), $client_name, $brand ) ); ?></title>
 <style>
 	:root {
 		--bg: #f5f6f8;
@@ -245,7 +245,7 @@ $action_url  = \StoreMCP\OAuth::issuer() . \StoreMCP\OAuth::AUTHORIZE_PATH;
 	<div style="text-align:center;">
 		<span class="user-chip">
 			<span class="dot"></span>
-			<?php echo esc_html( sprintf( __( 'Signed in as %s', 'store-mcp' ), $user->user_login ) ); ?>
+			<?php echo esc_html( sprintf( /* translators: %s: WordPress user login */ __( 'Signed in as %s', 'store-mcp' ), $user->user_login ) ); ?>
 		</span>
 	</div>
 
@@ -253,7 +253,7 @@ $action_url  = \StoreMCP\OAuth::issuer() . \StoreMCP\OAuth::AUTHORIZE_PATH;
 		<h2><?php esc_html_e( 'This will allow the app to', 'store-mcp' ); ?></h2>
 		<ul>
 			<li><?php esc_html_e( 'Read and manage content, products and settings via MCP tools', 'store-mcp' ); ?></li>
-			<li><?php echo esc_html( sprintf( __( 'Act on behalf of %s, limited to their existing permissions', 'store-mcp' ), $user->user_login ) ); ?></li>
+			<li><?php echo esc_html( sprintf( /* translators: %s: WordPress user login */ __( 'Act on behalf of %s, limited to their existing permissions', 'store-mcp' ), $user->user_login ) ); ?></li>
 			<li><?php esc_html_e( 'Be revoked any time from Settings → Connected apps', 'store-mcp' ); ?></li>
 		</ul>
 	</div>
