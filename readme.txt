@@ -2,7 +2,7 @@
 Contributors: storemcp
 Tags: mcp, woocommerce, ai, claude, chatgpt
 Requires at least: 6.4
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 8.0
 Stable tag: 1.1.3
 License: GPLv2 or later
