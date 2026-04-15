@@ -132,7 +132,7 @@ In a custom table `{prefix}storemcp_activity`. Retention is configurable (defaul
 * Plugin Check pass: escape exception messages, replace `parse_url()` with `wp_parse_url()`, replace `unlink()` with `wp_delete_file()`, prepare all custom-table queries, remove deprecated `load_plugin_textdomain()` call.
 * Stop relying on `wp_get_sidebars_widgets()` in widget tools (now reads the `sidebars_widgets` option directly).
 * Activity-log CSV export no longer touches the filesystem.
-* Trim the readme short description to fit the wp.org 150-char limit; bump "Tested up to" to 6.8.
+* Trim the readme short description to fit the wp.org 150-char limit; bump "Tested up to" to 6.9.
 
 = 1.1.2 — 2026-04-15 =
 * License activation now uses Lemon Squeezy: per-site instance tracking, correct seat counting and proper deactivation.
