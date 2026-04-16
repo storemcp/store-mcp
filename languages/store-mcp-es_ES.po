@@ -318,8 +318,8 @@ msgid "ChatGPT"
 msgstr "ChatGPT"
 
 #: admin/views/dashboard.php:74
-msgid "Custom connector (Pro / Team / Enterprise)"
-msgstr "Conector personalizado (Pro / Team / Enterprise)"
+msgid "Custom connector — requires Pro, Team or Enterprise plan"
+msgstr "Conector personalizado — requiere plan Pro, Team o Enterprise"
 
 #: admin/views/dashboard.php:79
 msgid "In ChatGPT → Settings → Apps & Connectors → Advanced Settings → enable Developer Mode."

@@ -71,7 +71,7 @@ $clients      = $plugin->oauth->list_clients();
 				</div>
 				<div>
 					<h3><?php esc_html_e( 'ChatGPT', 'store-mcp' ); ?></h3>
-					<p><?php esc_html_e( 'Custom connector (Pro / Team / Enterprise)', 'store-mcp' ); ?></p>
+					<p><?php esc_html_e( 'Custom connector — requires Pro, Team or Enterprise plan', 'store-mcp' ); ?></p>
 				</div>
 				<button type="button" class="button button-small store-mcp-toggle-steps"><?php esc_html_e( 'Show steps', 'store-mcp' ); ?></button>
 			</div>

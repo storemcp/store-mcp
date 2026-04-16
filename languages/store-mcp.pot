@@ -309,7 +309,7 @@ msgid "ChatGPT"
 msgstr ""
 
 #: admin/views/dashboard.php:74
-msgid "Custom connector (Pro / Team / Enterprise)"
+msgid "Custom connector — requires Pro, Team or Enterprise plan"
 msgstr ""
 
 #: admin/views/dashboard.php:79
