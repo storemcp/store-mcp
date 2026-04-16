@@ -71,13 +71,13 @@ $clients      = $plugin->oauth->list_clients();
 				</div>
 				<div>
 					<h3><?php esc_html_e( 'ChatGPT', 'store-mcp' ); ?></h3>
-					<p><?php esc_html_e( 'Custom connector', 'store-mcp' ); ?></p>
+					<p><?php esc_html_e( 'Custom connector (Plus or higher)', 'store-mcp' ); ?></p>
 				</div>
 				<button type="button" class="button button-small store-mcp-toggle-steps"><?php esc_html_e( 'Show steps', 'store-mcp' ); ?></button>
 			</div>
 			<ol class="store-mcp-steps" hidden>
-				<li><?php esc_html_e( 'In ChatGPT → Settings → Apps → click Add more.', 'store-mcp' ); ?></li>
-				<li><?php esc_html_e( 'Click Create, name it StoreMCP, and paste the URL above as MCP Server URL.', 'store-mcp' ); ?></li>
+				<li><?php esc_html_e( 'In ChatGPT → Settings → Connectors → click Create connector.', 'store-mcp' ); ?></li>
+				<li><?php esc_html_e( 'Name it StoreMCP, select Remote (MCP), and paste the URL above as the server URL.', 'store-mcp' ); ?></li>
 				<li><?php esc_html_e( 'Choose OAuth as authentication. Save. Authorize on this site when prompted.', 'store-mcp' ); ?></li>
 			</ol>
 		</div>

@@ -318,19 +318,16 @@ msgid "ChatGPT"
 msgstr "ChatGPT"
 
 #: admin/views/dashboard.php:74
-msgid "Custom connector"
-msgstr "Conector personalizado"
+msgid "Custom connector (Plus or higher)"
+msgstr "Conector personalizado (Plus o superior)"
 
 #: admin/views/dashboard.php:79
-msgid "In ChatGPT → Settings → Apps → click Add more."
-msgstr "En ChatGPT → Ajustes → Apps → haz clic en Agregar más."
+msgid "In ChatGPT → Settings → Connectors → click Create connector."
+msgstr "En ChatGPT → Ajustes → Conectores → haz clic en Crear conector."
 
 #: admin/views/dashboard.php:80
-msgid ""
-"Click Create, name it StoreMCP, and paste the URL above as MCP Server URL."
-msgstr ""
-"Haz clic en Crear, ponle el nombre StoreMCP y pega la URL de arriba como MCP "
-"Server URL."
+msgid "Name it StoreMCP, select Remote (MCP), and paste the URL above as the server URL."
+msgstr "Ponle el nombre StoreMCP, selecciona Remote (MCP) y pega la URL de arriba como server URL."
 
 #: admin/views/dashboard.php:81
 msgid ""
