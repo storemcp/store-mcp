@@ -4,6 +4,12 @@ All notable changes to StoreMCP are documented in this file. The format is based
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.4] — 2026-04-15
+
+### Fixed
+
+- ChatGPT setup instructions updated: path is now **Settings → Apps & Connectors → Advanced settings** (ChatGPT renamed "Connectors" to "Apps" in December 2025).
+
 ## [1.1.3] — 2026-04-15
 
 ### Fixed

@@ -4,7 +4,7 @@ Tags: mcp, woocommerce, ai, claude, chatgpt
 Requires at least: 6.4
 Tested up to: 6.9
 Requires PHP: 8.0
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -128,6 +128,9 @@ In a custom table `{prefix}storemcp_activity`. Retention is configurable (defaul
 
 == Changelog ==
 
+= 1.1.4 — 2026-04-15 =
+* Fix ChatGPT setup instructions: correct path to Settings → Apps & Connectors → Advanced settings (renamed in December 2025).
+
 = 1.1.3 — 2026-04-15 =
 * Plugin Check pass: escape exception messages, replace `parse_url()` with `wp_parse_url()`, replace `unlink()` with `wp_delete_file()`, prepare all custom-table queries, remove deprecated `load_plugin_textdomain()` call.
 * Stop relying on `wp_get_sidebars_widgets()` in widget tools (now reads the `sidebars_widgets` option directly).
@@ -155,6 +158,9 @@ In a custom table `{prefix}storemcp_activity`. Retention is configurable (defaul
 * Yoast and Rank Math compatible SEO tools.
 
 == Upgrade Notice ==
+
+= 1.1.4 =
+Fixes the ChatGPT setup instructions in the dashboard (path renamed in December 2025).
 
 = 1.1.3 =
 Plugin Check / wordpress.org compliance pass. No behavioural changes.
