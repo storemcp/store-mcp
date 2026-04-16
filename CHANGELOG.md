@@ -8,7 +8,7 @@ All notable changes to StoreMCP are documented in this file. The format is based
 
 ### Fixed
 
-- ChatGPT setup instructions updated: correct path is **Settings → Connectors → Create connector** (requires Plus or higher; "Add more" leads to the public app marketplace, not the custom connector creator).
+- ChatGPT setup instructions corrected: path is **Settings → Apps & Connectors → Advanced Settings → enable Developer Mode**, then Connectors → Create. Noted plan requirement (Pro / Team / Enterprise).
 
 ## [1.1.3] — 2026-04-15
 

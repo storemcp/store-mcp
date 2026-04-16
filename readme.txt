@@ -129,7 +129,7 @@ In a custom table `{prefix}storemcp_activity`. Retention is configurable (defaul
 == Changelog ==
 
 = 1.1.4 — 2026-04-16 =
-* Fix ChatGPT setup instructions: correct path is Settings → Connectors → Create connector (requires Plus or higher).
+* Fix ChatGPT setup instructions: path is Settings → Apps & Connectors → Advanced Settings → enable Developer Mode, then Connectors → Create (Pro / Team / Enterprise only).
 
 = 1.1.3 — 2026-04-15 =
 * Plugin Check pass: escape exception messages, replace `parse_url()` with `wp_parse_url()`, replace `unlink()` with `wp_delete_file()`, prepare all custom-table queries, remove deprecated `load_plugin_textdomain()` call.
