@@ -309,11 +309,11 @@ msgid "ChatGPT"
 msgstr ""
 
 #: admin/views/dashboard.php:74
-msgid "Developer Mode / Custom connector"
+msgid "Custom connector"
 msgstr ""
 
 #: admin/views/dashboard.php:79
-msgid "In ChatGPT → Settings → Connectors → Advanced → enable Developer mode."
+msgid "In ChatGPT → Settings → Apps → click Add more."
 msgstr ""
 
 #: admin/views/dashboard.php:80

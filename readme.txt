@@ -128,8 +128,8 @@ In a custom table `{prefix}storemcp_activity`. Retention is configurable (defaul
 
 == Changelog ==
 
-= 1.1.4 — 2026-04-15 =
-* Fix ChatGPT setup instructions: correct path to Settings → Apps & Connectors → Advanced settings (renamed in December 2025).
+= 1.1.4 — 2026-04-16 =
+* Fix ChatGPT setup instructions: correct path is now Settings → Apps → Add more (Developer Mode toggle no longer exists in current ChatGPT UI).
 
 = 1.1.3 — 2026-04-15 =
 * Plugin Check pass: escape exception messages, replace `parse_url()` with `wp_parse_url()`, replace `unlink()` with `wp_delete_file()`, prepare all custom-table queries, remove deprecated `load_plugin_textdomain()` call.
